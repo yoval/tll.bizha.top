@@ -42,11 +42,11 @@
         * [销售数据](/excel/power-query/销售数据 "销售数据")
         * [产品数据](/excel/power-query/产品数据 "产品数据")
     * formula
-        * [SUMPRODUCT](/excel/formula/SUMPRODUCT "SUMPRODUCT")
+        * [SUMPRODUCT](/excel/formula/sumproduct "SUMPRODUCT")
     * dax
-        * [evaluate](/excel/dax/evaluate "evaluate")
-        * [filter](/excel/dax/filter "filter")
-        * [summarize](/excel/dax/summarize "summarize")
+        * [evaluate](/excel/dax/evaluate "EVALUATE")
+        * [filter](/excel/dax/filter "FILTER")
+        * [summarize](/excel/dax/summarize "SUMMARIZE")
 * Materials
     * [活动新品](/materials/活动新品 "活动新品")
 * Topics
