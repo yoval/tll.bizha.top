@@ -44,10 +44,16 @@
         * [产品数据](/excel/power-query/产品数据 "产品数据")
     * formula
         * [SUMPRODUCT](/excel/formula/sumproduct "SUMPRODUCT")
+        * [LET](/excel/formula/let "LET")
+        * [GROUPBY](/excel/formula/groupby "GROUPBY")
+        * [HSTACK&VSTACK](/excel/formula/hstack与vstack "HSTACK&VSTACK")
+        * [TAKE&DROP](/excel/formula/take与drop "TAKE&DROP")
+        * [LAMBDA](/excel/formula/lambda "LAMBDA")
+
     * dax
-        * [evaluate](/excel/dax/evaluate "EVALUATE")
-        * [filter](/excel/dax/filter "FILTER")
-        * [summarize](/excel/dax/summarize "SUMMARIZE")
+        * [EVALUATE](/excel/dax/evaluate "EVALUATE")
+        * [FILTER](/excel/dax/filter "FILTER")
+        * [SUMMARIZE](/excel/dax/summarize "SUMMARIZE")
 * Materials
     * [活动新品](/materials/活动新品 "活动新品")
 * Topics
