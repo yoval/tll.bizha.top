@@ -49,7 +49,9 @@
         * [HSTACK&VSTACK](/excel/formula/hstack与vstack "HSTACK&VSTACK")
         * [TAKE&DROP](/excel/formula/take与drop "TAKE&DROP")
         * [LAMBDA](/excel/formula/lambda "LAMBDA")
+        * [FREQUENCY](/excel/formula/frequency "FREQUENCY")
         * [REG](/excel/formula/reg "正则表达式")
+        * [REDUCE](/excel/formula/reduce "REDUCE")
 
     * dax
         * [EVALUATE](/excel/dax/evaluate "EVALUATE")
