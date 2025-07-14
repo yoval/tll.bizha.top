@@ -61,3 +61,6 @@
     * [活动新品](/materials/活动新品 "活动新品")
 * Topics
     * [新品30销售追踪](/topics/新品30天销售追踪 "新品30天销售追踪")
+
+* Others
+    * [GITHUBCONNECT](/others/githubconnect "gitgub连接")
