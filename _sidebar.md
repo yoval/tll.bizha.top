@@ -9,14 +9,15 @@
     * [flink_rps_tll_presale_order_df](/data-dictionary/flink_rps_tll_presale_order_df "预售订单")
     * [flink_rps_tll_presale_order_details_df](/data-dictionary/flink_rps_tll_presale_order_details_df "预售详单")
     * [dim_oas_formmain_0145_all_df](/data-dictionary/dim_oas_formmain_0145_all_df "门店信息")
-    * [ads_mkt_fines_summary_df](/data-dictionary/ads_mkt_fines_summary_df "罚款信息")
+    * [ads_fin_fee_bx_detail_di](/data-dictionary/ads_fin_fee_bx_detail_di "费用报销明细表")
+    * [ads_mkt_fines_summary_df](/data-dictionary/ads_mkt_fines_summary_df "门店罚款信息")
+    * [dwd_spc_report_sales_di](/data-dictionary/dwd_spc_report_sales_di "u8c订单信息（已弃用）")
     * [dwd_rps_dt_orders_di](/data-dictionary/dwd_rps_dt_orders_di "u8c订单（已弃用）")
     * [dwd_rps_dt_order_goods_di](/data-dictionary/dwd_rps_dt_order_goods_di "u8c订单明细（已弃用）")
     * [dws_trd_mtpos_order_pay_channel_details_di](/data-dictionary/dws_trd_mtpos_order_pay_channel_details_di "门店销售（详细渠道）")
     * [ads_dbs_trade_shop_pay_channel_di](/data-dictionary/ads_dbs_trade_shop_pay_channel_di "门店销售（详细渠道日表）")
     * [imp_online_new_channel_supplement](/data-dictionary/imp_online_new_channel_supplement "新渠道补录")
     * [dim_sup_srm_goods_df](/data-dictionary/dim_sup_srm_goods_df "商品信息")
-
 
 * DataQuery
     * 营业额查询
@@ -63,4 +64,6 @@
     * [新品30销售追踪](/topics/新品30天销售追踪 "新品30天销售追踪")
 
 * Others
-    * [GITHUBCONNECT](/others/githubconnect "gitgub连接")
+    * [GITHUBCONNECT](/others/githubconnect "gitgub连接代理")
+    * [CONDA](/others/conda "conda的使用")
+    * [SQLFUNCTIONS](/others/sqlfunctions "常用的SQL函数")
