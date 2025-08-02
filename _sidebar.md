@@ -4,6 +4,8 @@
     * [ads_dbs_trade_food_di](/data-dictionary/ads_dbs_trade_food_di "产品销售（大渠道）")
     * [dwd_rps_tll_order_di](/data-dictionary/dwd_rps_tll_order_di "报货订单")
     * [dwd_rps_tll_order_details_di](/data-dictionary/dwd_rps_tll_order_details_di "报货订单明细")
+    * [dwd_rps_tll_order_cancel_df](/data-dictionary/dwd_rps_tll_order_cancel_df "报货退货订单")
+    * [dwd_rps_tll_order_cancel_details_df](/data-dictionary/dwd_rps_tll_order_cancel_details_df "报货退货订单明细")
     * [flink_rps_all_new_tll_order_now_day_df](/data-dictionary/flink_rps_all_new_tll_order_now_day_df "报货订单（即时）")
     * [flink_rps_all_new_tll_order_details_now_day_df](/data-dictionary/flink_rps_all_new_tll_order_details_now_day_df "报货订单明细（即时）")
     * [flink_rps_tll_presale_order_df](/data-dictionary/flink_rps_tll_presale_order_df "预售订单")
