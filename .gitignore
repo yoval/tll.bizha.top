@@ -1,0 +1,49 @@
+# Python文件
+*.py
+*.pyc
+__pycache__/
+
+# Python缓存
+*.pyo
+*.pyd
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# 环境文件
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# 日志文件
+*.log
+
+# 数据库连接测试文件
+test_db_connection.py
+get_db_schema.py
+get_new_table.py
+update_data_dictionary.py
+
+# IDE配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp
+
+# 备份文件
+*.bak
+*.backup

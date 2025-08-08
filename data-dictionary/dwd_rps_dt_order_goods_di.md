@@ -1,41 +1,66 @@
-# `dwd_rps_dt_order_goods_di`
+# dwd_rps_dt_order_goods_di
 
----
+## 表描述
+OLAP
 
-- 报货历史详单查询
+## 数据量
+- 总记录数：7,789,204 条
 
+## 字段信息
 
-| 字段               | 类型         | 说明         | 示例                   |
-| ------------------ | ------------ | ------------ | ---------------------- |
-| id                 | int          | 自增ID       | 11                     |
-| order_id           | int          | 订单ID       | 100027                 |
-| order_no           | string       | 订单编码     | XCD00000000012         |
-| sortId             | int          | 序号         | 1                      |
-| article_id         | int          | 文章ID       |                        |
-| goods_no           | string       | 商品货号     | 120001041              |
-| goods_title        | string       | 商品标题     | 摇摇杯宣传物料包 杯贴  |
-| goods_price        | decimal(143) | 商品价格     | 85                     |
-| real_price         | decimal(143) | 实际标题     | 85                     |
-| quantity           | decimal(142) | 数量         | 1                      |
-| taxAmount          | decimal(143) | 实际金额     | 85                     |
-| point              | int          | 积分         | 0                      |
-| discount           | int          | 折扣金额     | 100                    |
-| derate             | decimal(142) | 利率         | 0                      |
-| fabh               | string       | fabh         |                        |
-| cxbs               | string       | cxbs         |                        |
-| decaribe           | string       | 描述         |                        |
-| entid              | string       | 企业代码     | E26FMM0XNYQ            |
-| IsCriticism        | string       | 是否评论     | N                      |
-| PromScenario       | string       | PromScenario |                        |
-| Status             | int          | 状态         | 0                      |
-| ReturnNum          | decimal(142) | 退货数量     | 0                      |
-| PiHao              | string       | PiHao        |                        |
-| timestamps         | string       | 创建时间     | 2023/6/15 12:23        |
-| erp_orderno        | string       | U8C订单编号  |                        |
-| erp_orderno_return | string       | U8C退单编号  |                        |
-| storcode           | string       | 仓库编码     | 1001F8100000000001IZ   |
-| storname           | string       | 仓库名称     | 蚌埠快递仓（原天津仓） |
-| updatetime         | string       | 审核时间     | 2023/6/15 12:30        |
-| data_source        | int          | 数据源类型   | 2                      |
+| 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段描述 |
+|---------|----------|----------|--------|----------|
+| id | INT | 是 |  | 自增ID |
+| order_id | INT | 是 |  | 订单ID |
+| order_no | VARCHAR(255) | 是 |  | 订单编码 |
+| sortId | INT | 是 |  | 序号 |
+| article_id | INT | 是 |  | 文章ID |
+| goods_no | VARCHAR(255) | 是 |  | 商品货号 |
+| goods_title | VARCHAR(255) | 是 |  | 商品标题 |
+| goods_price | DECIMAL(14,3) | 是 |  | 商品价格 |
+| real_price | DECIMAL(14,3) | 是 |  | 实际标题 |
+| quantity | DECIMAL(14,2) | 是 |  | 数量 |
+| taxAmount | DECIMAL(14,3) | 是 |  | 实际金额 |
+| point | INT | 是 |  | 积分 |
+| discount | INT | 是 |  | 折扣金额 |
+| derate | DECIMAL(14,2) | 是 |  | 利率 |
+| fabh | VARCHAR(255) | 是 |  | fabh |
+| cxbs | VARCHAR(255) | 是 |  | cxbs |
+| decaribe | VARCHAR(255) | 是 |  | 描述 |
+| entid | VARCHAR(255) | 是 |  | 企业代码 |
+| IsCriticism | VARCHAR(255) | 是 |  | 是否评论 |
+| PromScenario | VARCHAR(255) | 是 |  | PromScenario |
+| Status | INT | 是 |  | 状态 |
+| ReturnNum | DECIMAL(14,2) | 是 |  | 退货数量 |
+| PiHao | VARCHAR(255) | 是 |  | PiHao |
+| timestamps | VARCHAR(255) | 是 |  | 创建时间 |
+| erp_orderno | VARCHAR(255) | 是 |  | U8C订单编号 |
+| erp_orderno_return | VARCHAR(255) | 是 |  | U8C退单编号 |
+| storcode | VARCHAR(255) | 是 |  | 仓库编码 |
+| storname | VARCHAR(255) | 是 |  | 仓库名称 |
+| updatetime | VARCHAR(255) | 是 |  | 审核时间 |
+| data_source | INT | 是 |  | 数据源类型 |
+| pt | VARCHAR(255) | 是 |  | 天分区 |
 
-- 备注：u8c渠道，已于2024年9月后弃用
+## 使用说明
+
+### 常用查询示例
+
+```sql
+-- 查询最新数据
+SELECT * FROM dwd_rps_dt_order_goods_di 
+ORDER BY business_date DESC 
+LIMIT 10;
+
+-- 查询数据总量
+SELECT COUNT(*) FROM dwd_rps_dt_order_goods_di;
+
+-- 查询某日数据
+SELECT * FROM dwd_rps_dt_order_goods_di 
+WHERE business_date = 20240101;
+```
+
+### 注意事项
+- 时间字段通常为bigint类型，格式为YYYYMMDD
+- 金额字段单位为分，需要除以100转换为元
+- 字符类型字段需要注意大小写敏感问题

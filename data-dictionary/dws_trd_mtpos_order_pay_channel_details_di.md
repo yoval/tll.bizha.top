@@ -1,26 +1,52 @@
-# `dws_trd_mtpos_order_pay_channel_details_di`
+# dws_trd_mtpos_order_pay_channel_details_di
 
----
+## 表描述
+OLAP
 
-- 详细支付渠道
+## 数据量
+- 总记录数：108,356,676 条
 
+## 字段信息
 
-| 字段                  | 类型 | 说明         | 示例                  |
-| --------------------- | ---- | ------------ | --------------------- |
-| order_id              |      | 订单号       | 1897288567765016668   |
-| shop_id               |      | 门店编号     | TLL00831              |
-| data_source           |      | 类型         | instore               |
-| source_name           |      | 渠道         | 收银POS               |
-| status_name           |      | 状态         | 已结账                |
-| pay_way_pay_type      |      | 支付路径码   | 53                    |
-| pay_way_pay_type_name |      | 支付路径名称 | 扫码支付（直连）-微信 |
-| income                |      | 营业收入     | 9                     |
-| discount              |      | 优惠金额     | 9                     |
-| amount                |      | 营业额       | 18                    |
-| refund_status         |      | 退款状态     | 0                     |
-| pay_way_created_time  |      | 创建日期     | 2025-03-07 09:52:20   |
-| pay_way_refund_time   |      | 退款日期     | 0                     |
-| pay_way_status        |      | 支持状态     | 1                     |
-| pay_way_type          |      | 支付类型     | 1                     |
-| pt                    |      | 日期         | 20250307              |
+| 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段描述 |
+|---------|----------|----------|--------|----------|
+| pt | VARCHAR(100) | 是 |  | 分区时间 |
+| order_id | VARCHAR(100) | 是 |  | 订单id |
+| shop_id | VARCHAR(100) | 是 |  | 门店id(标准化) |
+| data_source | VARCHAR(100) | 是 |  | 数据来源(instore 店内；mt 美团外卖；ele 饿了么外卖；self 自营外卖) |
+| source_name | VARCHAR(100) | 是 |  | 订单来源名称 |
+| status_name | VARCHAR(100) | 是 |  | 订单状态名称 |
+| payment_channels | VARCHAR(100) | 是 |  | 支付渠道名称 |
+| pay_way_pay_type | INT | 是 |  | 支付方式Id，大于1000的属于自定支付方式 |
+| pay_way_pay_type_name | VARCHAR(100) | 是 |  | 结账方式名称 (格式:一级结账方式名称-二级结账方式名称）注：当一级和二级名称相同时，展示格式为：二级结账方式名称。 |
+| income | DECIMAL(16,2) | 是 |  | 收入金额 |
+| discount | DECIMAL(16,2) | 是 |  | 优惠金额 |
+| amount | DECIMAL(16,2) | 是 |  | 流水金额 |
+| refund_status | INT | 是 |  | 退单状态,0-未退单, 1-退单中, 2-已退单, 3-退单部分失败 |
+| pay_way_created_time | VARCHAR(100) | 是 |  | 支付订单创建时间 |
+| pay_way_refund_time | VARCHAR(100) | 是 |  | 支付订单退款时间 |
+| pay_way_status | INT | 是 |  | 状态：-1 未支付,1 已支付,2 已撤销,3 支付中,4 退款中,5 支付失败,6 退款失败 |
+| pay_way_type | INT | 是 |  | 支付类型 1-支付、2-找零、3-退款、4-找零撤销 |
 
+## 使用说明
+
+### 常用查询示例
+
+```sql
+-- 查询最新数据
+SELECT * FROM dws_trd_mtpos_order_pay_channel_details_di 
+ORDER BY business_date DESC 
+LIMIT 10;
+
+-- 查询数据总量
+SELECT COUNT(*) FROM dws_trd_mtpos_order_pay_channel_details_di;
+
+-- 查询某日数据
+SELECT * FROM dws_trd_mtpos_order_pay_channel_details_di 
+WHERE business_date = 20240101;
+```
+
+### 注意事项
+- 时间字段通常为bigint类型，格式为YYYYMMDD
+- 金额字段单位为分，需要除以100转换为元
+- 字符类型字段需要注意大小写敏感问题
