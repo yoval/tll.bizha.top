@@ -1,10 +1,8 @@
 # dws_trd_mtpos_order_pay_channel_details_di
 
 ## 表描述
-OLAP
+订单支付渠道详情表
 
-## 数据量
-- 总记录数：108,356,676 条
 
 ## 字段信息
 
@@ -46,7 +44,3 @@ SELECT * FROM dws_trd_mtpos_order_pay_channel_details_di
 WHERE business_date = 20240101;
 ```
 
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

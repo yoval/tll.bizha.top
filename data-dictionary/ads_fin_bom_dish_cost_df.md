@@ -1,10 +1,8 @@
 # ads_fin_bom_dish_cost_df
 
 ## 表描述
-OLAP - 菜品BOM成本表，用于计算菜品成本结构
 
-## 数据量
-- 总记录数：12,832 条
+菜品BOM成本表，用于计算菜品成本结构
 
 ## 字段信息
 
@@ -120,16 +118,3 @@ WHERE bom_code = 'BOM001'
 ORDER BY item_cost DESC;
 ```
 
-## 注意事项
-
-1. **时间格式**：pt字段为分区字段，格式为YYYYMMDD
-2. **金额单位**：所有金额字段单位为分，需要除以100转换为元
-3. **物料分类**：item_cate_code和item_cate_name对应物料的分类体系
-4. **杯型差异**：不同杯型(cup_code)对应不同的物料用量(use_quantity)
-5. **温度甜度**：temperature_name和sweetness_name影响最终的物料配置
-6. **区域差异**：region_name可能导致价格和用量的区域差异
-
-## 数据更新频率
-- **更新周期**：每日更新
-- **更新时间**：凌晨2:00-4:00
-- **历史数据**：保留最近2年数据

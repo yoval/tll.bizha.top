@@ -1,10 +1,7 @@
 # dwd_rps_tll_order_di
 
 ## 表描述
-OLAP
-
-## 数据量
-- 总记录数：47,702 条
+订单表
 
 ## 字段信息
 
@@ -90,7 +87,3 @@ SELECT * FROM dwd_rps_tll_order_di
 WHERE business_date = 20240101;
 ```
 
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

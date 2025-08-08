@@ -1,10 +1,7 @@
 # dim_sup_srm_goods_df
 
 ## 表描述
-OLAP
-
-## 数据量
-- 总记录数：576 条
+SRM商品表
 
 ## 字段信息
 
@@ -66,7 +63,3 @@ SELECT * FROM dim_sup_srm_goods_df
 WHERE business_date = 20240101;
 ```
 
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

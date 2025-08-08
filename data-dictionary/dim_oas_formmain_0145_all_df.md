@@ -1,10 +1,8 @@
 # dim_oas_formmain_0145_all_df
 
 ## 表描述
-OLAP
+OA门店表
 
-## 数据量
-- 总记录数：4,115,156 条
 
 ## 字段信息
 
@@ -72,7 +70,3 @@ SELECT * FROM dim_oas_formmain_0145_all_df
 WHERE business_date = 20240101;
 ```
 
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

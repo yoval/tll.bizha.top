@@ -1,10 +1,8 @@
 # flink_rps_tll_presale_order_details_df
 
 ## 表描述
-OLAP
+预售订单详情表
 
-## 数据量
-- 总记录数：229,659 条
 
 ## 字段信息
 
@@ -53,7 +51,3 @@ SELECT * FROM flink_rps_tll_presale_order_details_df
 WHERE business_date = 20240101;
 ```
 
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题
