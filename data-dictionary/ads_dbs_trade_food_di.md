@@ -16,35 +16,35 @@ OLAP
 | prov_name | VARCHAR(255) | 是 |  | 省份名称 | 新疆维吾尔自治区 |
 | city_id | VARCHAR(64) | 是 |  | 城市编码 | 其它 |
 | city_name | VARCHAR(255) | 是 |  | 城市名称 | 其它 |
-| city_level | VARCHAR(64) | 是 |  | 城市等级 | 其它 |
+| city_level | VARCHAR(64) | 是 |  | 城市等级 | 五线 |
 | district_id | VARCHAR(64) | 是 |  | 区县编码 |  |
 | district_name | VARCHAR(255) | 是 |  | 区县名称 |  |
-| busi_area_type | VARCHAR(64) | 是 |  | 商圈 | 其它 |
-| bussiness_type | VARCHAR(64) | 是 |  | 业务类型 | 外卖 |
+| busi_area_type | VARCHAR(64) | 是 |  | 商圈 | 普通沿街商铺店 |
+| bussiness_type | VARCHAR(64) | 是 |  | 业务类型 | 外卖自提 |
 | channel_name | VARCHAR(255) | 是 |  | 订单渠道 | 美团外卖 |
 | anal_type | VARCHAR(64) | 是 |  | 分析类型(到家、到店) | 到家 |
-| platform | VARCHAR(64) | 是 |  | 平台(到家：美团、饿了么、其它 到店：POS、小程序、其它) | 饿了么 |
+| platform | VARCHAR(64) | 是 |  | 平台(到家：美团、饿了么、其它 到店：POS、小程序、其它) | 美团 |
 | cust_type | VARCHAR(64) | 是 |  | 用户类型 | 其它 |
 | time_name | VARCHAR(255) | 是 |  | 时段 | 其它 |
-| food_category_name | VARCHAR(255) | 是 |  | 商品分类 | 招牌鲜奶茶 |
-| food_oneid | VARCHAR(64) | 是 |  | 商品oneid | d8a3b2cf2284d9c4b0cd0eae21ccb436 |
-| item_name | VARCHAR(500) | 是 |  | 商品名称 | 只是芒果 |
-| new_flag | VARCHAR(64) | 是 |  | 是否新品 | 是 |
+| food_category_name | VARCHAR(255) | 是 |  | 商品分类 | 水果茶派对 |
+| food_oneid | VARCHAR(64) | 是 |  | 商品oneid | e7231302649f38b453255dbdc63c3b6e |
+| item_name | VARCHAR(500) | 是 |  | 商品名称 | 雪顶咖啡 |
+| new_flag | VARCHAR(64) | 是 |  | 是否新品 | 否 |
 | cup_type | VARCHAR(64) | 是 |  | 杯型 | 其它 |
 | ice_type | VARCHAR(64) | 是 |  | 温度 | 冰 |
-| sugar_type | VARCHAR(64) | 是 |  | 甜度 | 七分糖 |
+| sugar_type | VARCHAR(64) | 是 |  | 甜度 | 正常糖 |
 | dp_total_amount | DECIMAL(16,2) | 是 |  | 商品流水金额 | 0.00 |
 | dp_total_amount_last_day | DECIMAL(16,2) | 是 |  | 上一天商品流水金额 | 0.00 |
 | dp_total_amount_last_week | DECIMAL(16,2) | 是 |  | 上一周商品流水金额 | 0.00 |
-| dp_total_amount_last_year | DECIMAL(16,2) | 是 |  | 去年同期商品流水金额 | 3.77 |
-| dp_item_count | BIGINT | 是 |  | 商品销量 | 0 |
+| dp_total_amount_last_year | DECIMAL(16,2) | 是 |  | 去年同期商品流水金额 | 6.93 |
+| dp_item_count | BIGINT | 是 |  | 商品销量 | 1 |
 | dp_item_count_last_day | BIGINT | 是 |  | 上一天商品销量 | 0 |
 | dp_item_count_last_week | BIGINT | 是 |  | 上一周商品销量 | 0 |
 | dp_item_count_last_year | BIGINT | 是 |  | 去年同期商品销量 | 1 |
 | dp_pay_amount | DECIMAL(16,2) | 是 |  | 商品实收金额 | 0.00 |
-| dp_pay_amount_last_day | DECIMAL(16,2) | 是 |  | 上一天商品实收金额 | 0.00 |
+| dp_pay_amount_last_day | DECIMAL(16,2) | 是 |  | 上一天商品实收金额 | 15.09 |
 | dp_pay_amount_last_week | DECIMAL(16,2) | 是 |  | 上一周商品实收金额 | 0.00 |
-| dp_pay_amount_last_year | DECIMAL(16,2) | 是 |  | 去年同期商品实收金额 | 4.39 |
+| dp_pay_amount_last_year | DECIMAL(16,2) | 是 |  | 去年同期商品实收金额 | 4.40 |
 | dp_discount_amount | DECIMAL(16,2) | 是 |  | 商品优惠金额 | 0.00 |
 | dp_discount_amount_last_day | DECIMAL(16,2) | 是 |  | 上一天商品优惠金额 | 0.00 |
 | dp_discount_amount_last_week | DECIMAL(16,2) | 是 |  | 上一周商品优惠金额 | 0.00 |
