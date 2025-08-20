@@ -1,105 +1,64 @@
 # dwd_rps_tll_order_cancel_product_df
 
 ## 表描述
-订单取消商品明细表
+OLAP
 
+## 数据量
+- 总记录数：10,729,982 条
 
-## 字段详情
+## 字段信息
 
-| 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段说明 |
-|---------|----------|----------|--------|----------|
-| id | bigint | 否 | - | 主键ID，使用雪花算法生成的自定义long类型 |
-| serial_no | varchar | 是 | NULL | 流水号，从订单商品明细继承过来 |
-| product_code | varchar | 是 | NULL | 商品编码 |
-| product_name | varchar | 是 | NULL | 商品名称 |
-| product_specification | varchar | 是 | NULL | 商品规格 |
-| product_unit | varchar | 是 | NULL | 单位编码，当前下单对应的单位编码+名称 |
-| is_gift | int | 是 | 0 | 是否赠品，默认0:否 1:是 |
-| cancel_quantity | int | 是 | NULL | 取消数量 |
-| refund_unit_price | decimal | 是 | NULL | 退款单价，对应订单中原折后含税单价 |
-| subtotal | decimal | 是 | NULL | 小计 |
-| discount_amount | decimal | 是 | NULL | 优惠金额，商品单价和折后单价的差乘以数量 |
-| actual_refund_amount | decimal | 是 | NULL | 银行卡实退金额 |
-| pt_discount_amount | decimal | 是 | NULL | 平台优惠退的金额 |
-| agent_amount | decimal | 是 | NULL | 代理商代收代付款 |
-| business_discount | decimal | 是 | NULL | 招商优惠 |
-| customer_discount | decimal | 是 | NULL | 客户往来款 |
-| house_subsidy | decimal | 是 | NULL | 房租优惠 |
-| cancel_order_id | bigint | 是 | NULL | 退款单id |
-| create_time | varchar | 是 | NULL | 创建时间 |
-| update_time | varchar | 是 | NULL | 更新时间 |
-| create_by | varchar | 是 | NULL | 创建者 |
-| update_by | varchar | 是 | NULL | 修改者 |
-| order_id | bigint | 是 | NULL | 订单ID，long类型 |
-| product_id | bigint | 是 | NULL | 商品ID，long类型 |
-| product_price | decimal | 是 | NULL | 商品单价 |
-| tenant_id | varchar | 是 | NULL | 租户id |
-| discount_unit_price | decimal | 是 | NULL | 商品折后单价 |
-| is_combination_children_product | int | 是 | NULL | 是否是组合子商品(1-是,2-否) |
-| pt | varchar | 是 | NULL | 天分区 |
+| 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段描述 | 示例 |
+|---------|----------|----------|--------|----------|------|
+| id | BIGINT | 是 |  | 主键ID，使用雪花算法生成的自定义long类型 | 484254983291289600 |
+| serial_no | VARCHAR(255) | 是 |  | 流水号，从订单商品明细继承过来 | 327484 |
+| product_code | VARCHAR(255) | 是 |  | 商品编码 | 020000019 |
+| product_name | VARCHAR(255) | 是 |  | 商品名称 | 速冻百香果浆-950g*12瓶/箱 |
+| product_specification | VARCHAR(255) | 是 |  | 商品规格 | 5000个/件 |
+| product_unit | VARCHAR(255) | 是 |  | 单位编码，当前下单对应的单位编码+名称 | 件 |
+| is_gift | INT | 是 |  | 是否赠品，默认0:否  1:是 | 0 |
+| cancel_quantity | INT | 是 |  | 取消数量 | 1 |
+| refund_unit_price | DECIMAL(10,3) | 是 |  | 退款单价，对应订单中原折后含税单价 | 220.000 |
+| subtotal | DECIMAL(10,3) | 是 |  | 小计 | 81.000 |
+| discount_amount | DECIMAL(10,3) | 是 |  | 优惠金额，商品单价和折后单价的差乘以数量 | 18.000 |
+| actual_refund_amount | DECIMAL(10,3) | 是 |  | 银行卡实退金额 | 228.580 |
+| pt_discount_amount | DECIMAL(10,3) | 是 |  | 平台优惠退的金额 | 0.000 |
+| agent_amount | DECIMAL(10,3) | 是 |  | 代理商代收代付款 | 0.000 |
+| business_discount | DECIMAL(10,3) | 是 |  | 招商优惠 | 0.000 |
+| customer_discount | DECIMAL(10,3) | 是 |  | 客户往来款 | 0.000 |
+| house_subsidy | DECIMAL(10,3) | 是 |  | 房租优惠 | 0.000 |
+| cancel_order_id | BIGINT | 是 |  | 退款单id | 484249094496862208 |
+| create_time | VARCHAR(255) | 是 |  | 创建时间 | 2024-08-28 23:37:08 |
+| update_time | VARCHAR(255) | 是 |  | 更新时间 | 2024-08-28 23:37:42 |
+| create_by | VARCHAR(255) | 是 |  | 创建者 |  |
+| update_by | VARCHAR(255) | 是 |  | 修改者 |  |
+| order_id | BIGINT | 是 |  | 订单ID，long类型 | 484254901477064704 |
+| product_id | BIGINT | 是 |  | 商品ID，long类型 | 483962582441529344 |
+| product_price | DECIMAL(10,3) | 是 |  | 商品单价 | 90.000 |
+| tenant_id | VARCHAR(255) | 是 |  | 租户id | tll |
+| discount_unit_price | DECIMAL(10,3) | 是 |  | 商品折后单价 | 230.000 |
+| is_combination_children_product | INT | 是 |  | 是否是组合子商品(1-是,2-否) | 2 |
+| pt | VARCHAR(255) | 是 |  | 天分区 | 20250817 |
 
-## 业务说明
+## 使用说明
 
-### 关键字段解释
-- **cancel_quantity**: 商品取消的数量，正整数
-- **refund_unit_price**: 商品取消时的退款单价，已考虑折扣
-- **actual_refund_amount**: 实际退回给客户的银行卡金额
-- **discount_amount**: 商品取消时优惠金额的分摊
+### 常用查询示例
 
-### 金额计算逻辑
-```
-subtotal = refund_unit_price × cancel_quantity
-discount_amount = (product_price - discount_unit_price) × cancel_quantity
-```
-
-### 使用场景
-1. **取消商品分析**: 分析各商品的取消情况
-2. **退款金额统计**: 统计各商品的实际退款金额
-3. **优惠分摊计算**: 计算取消商品的优惠金额分摊
-4. **商品维度分析**: 按商品维度分析取消订单
-
-## 常用查询示例
-
-### 1. 查询某日各商品的取消数量
 ```sql
-SELECT 
-    product_code,
-    product_name,
-    SUM(cancel_quantity) as total_cancel_qty,
-    SUM(actual_refund_amount) as total_refund
-FROM dwd_rps_tll_order_cancel_product_df
-WHERE pt = '20241201'
-GROUP BY product_code, product_name
-ORDER BY total_cancel_qty DESC;
+-- 查询最新数据
+SELECT * FROM dwd_rps_tll_order_cancel_product_df 
+ORDER BY business_date DESC 
+LIMIT 10;
+
+-- 查询数据总量
+SELECT COUNT(*) FROM dwd_rps_tll_order_cancel_product_df;
+
+-- 查询某日数据
+SELECT * FROM dwd_rps_tll_order_cancel_product_df 
+WHERE business_date = 20240101;
 ```
 
-### 2. 查询某订单的取消商品详情
-```sql
-SELECT 
-    product_code,
-    product_name,
-    cancel_quantity,
-    refund_unit_price,
-    actual_refund_amount,
-    discount_amount
-FROM dwd_rps_tll_order_cancel_product_df
-WHERE order_id = 12345678
-ORDER BY product_code;
-```
-
-### 3. 统计某时间段内取消金额TOP商品
-```sql
-SELECT 
-    product_code,
-    product_name,
-    COUNT(*) as cancel_times,
-    SUM(cancel_quantity) as total_cancel_qty,
-    SUM(actual_refund_amount) as total_refund_amount
-FROM dwd_rps_tll_order_cancel_product_df
-WHERE pt BETWEEN '20241201' AND '20241231'
-GROUP BY product_code, product_name
-HAVING total_refund_amount > 1000
-ORDER BY total_refund_amount DESC
-LIMIT 20;
-```
-
+### 注意事项
+- 时间字段通常为bigint类型，格式为YYYYMMDD
+- 金额字段单位为分，需要除以100转换为元
+- 字符类型字段需要注意大小写敏感问题
