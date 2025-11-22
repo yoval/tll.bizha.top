@@ -1,11 +1,5 @@
 # flink_rps_all_new_tll_order_now_day_df
 
-## 表描述
-OLAP
-
-## 数据量
-- 总记录数：20,280 条
-
 ## 字段信息
 
 | 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段描述 | 示例 |
@@ -67,26 +61,3 @@ OLAP
  |  |
 | packing_fee | DECIMAL(10,2) | 是 |  | 打包费 |  |
 | pullstate | VARCHAR(255) | 是 |  | 新老区分 | 3 |
-
-## 使用说明
-
-### 常用查询示例
-
-```sql
--- 查询最新数据
-SELECT * FROM flink_rps_all_new_tll_order_now_day_df 
-ORDER BY business_date DESC 
-LIMIT 10;
-
--- 查询数据总量
-SELECT COUNT(*) FROM flink_rps_all_new_tll_order_now_day_df;
-
--- 查询某日数据
-SELECT * FROM flink_rps_all_new_tll_order_now_day_df 
-WHERE business_date = 20240101;
-```
-
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

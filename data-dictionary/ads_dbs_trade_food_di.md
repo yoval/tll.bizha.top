@@ -1,11 +1,5 @@
 # ads_dbs_trade_food_di
 
-## 表描述
-OLAP
-
-## 数据量
-- 总记录数：1,053,723,981 条
-
 ## 字段信息
 
 | 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段描述 | 示例 |
@@ -113,26 +107,3 @@ OLAP
 | stat_shop_id | VARCHAR(64) | 是 |  | 门店统计id | TLL02082 |
 | stat_shop_name | VARCHAR(255) | 是 |  | 门店统计名称 | 新疆石河子天富康城店 |
 | send_whse | VARCHAR(64) | 是 |  | 仓库 | 郑州仓 |
-
-## 使用说明
-
-### 常用查询示例
-
-```sql
--- 查询最新数据
-SELECT * FROM ads_dbs_trade_food_di 
-ORDER BY business_date DESC 
-LIMIT 10;
-
--- 查询数据总量
-SELECT COUNT(*) FROM ads_dbs_trade_food_di;
-
--- 查询某日数据
-SELECT * FROM ads_dbs_trade_food_di 
-WHERE business_date = 20240101;
-```
-
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

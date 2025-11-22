@@ -1,11 +1,5 @@
 # dwd_rps_tll_order_details_di
 
-## 表描述
-OLAP
-
-## 数据量
-- 总记录数：3,364,778 条
-
 ## 字段信息
 
 | 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段描述 | 示例 |
@@ -56,26 +50,3 @@ OLAP
 | has_logistic_fee | INT | 是 |  |  | 0 |
 | delivery_method | INT | 是 |  | 配送方式,1:物流,2:快递,3:上门自提 | 0 |
 | shipping_method | INT | 是 |  | 送货方式,0:起订,1:包邮,2:送货上门 | 0 |
-
-## 使用说明
-
-### 常用查询示例
-
-```sql
--- 查询最新数据
-SELECT * FROM dwd_rps_tll_order_details_di 
-ORDER BY business_date DESC 
-LIMIT 10;
-
--- 查询数据总量
-SELECT COUNT(*) FROM dwd_rps_tll_order_details_di;
-
--- 查询某日数据
-SELECT * FROM dwd_rps_tll_order_details_di 
-WHERE business_date = 20240101;
-```
-
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

@@ -1,11 +1,5 @@
 # ads_fin_bom_dish_cost_df
 
-## 表描述
-OLAP
-
-## 数据量
-- 总记录数：12,832 条
-
 ## 字段信息
 
 | 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段描述 | 示例 |
@@ -32,26 +26,3 @@ OLAP
 | purc_price | DECIMAL(20,4) | 是 |  | 报货原价 | 650.0000 |
 | dish_price | DECIMAL(20,4) | 是 |  | 菜品价格 | 4.0000 |
 | pt | VARCHAR(8) | 是 |  | 天分区 | 20250819 |
-
-## 使用说明
-
-### 常用查询示例
-
-```sql
--- 查询最新数据
-SELECT * FROM ads_fin_bom_dish_cost_df 
-ORDER BY business_date DESC 
-LIMIT 10;
-
--- 查询数据总量
-SELECT COUNT(*) FROM ads_fin_bom_dish_cost_df;
-
--- 查询某日数据
-SELECT * FROM ads_fin_bom_dish_cost_df 
-WHERE business_date = 20240101;
-```
-
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

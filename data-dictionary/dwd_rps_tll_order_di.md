@@ -1,11 +1,5 @@
 # dwd_rps_tll_order_di
 
-## 表描述
-OLAP
-
-## 数据量
-- 总记录数：300,427 条
-
 ## 字段信息
 
 | 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段描述 | 示例 |
@@ -71,26 +65,3 @@ OLAP
 | cancel_type | VARCHAR(255) | 是 |  | 取消类型 |  |
 | agent_name | VARCHAR(255) | 是 |  | 代理商名称 | 刘剑（衡水） |
 | pt | VARCHAR(255) | 是 |  | 天分区 | 20250409 |
-
-## 使用说明
-
-### 常用查询示例
-
-```sql
--- 查询最新数据
-SELECT * FROM dwd_rps_tll_order_di 
-ORDER BY business_date DESC 
-LIMIT 10;
-
--- 查询数据总量
-SELECT COUNT(*) FROM dwd_rps_tll_order_di;
-
--- 查询某日数据
-SELECT * FROM dwd_rps_tll_order_di 
-WHERE business_date = 20240101;
-```
-
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

@@ -75,3 +75,7 @@
     * [GITHUBCONNECT](/others/githubconnect "gitgub连接代理")
     * [CONDA](/others/conda "conda的使用")
     * [SQLFUNCTIONS](/others/sqlfunctions "常用的SQL函数")
+* Readme
+    * [about](/readme/关于文档.md "关于文档")
+    * [关于渠道](/readme/关于渠道.md "关于渠道")
+    * [不同数据源营业额比较](/readme/不同数据源营业额比较.md "不同数据源营业额比较")

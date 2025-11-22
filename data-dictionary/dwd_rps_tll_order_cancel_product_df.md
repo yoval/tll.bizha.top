@@ -1,10 +1,5 @@
 # dwd_rps_tll_order_cancel_product_df
 
-## 表描述
-OLAP
-
-## 数据量
-- 总记录数：10,729,982 条
 
 ## 字段信息
 
@@ -39,26 +34,3 @@ OLAP
 | discount_unit_price | DECIMAL(10,3) | 是 |  | 商品折后单价 | 575.000 |
 | is_combination_children_product | INT | 是 |  | 是否是组合子商品(1-是,2-否) | 2 |
 | pt | VARCHAR(255) | 是 |  | 天分区 | 20250817 |
-
-## 使用说明
-
-### 常用查询示例
-
-```sql
--- 查询最新数据
-SELECT * FROM dwd_rps_tll_order_cancel_product_df 
-ORDER BY business_date DESC 
-LIMIT 10;
-
--- 查询数据总量
-SELECT COUNT(*) FROM dwd_rps_tll_order_cancel_product_df;
-
--- 查询某日数据
-SELECT * FROM dwd_rps_tll_order_cancel_product_df 
-WHERE business_date = 20240101;
-```
-
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

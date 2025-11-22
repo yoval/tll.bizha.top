@@ -1,11 +1,5 @@
 # dws_trd_mtpos_order_pay_channel_details_di
 
-## 表描述
-OLAP
-
-## 数据量
-- 总记录数：108,356,676 条
-
 ## 字段信息
 
 | 字段名称 | 数据类型 | 是否可空 | 默认值 | 字段描述 | 示例 |
@@ -27,26 +21,3 @@ OLAP
 | pay_way_refund_time | VARCHAR(100) | 是 |  | 支付订单退款时间 |  |
 | pay_way_status | INT | 是 |  | 状态：-1 未支付,1 已支付,2 已撤销,3 支付中,4 退款中,5 支付失败,6 退款失败 | 99 |
 | pay_way_type | INT | 是 |  | 支付类型 1-支付、2-找零、3-退款、4-找零撤销 | 99 |
-
-## 使用说明
-
-### 常用查询示例
-
-```sql
--- 查询最新数据
-SELECT * FROM dws_trd_mtpos_order_pay_channel_details_di 
-ORDER BY business_date DESC 
-LIMIT 10;
-
--- 查询数据总量
-SELECT COUNT(*) FROM dws_trd_mtpos_order_pay_channel_details_di;
-
--- 查询某日数据
-SELECT * FROM dws_trd_mtpos_order_pay_channel_details_di 
-WHERE business_date = 20240101;
-```
-
-### 注意事项
-- 时间字段通常为bigint类型，格式为YYYYMMDD
-- 金额字段单位为分，需要除以100转换为元
-- 字符类型字段需要注意大小写敏感问题

@@ -6,5 +6,4 @@
 
 > Internal Use Only
 
-[Report Query](/data-query/store-buy-product-query/)
-[Sales Query](/data-query/turnover-query/)
+[README](/readme/关于文档.md)
