@@ -6,4 +6,4 @@
 
 > Internal Use Only
 
-[README](/readme/关于文档.md)
+[README](/README.md)
