@@ -2,6 +2,8 @@
 * DataDictionary
     * [ads_dbs_trade_shop_pay_channel_di](/data-dictionary/ads_dbs_trade_shop_pay_channel_di "门店销售")
     * [ads_dbs_trade_food_di](/data-dictionary/ads_dbs_trade_food_di "产品销售")
+    * [dwd_rps_tll_order_details_di](/data-dictionary/dwd_rps_tll_order_details_di "门店报货信息")
+    * [dim_oas_formmain_0145_df](/data-dictionary/dim_oas_formmain_0145_df "门店管理表")
 
 * DataQuery
     * [营业额查询](https://fuwenyue.coding.net/share/km/70968a3e-caa3-49f4-bf11-8f13c05bf307 "OA门店营业额查询")

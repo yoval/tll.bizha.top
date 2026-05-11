@@ -1,5 +1,7 @@
 # ads_dbs_trade_shop_pay_channel_di
 
+门店销售
+
 
 ## 字段信息
 
