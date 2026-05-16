@@ -82,4 +82,4 @@
 
 
 
-文档存放于[Tencent edgeone](https://edgeone.cloud.tencent.com/pages/document/162936635171454976) 。
+文档存放于[Tencent edgeone](https://console.cloud.tencent.com/edgeone/pages) 。
