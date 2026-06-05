@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
+需求频率#不定时
+数据查询及导出#视实收金额为0的茶为赠茶。
+WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39; AS end_date ) SELECT CONCAT(day_periods.start_date, &#39;~&#39;, day_periods.end_date) AS 时段, business_date AS 日期, city_name AS 城市, item_name AS 产品名称, SUM(dp_item_count) AS 销量, SUM(dp_total_amount) AS 流水, SUM(dp_pay_amount) AS 实收 FROM ads_dbs_trade_food_di CROSS JOIN day_periods WHERE business_date BETWEEN day_periods.start_date AND day_periods.end_date AND city_name in (&#39;蚌埠市&#39;,&#39;阜阳市&#39;,&#39;淮南市&#39;) GROUP BY 时段, 日期, 城市, 产品名称 HAVING SUM(dp_item_count) &gt; 0 AND SUM(dp_pay_amount) = 0;数据清洗#筛选 青韵乌龙、茉莉初露、每日鲜泡好茶 相关，因可能会新增奇怪名称，不在SQL阶段进行过滤。
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1314/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
+	<meta property="og:site_name" content="Data Documentation">
+	<meta property="og:title" content="赠茶数据需求">
+	<meta property="og:description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
+需求频率#不定时
+数据查询及导出#视实收金额为0的茶为赠茶。
+WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39; AS end_date ) SELECT CONCAT(day_periods.start_date, &#39;~&#39;, day_periods.end_date) AS 时段, business_date AS 日期, city_name AS 城市, item_name AS 产品名称, SUM(dp_item_count) AS 销量, SUM(dp_total_amount) AS 流水, SUM(dp_pay_amount) AS 实收 FROM ads_dbs_trade_food_di CROSS JOIN day_periods WHERE business_date BETWEEN day_periods.start_date AND day_periods.end_date AND city_name in (&#39;蚌埠市&#39;,&#39;阜阳市&#39;,&#39;淮南市&#39;) GROUP BY 时段, 日期, 城市, 产品名称 HAVING SUM(dp_item_count) &gt; 0 AND SUM(dp_pay_amount) = 0;数据清洗#筛选 青韵乌龙、茉莉初露、每日鲜泡好茶 相关，因可能会新增奇怪名称，不在SQL阶段进行过滤。">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="script">
+
+
+	<meta itemprop="name" content="赠茶数据需求">
+	<meta itemprop="description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
+需求频率#不定时
+数据查询及导出#视实收金额为0的茶为赠茶。
+WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39; AS end_date ) SELECT CONCAT(day_periods.start_date, &#39;~&#39;, day_periods.end_date) AS 时段, business_date AS 日期, city_name AS 城市, item_name AS 产品名称, SUM(dp_item_count) AS 销量, SUM(dp_total_amount) AS 流水, SUM(dp_pay_amount) AS 实收 FROM ads_dbs_trade_food_di CROSS JOIN day_periods WHERE business_date BETWEEN day_periods.start_date AND day_periods.end_date AND city_name in (&#39;蚌埠市&#39;,&#39;阜阳市&#39;,&#39;淮南市&#39;) GROUP BY 时段, 日期, 城市, 产品名称 HAVING SUM(dp_item_count) &gt; 0 AND SUM(dp_pay_amount) = 0;数据清洗#筛选 青韵乌龙、茉莉初露、每日鲜泡好茶 相关，因可能会新增奇怪名称，不在SQL阶段进行过滤。">
+	<meta itemprop="wordCount" content="75">
+
+<title>赠茶数据需求 • Data Documentation</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1314/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
+<link rel="stylesheet" href="/book.min.css">
+
+
+  <script defer type="module" src="/en.search.min.js"></script>
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-script">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="https://www.tianlala.com/favicon.ico" alt="Logo" /><span>Data Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      Script</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E9%97%A8%E5%BA%97%E7%AE%A1%E7%90%86%E8%A1%A8%E6%97%A5%E5%A4%87%E4%BB%BD/" class="">
+      门店管理表日备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E5%8C%97%E6%A3%AE%E9%80%9A%E8%AE%AF%E5%BD%95%E4%BF%A1%E6%81%AF%E6%97%A5%E5%A4%87%E4%BB%BD/" class="">
+      北森通讯录信息日备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E9%97%A8%E5%BA%97%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%87%E4%BB%BD/" class="">
+      门店销售数据的备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/" class="">
+      各渠道同比基础数据</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%A0%B8%E5%AF%B9/" class="">
+      标准菜品名称核对</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E7%94%9C%E5%95%A6%E5%95%A6%E9%85%8D%E6%96%B9%E7%AE%A1%E7%90%86/" class="">
+      配方管理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/" class="">
+      周边数据需求</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/" class="active">
+      赠茶数据需求</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>赠茶数据需求</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#赠茶数据需求">赠茶数据需求</a>
+      <ul>
+        <li><a href="#背景">背景</a></li>
+        <li><a href="#需求频率">需求频率</a></li>
+        <li><a href="#数据查询及导出">数据查询及导出</a></li>
+        <li><a href="#数据清洗">数据清洗</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="赠茶数据需求">赠茶数据需求<a class="anchor" href="#%e8%b5%a0%e8%8c%b6%e6%95%b0%e6%8d%ae%e9%9c%80%e6%b1%82">#</a></h1>
+<h2 id="背景">背景<a class="anchor" href="#%e8%83%8c%e6%99%af">#</a></h2>
+<p>品牌管理部需要的赠茶相关报表</p>
+<h2 id="需求频率">需求频率<a class="anchor" href="#%e9%9c%80%e6%b1%82%e9%a2%91%e7%8e%87">#</a></h2>
+<p>不定时</p>
+<h2 id="数据查询及导出">数据查询及导出<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e6%9f%a5%e8%af%a2%e5%8f%8a%e5%af%bc%e5%87%ba">#</a></h2>
+<p><em>视实收金额为0的茶为赠茶。</em></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">WITH</span><span style="color:#fff"> </span>day_periods<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SELECT</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;20260327&#39;</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span>start_date<span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;20260504&#39;</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span>end_date<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">SELECT</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>CONCAT<span style="color:#1f2328">(</span>day_periods<span style="color:#1f2328">.</span>start_date<span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;~&#39;</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span>day_periods<span style="color:#1f2328">.</span>end_date<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >时段</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>business_date<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >日期</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>city_name<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >城市</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>item_name<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >产品名称</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span>dp_item_count<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >销量</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span>dp_total_amount<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >流水</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span>dp_pay_amount<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >实收</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">FROM</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>ads_dbs_trade_food_di<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">CROSS</span><span style="color:#fff"> </span><span style="color:#cf222e">JOIN</span><span style="color:#fff"> </span>day_periods<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>business_date<span style="color:#fff"> </span><span style="color:#cf222e">BETWEEN</span><span style="color:#fff"> </span>day_periods<span style="color:#1f2328">.</span>start_date<span style="color:#fff"> </span><span style="color:#cf222e">AND</span><span style="color:#fff"> </span>day_periods<span style="color:#1f2328">.</span>end_date<span style="color:#fff"> </span><span style="color:#cf222e">AND</span><span style="color:#fff"> </span>city_name<span style="color:#fff"> </span><span style="color:#cf222e">in</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;蚌埠市&#39;</span><span style="color:#1f2328">,</span><span style="color:#0a3069">&#39;阜阳市&#39;</span><span style="color:#1f2328">,</span><span style="color:#0a3069">&#39;淮南市&#39;</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">GROUP</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span >时段</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span >日期</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span >城市</span><span style="color:#1f2328">,</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span >产品名称</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">HAVING</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span>dp_item_count<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#0550ae">&gt;</span><span style="color:#fff"> </span><span style="color:#0550ae">0</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">AND</span><span style="color:#fff"> </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span>dp_pay_amount<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">0</span><span style="color:#1f2328">;</span></span></span></code></pre></div><h2 id="数据清洗">数据清洗<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e6%b8%85%e6%b4%97">#</a></h2>
+<p>筛选 青韵乌龙、茉莉初露、每日鲜泡好茶 相关，因可能会新增奇怪名称，不在SQL阶段进行过滤。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>周边数据需求</span>
+      </a>
+    
+    </span>
+    <span>
+    
+    </span>
+  </div>
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#赠茶数据需求">赠茶数据需求</a>
+      <ul>
+        <li><a href="#背景">背景</a></li>
+        <li><a href="#需求频率">需求频率</a></li>
+        <li><a href="#数据查询及导出">数据查询及导出</a></li>
+        <li><a href="#数据清洗">数据清洗</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  <script>
+(function () {
+  document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+    var pre = codeBlock.parentNode;
+    var button = document.createElement('button');
+    button.className = 'copy-code';
+    button.textContent = '复制';
+    button.addEventListener('click', function () {
+      var text = codeBlock.textContent;
+      navigator.clipboard.writeText(text).then(function () {
+        button.textContent = '已复制';
+        button.classList.add('copied');
+        setTimeout(function () {
+          button.textContent = '复制';
+          button.classList.remove('copied');
+        }, 2000);
+      });
+    });
+    pre.appendChild(button);
+  });
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
