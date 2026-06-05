@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -15,29 +15,29 @@ WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1314/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
-	<meta property="og:site_name" content="Data Documentation">
-	<meta property="og:title" content="赠茶数据需求">
-	<meta property="og:description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
+  <meta property="og:site_name" content="Data Documentation">
+  <meta property="og:title" content="赠茶数据需求">
+  <meta property="og:description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
 需求频率#不定时
 数据查询及导出#视实收金额为0的茶为赠茶。
 WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39; AS end_date ) SELECT CONCAT(day_periods.start_date, &#39;~&#39;, day_periods.end_date) AS 时段, business_date AS 日期, city_name AS 城市, item_name AS 产品名称, SUM(dp_item_count) AS 销量, SUM(dp_total_amount) AS 流水, SUM(dp_pay_amount) AS 实收 FROM ads_dbs_trade_food_di CROSS JOIN day_periods WHERE business_date BETWEEN day_periods.start_date AND day_periods.end_date AND city_name in (&#39;蚌埠市&#39;,&#39;阜阳市&#39;,&#39;淮南市&#39;) GROUP BY 时段, 日期, 城市, 产品名称 HAVING SUM(dp_item_count) &gt; 0 AND SUM(dp_pay_amount) = 0;数据清洗#筛选 青韵乌龙、茉莉初露、每日鲜泡好茶 相关，因可能会新增奇怪名称，不在SQL阶段进行过滤。">
-	<meta property="og:locale" content="zh_CN">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="script">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="script">
 
 
-	<meta itemprop="name" content="赠茶数据需求">
-	<meta itemprop="description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
+  <meta itemprop="name" content="赠茶数据需求">
+  <meta itemprop="description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
 需求频率#不定时
 数据查询及导出#视实收金额为0的茶为赠茶。
 WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39; AS end_date ) SELECT CONCAT(day_periods.start_date, &#39;~&#39;, day_periods.end_date) AS 时段, business_date AS 日期, city_name AS 城市, item_name AS 产品名称, SUM(dp_item_count) AS 销量, SUM(dp_total_amount) AS 流水, SUM(dp_pay_amount) AS 实收 FROM ads_dbs_trade_food_di CROSS JOIN day_periods WHERE business_date BETWEEN day_periods.start_date AND day_periods.end_date AND city_name in (&#39;蚌埠市&#39;,&#39;阜阳市&#39;,&#39;淮南市&#39;) GROUP BY 时段, 日期, 城市, 产品名称 HAVING SUM(dp_item_count) &gt; 0 AND SUM(dp_pay_amount) = 0;数据清洗#筛选 青韵乌龙、茉莉初露、每日鲜泡好茶 相关，因可能会新增奇怪名称，不在SQL阶段进行过滤。">
-	<meta itemprop="wordCount" content="75">
+  <meta itemprop="wordCount" content="75">
 
 <title>赠茶数据需求 • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1314/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
+<link rel="canonical" href="http://localhost:1313/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
 <link rel="stylesheet" href="/book.min.css">
 
 
@@ -81,6 +81,81 @@ WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39
 
   
   <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      DataDictionary</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_shop_pay_channel_di/" class="">
+      门店销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_food_di/" class="">
+      产品销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dwd_rps_tll_order_details_di/" class="">
+      门店报货信息</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dim_oas_formmain_0145_df/" class="">
+      门店管理表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
     
       
         <li class="book-section-flat" >
@@ -203,6 +278,39 @@ WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39
   
     <a href="/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/" class="active">
       赠茶数据需求</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      NewProduct</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/new-product/2026%E4%BA%A7%E5%93%81%E4%B8%8A%E6%96%B0%E8%AE%B0%E5%BD%95/" class="">
+      2026产品上新记录</a>
   
 
         </li>
@@ -344,6 +452,11 @@ WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39
     
     </span>
     <span>
+    
+      <a href="/new-product/2026%E4%BA%A7%E5%93%81%E4%B8%8A%E6%96%B0%E8%AE%B0%E5%BD%95/" class="flex align-center">
+        <span>2026产品上新记录</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
     
     </span>
   </div>

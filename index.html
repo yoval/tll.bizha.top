@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" dir="ltr">
 <head>
-	<meta name="generator" content="Hugo 0.162.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.161.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -9,27 +9,43 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+<meta name="description" content="文档说明#数据库重构之后，目前仅能够通过JumpServer连接数据库。
+数据库基础信息#版本信息#JumpServer版本：v4.0.1 Doris版本：tencent-cdw-doris-2.1.12-15194aa-2512121 Doris 对外暴露的Mysql版本：5.7.99 常用表#数据库：tll_bi_dw
+ads_dbs_trade_shop_pay_channel_di： 门店销售。
+ads_dbs_trade_food_di： 产品销售。
+渠道比较#原始渠道 小渠道 大渠道 共有渠道 pos收银 pos pos小程序 ✅ 抖音团购 抖音团购 线上团购 ✅ 淘宝闪购 饿了么外卖 线上外卖 ✅ 高德团购 高德团购 线上团购 ✅ 京东外卖 京东外卖 线上外卖 ✅ 抖音小程序（核销工具） 快手团购 线上团购 ✅ 快手团购 快手团购 线上团购 ✅ 美团/大众点评团购 美团团购 线上团购 ✅ 美团/大众点评小程序 美团团购 线上团购 ✅ 美团外卖 美团外卖 线上外卖 ✅ 甜啦啦小程序 甜啦啦小程序 pos小程序 ✅ 甜啦啦小程序-储值业务 甜啦啦小程序 pos小程序 ✅ 支付宝小程序 甜啦啦小程序 pos小程序 ✅ 微信小程序 甜啦啦小程序 pos小程序 ✅ 线上新增抖音团购 抖音团购 线上团购 ❌ 线上新增快手团购 快手团购 线上团购 ❌ 线上新增美团团购 美团团购 线上团购 ❌ 原始渠道：门店销售表的payment_channels字段，产品销售表的channel_name字段。
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1314/">
-	<meta property="og:site_name" content="Data Documentation">
-	<meta property="og:title" content="Data Documentation">
-	<meta property="og:locale" content="zh_CN">
-	<meta property="og:type" content="website">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/">
+  <meta property="og:site_name" content="Data Documentation">
+  <meta property="og:title" content="Data Documentation">
+  <meta property="og:description" content="文档说明#数据库重构之后，目前仅能够通过JumpServer连接数据库。
+数据库基础信息#版本信息#JumpServer版本：v4.0.1 Doris版本：tencent-cdw-doris-2.1.12-15194aa-2512121 Doris 对外暴露的Mysql版本：5.7.99 常用表#数据库：tll_bi_dw
+ads_dbs_trade_shop_pay_channel_di： 门店销售。
+ads_dbs_trade_food_di： 产品销售。
+渠道比较#原始渠道 小渠道 大渠道 共有渠道 pos收银 pos pos小程序 ✅ 抖音团购 抖音团购 线上团购 ✅ 淘宝闪购 饿了么外卖 线上外卖 ✅ 高德团购 高德团购 线上团购 ✅ 京东外卖 京东外卖 线上外卖 ✅ 抖音小程序（核销工具） 快手团购 线上团购 ✅ 快手团购 快手团购 线上团购 ✅ 美团/大众点评团购 美团团购 线上团购 ✅ 美团/大众点评小程序 美团团购 线上团购 ✅ 美团外卖 美团外卖 线上外卖 ✅ 甜啦啦小程序 甜啦啦小程序 pos小程序 ✅ 甜啦啦小程序-储值业务 甜啦啦小程序 pos小程序 ✅ 支付宝小程序 甜啦啦小程序 pos小程序 ✅ 微信小程序 甜啦啦小程序 pos小程序 ✅ 线上新增抖音团购 抖音团购 线上团购 ❌ 线上新增快手团购 快手团购 线上团购 ❌ 线上新增美团团购 美团团购 线上团购 ❌ 原始渠道：门店销售表的payment_channels字段，产品销售表的channel_name字段。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="website">
 
 
-	<meta itemprop="name" content="Data Documentation">
+  <meta itemprop="name" content="Data Documentation">
+  <meta itemprop="description" content="文档说明#数据库重构之后，目前仅能够通过JumpServer连接数据库。
+数据库基础信息#版本信息#JumpServer版本：v4.0.1 Doris版本：tencent-cdw-doris-2.1.12-15194aa-2512121 Doris 对外暴露的Mysql版本：5.7.99 常用表#数据库：tll_bi_dw
+ads_dbs_trade_shop_pay_channel_di： 门店销售。
+ads_dbs_trade_food_di： 产品销售。
+渠道比较#原始渠道 小渠道 大渠道 共有渠道 pos收银 pos pos小程序 ✅ 抖音团购 抖音团购 线上团购 ✅ 淘宝闪购 饿了么外卖 线上外卖 ✅ 高德团购 高德团购 线上团购 ✅ 京东外卖 京东外卖 线上外卖 ✅ 抖音小程序（核销工具） 快手团购 线上团购 ✅ 快手团购 快手团购 线上团购 ✅ 美团/大众点评团购 美团团购 线上团购 ✅ 美团/大众点评小程序 美团团购 线上团购 ✅ 美团外卖 美团外卖 线上外卖 ✅ 甜啦啦小程序 甜啦啦小程序 pos小程序 ✅ 甜啦啦小程序-储值业务 甜啦啦小程序 pos小程序 ✅ 支付宝小程序 甜啦啦小程序 pos小程序 ✅ 微信小程序 甜啦啦小程序 pos小程序 ✅ 线上新增抖音团购 抖音团购 线上团购 ❌ 线上新增快手团购 快手团购 线上团购 ❌ 线上新增美团团购 美团团购 线上团购 ❌ 原始渠道：门店销售表的payment_channels字段，产品销售表的channel_name字段。">
+  <meta itemprop="wordCount" content="151">
 
 <title>Data Documentation • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1314/">
+<link rel="canonical" href="http://localhost:1313/">
 <link rel="stylesheet" href="/book.min.css">
 
 
   <script defer type="module" src="/en.search.min.js"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1314/index.xml" title="Data Documentation" />
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="Data Documentation" />
 
   
 </head>
@@ -69,6 +85,81 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      DataDictionary</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_shop_pay_channel_di/" class="">
+      门店销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_food_di/" class="">
+      产品销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dwd_rps_tll_order_details_di/" class="">
+      门店报货信息</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dim_oas_formmain_0145_df/" class="">
+      门店管理表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
     
       
         <li class="book-section-flat" >
@@ -201,6 +292,39 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      NewProduct</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/new-product/2026%E4%BA%A7%E5%93%81%E4%B8%8A%E6%96%B0%E8%AE%B0%E5%BD%95/" class="">
+      2026产品上新记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
   </ul>
 
 
@@ -250,7 +374,22 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#文档说明">文档说明</a>
+      <ul>
+        <li><a href="#数据库基础信息">数据库基础信息</a>
+          <ul>
+            <li><a href="#版本信息">版本信息</a></li>
+            <li><a href="#常用表">常用表</a></li>
+            <li><a href="#渠道比较">渠道比较</a></li>
+            <li><a href="#金额比较">金额比较</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -261,7 +400,241 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"></article>
+  <article class="markdown book-article"><h1 id="文档说明">文档说明<a class="anchor" href="#%e6%96%87%e6%a1%a3%e8%af%b4%e6%98%8e">#</a></h1>
+<p>数据库重构之后，目前仅能够通过<a href="https://jumpserver.tianlala.com/">JumpServer</a>连接数据库。</p>
+<h2 id="数据库基础信息">数据库基础信息<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e5%ba%93%e5%9f%ba%e7%a1%80%e4%bf%a1%e6%81%af">#</a></h2>
+<h3 id="版本信息">版本信息<a class="anchor" href="#%e7%89%88%e6%9c%ac%e4%bf%a1%e6%81%af">#</a></h3>
+<ul>
+<li><code>JumpServer</code>版本：v4.0.1</li>
+<li><code>Doris</code>版本：tencent-cdw-doris-2.1.12-15194aa-2512121</li>
+<li><code>Doris</code> 对外暴露的<code>Mysql</code>版本：5.7.99</li>
+</ul>
+<h3 id="常用表">常用表<a class="anchor" href="#%e5%b8%b8%e7%94%a8%e8%a1%a8">#</a></h3>
+<p>数据库：<code>tll_bi_dw</code></p>
+<p><code>ads_dbs_trade_shop_pay_channel_di</code>： 门店销售。</p>
+<p><code>ads_dbs_trade_food_di</code>： 产品销售。</p>
+<h3 id="渠道比较">渠道比较<a class="anchor" href="#%e6%b8%a0%e9%81%93%e6%af%94%e8%be%83">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>原始渠道</th>
+          <th>小渠道</th>
+          <th>大渠道</th>
+          <th>共有渠道</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>pos收银</td>
+          <td>pos</td>
+          <td>pos小程序</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>抖音团购</td>
+          <td>抖音团购</td>
+          <td>线上团购</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>淘宝闪购</td>
+          <td>饿了么外卖</td>
+          <td>线上外卖</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>高德团购</td>
+          <td>高德团购</td>
+          <td>线上团购</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>京东外卖</td>
+          <td>京东外卖</td>
+          <td>线上外卖</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>抖音小程序（核销工具）</td>
+          <td>快手团购</td>
+          <td>线上团购</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>快手团购</td>
+          <td>快手团购</td>
+          <td>线上团购</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>美团/大众点评团购</td>
+          <td>美团团购</td>
+          <td>线上团购</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>美团/大众点评小程序</td>
+          <td>美团团购</td>
+          <td>线上团购</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>美团外卖</td>
+          <td>美团外卖</td>
+          <td>线上外卖</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>甜啦啦小程序</td>
+          <td>甜啦啦小程序</td>
+          <td>pos小程序</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>甜啦啦小程序-储值业务</td>
+          <td>甜啦啦小程序</td>
+          <td>pos小程序</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>支付宝小程序</td>
+          <td>甜啦啦小程序</td>
+          <td>pos小程序</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>微信小程序</td>
+          <td>甜啦啦小程序</td>
+          <td>pos小程序</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>线上新增抖音团购</td>
+          <td>抖音团购</td>
+          <td>线上团购</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>线上新增快手团购</td>
+          <td>快手团购</td>
+          <td>线上团购</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>线上新增美团团购</td>
+          <td>美团团购</td>
+          <td>线上团购</td>
+          <td>❌</td>
+      </tr>
+  </tbody>
+</table>
+<p>原始渠道：门店销售表的<code>payment_channels</code>字段，产品销售表的<code>channel_name</code>字段。</p>
+<p>✅ 指门店与产品<strong>共有渠道</strong>，❌ 指门店<strong>独有渠道</strong>。</p>
+<h3 id="金额比较">金额比较<a class="anchor" href="#%e9%87%91%e9%a2%9d%e6%af%94%e8%be%83">#</a></h3>
+<p>以2026年4月数据为例，汇总门店销售与产品销售的金额。</p>
+<table>
+  <thead>
+      <tr>
+          <th>小渠道</th>
+          <th>门店汇总</th>
+          <th>产品汇总</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>pos收银</td>
+          <td>101319199.1</td>
+          <td>111207161.2</td>
+      </tr>
+      <tr>
+          <td>淘宝闪购</td>
+          <td>30081015.22</td>
+          <td>28658289.96</td>
+      </tr>
+      <tr>
+          <td>美团外卖</td>
+          <td>29561662.93</td>
+          <td>27745785.85</td>
+      </tr>
+      <tr>
+          <td>甜啦啦小程序</td>
+          <td>23300161.38</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>京东外卖</td>
+          <td>10831022.1</td>
+          <td>199830.65</td>
+      </tr>
+      <tr>
+          <td>美团/大众点评团购</td>
+          <td>5164895.49</td>
+          <td>44981.8</td>
+      </tr>
+      <tr>
+          <td>抖音团购</td>
+          <td>3809937.9</td>
+          <td>49291.5</td>
+      </tr>
+      <tr>
+          <td>抖音小程序（核销工具）</td>
+          <td>3357205.1</td>
+          <td>58437.5</td>
+      </tr>
+      <tr>
+          <td>微信小程序</td>
+          <td>499927.9</td>
+          <td>500916.9</td>
+      </tr>
+      <tr>
+          <td>美团/大众点评小程序</td>
+          <td>323364</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>快手团购</td>
+          <td>61926</td>
+          <td>90</td>
+      </tr>
+      <tr>
+          <td>支付宝小程序</td>
+          <td>49264.2</td>
+          <td>49399.2</td>
+      </tr>
+      <tr>
+          <td>线上新增抖音团购</td>
+          <td>22146.9</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>甜啦啦小程序-储值业务</td>
+          <td>3342.9</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>线上新增美团团购</td>
+          <td>1991</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>高德团购</td>
+          <td>666</td>
+          <td>666</td>
+      </tr>
+      <tr>
+          <td>线上新增快手团购</td>
+          <td>338</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>汇总</td>
+          <td>208388066.1</td>
+          <td>168514850.5</td>
+      </tr>
+  </tbody>
+</table>
+<p>汇总逻辑应该存在差异。</p>
+</article>
  
       
 
@@ -279,7 +652,19 @@ https://github.com/alex-shpak/hugo-book
 
 </div>
 
-
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+    </span>
+    <span>
+    
+      <a href="/data-dictionary/ads_dbs_trade_shop_pay_channel_di/" class="flex align-center">
+        <span>门店销售</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
@@ -305,7 +690,22 @@ https://github.com/alex-shpak/hugo-book
     <div class="book-toc-content">
       
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#文档说明">文档说明</a>
+      <ul>
+        <li><a href="#数据库基础信息">数据库基础信息</a>
+          <ul>
+            <li><a href="#版本信息">版本信息</a></li>
+            <li><a href="#常用表">常用表</a></li>
+            <li><a href="#渠道比较">渠道比较</a></li>
+            <li><a href="#金额比较">金额比较</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 

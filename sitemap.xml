@@ -1,44 +1,43 @@
-
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tll.bizha.top/new-product/2026%E4%BA%A7%E5%93%81%E4%B8%8A%E6%96%B0%E8%AE%B0%E5%BD%95/</loc>
+    <loc>http://localhost:1313/new-product/2026%E4%BA%A7%E5%93%81%E4%B8%8A%E6%96%B0%E8%AE%B0%E5%BD%95/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/</loc>
+    <loc>http://localhost:1313/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/data-dictionary/</loc>
+    <loc>http://localhost:1313/data-dictionary/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/script/%E9%97%A8%E5%BA%97%E7%AE%A1%E7%90%86%E8%A1%A8%E6%97%A5%E5%A4%87%E4%BB%BD/</loc>
+    <loc>http://localhost:1313/script/%E9%97%A8%E5%BA%97%E7%AE%A1%E7%90%86%E8%A1%A8%E6%97%A5%E5%A4%87%E4%BB%BD/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/data-dictionary/ads_dbs_trade_shop_pay_channel_di/</loc>
+    <loc>http://localhost:1313/data-dictionary/ads_dbs_trade_shop_pay_channel_di/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/script/</loc>
+    <loc>http://localhost:1313/script/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/data-dictionary/ads_dbs_trade_food_di/</loc>
+    <loc>http://localhost:1313/data-dictionary/ads_dbs_trade_food_di/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/script/%E5%8C%97%E6%A3%AE%E9%80%9A%E8%AE%AF%E5%BD%95%E4%BF%A1%E6%81%AF%E6%97%A5%E5%A4%87%E4%BB%BD/</loc>
+    <loc>http://localhost:1313/script/%E5%8C%97%E6%A3%AE%E9%80%9A%E8%AE%AF%E5%BD%95%E4%BF%A1%E6%81%AF%E6%97%A5%E5%A4%87%E4%BB%BD/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/new-product/</loc>
+    <loc>http://localhost:1313/new-product/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/data-dictionary/dwd_rps_tll_order_details_di/</loc>
+    <loc>http://localhost:1313/data-dictionary/dwd_rps_tll_order_details_di/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/script/%E9%97%A8%E5%BA%97%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%87%E4%BB%BD/</loc>
+    <loc>http://localhost:1313/script/%E9%97%A8%E5%BA%97%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%87%E4%BB%BD/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/</loc>
+    <loc>http://localhost:1313/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/data-dictionary/dim_oas_formmain_0145_df/</loc>
+    <loc>http://localhost:1313/data-dictionary/dim_oas_formmain_0145_df/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%A0%B8%E5%AF%B9/</loc>
+    <loc>http://localhost:1313/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%A0%B8%E5%AF%B9/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/script/%E7%94%9C%E5%95%A6%E5%95%A6%E9%85%8D%E6%96%B9%E7%AE%A1%E7%90%86/</loc>
+    <loc>http://localhost:1313/script/%E7%94%9C%E5%95%A6%E5%95%A6%E9%85%8D%E6%96%B9%E7%AE%A1%E7%90%86/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/</loc>
+    <loc>http://localhost:1313/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/</loc>
+    <loc>http://localhost:1313/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://tll.bizha.top/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

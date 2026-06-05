@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -11,23 +11,23 @@ https://github.com/alex-shpak/hugo-book
 <meta name="description" content="产品销售信息#ads_dbs_trade_food_di 列名 数据类型 注释 business_date bigint(20) 日期 oper_center_name varchar(255) 营运中心 prov_id varchar(64) 省份编码 prov_name varchar(255) 省份名称 city_id varchar(64) 城市编码 city_name varchar(255) 城市名称 city_level varchar(64) 城市等级 district_id varchar(64) 区县编码 district_name varchar(255) 区县名称 busi_area_type varchar(64) 商圈 bussiness_type varchar(64) 业务类型 channel_name varchar(255) 订单渠道 anal_type varchar(64) 分析类型(到家、到店) platform varchar(64) 平台(到家：美团、饿了么、其它 到店：POS、小程序、其它) cust_type varchar(64) 用户类型 time_name varchar(255) 时段 food_category_name varchar(255) 商品分类 food_oneid varchar(64) 商品oneid item_name varchar(500) 商品名称 new_flag varchar(64) 是否新品 cup_type varchar(64) 杯型 ice_type varchar(64) 温度 sugar_type varchar(64) 甜度 dp_total_amount decimalv3(16, 2) 商品流水金额 dp_total_amount_last_day decimalv3(16, 2) 上一天商品流水金额 dp_total_amount_last_week decimalv3(16, 2) 上一周商品流水金额 dp_total_amount_last_year decimalv3(16, 2) 去年同期商品流水金额 dp_item_count bigint(20) 商品销量 dp_item_count_last_day bigint(20) 上一天商品销量 dp_item_count_last_week bigint(20) 上一周商品销量 dp_item_count_last_year bigint(20) 去年同期商品销量 dp_pay_amount decimalv3(16, 2) 商品实收金额 dp_pay_amount_last_day decimalv3(16, 2) 上一天商品实收金额 dp_pay_amount_last_week decimalv3(16, 2) 上一周商品实收金额 dp_pay_amount_last_year decimalv3(16, 2) 去年同期商品实收金额 dp_discount_amount decimalv3(16, 2) 商品优惠金额 dp_discount_amount_last_day decimalv3(16, 2) 上一天商品优惠金额 dp_discount_amount_last_week decimalv3(16, 2) 上一周商品优惠金额 dp_discount_amount_last_year decimalv3(16, 2) 去年同期商品优惠金额 dp_return_item_count bigint(20) 商品退货量 dp_return_item_count_last_day bigint(20) 上一天商品退货量 dp_return_item_count_last_week bigint(20) 上一周商品退货量 dp_return_item_count_last_year bigint(20) 去年同期商品退货量 dp_return_total_amount decimalv3(16, 2) 商品退款金额 dp_return_total_amount_last_day decimalv3(16, 2) 上一天商品退款金额 dp_return_total_amount_last_week decimalv3(16, 2) 上一周商品退款金额 dp_return_total_amount_last_year decimalv3(16, 2) 去年同期商品退款金额 xl_total_amount decimalv3(16, 2) 小料流水金额 xl_total_amount_last_day decimalv3(16, 2) 上一天小料流水金额 xl_total_amount_last_week decimalv3(16, 2) 上一周小料流水金额 xl_total_amount_last_year decimalv3(16, 2) 去年同期小料流水金额 xl_item_count bigint(20) 小料销量 xl_item_count_last_day bigint(20) 上一天小料销量 xl_item_count_last_week bigint(20) 上一周小料销量 xl_item_count_last_year bigint(20) 去年同期小料销量 xl_pay_amount decimalv3(16, 2) 小料实收金额 xl_pay_amount_last_day decimalv3(16, 2) 上一天小料实收金额 xl_pay_amount_last_week decimalv3(16, 2) 上一周小料实收金额 xl_pay_amount_last_year decimalv3(16, 2) 去年同期小料实收金额 tc_total_amount decimalv3(16, 2) 套餐流水金额 tc_total_amount_last_day decimalv3(16, 2) 上一天套餐流水金额 tc_total_amount_last_week decimalv3(16, 2) 上一周套餐流水金额 tc_total_amount_last_year decimalv3(16, 2) 去年同期套餐流水金额 tc_item_count bigint(20) 套餐销量 tc_item_count_last_day bigint(20) 上一天套餐销量 tc_item_count_last_week bigint(20) 上一周套餐销量 tc_item_count_last_year bigint(20) 去年同期套餐销量 tc_pay_amount decimalv3(16, 2) 套餐实收金额 tc_pay_amount_last_day decimalv3(16, 2) 上一天套餐实收金额 tc_pay_amount_last_week decimalv3(16, 2) 上一周套餐实收金额 tc_pay_amount_last_year decimalv3(16, 2) 去年同期套餐实收金额 tc_discount_amount decimalv3(16, 2) 套餐优惠金额 tc_discount_amount_last_day decimalv3(16, 2) 上一天套餐优惠金额 tc_discount_amount_last_week decimalv3(16, 2) 上一周套餐优惠金额 tc_discount_amount_last_year decimalv3(16, 2) 去年同期套餐优惠金额 zb_total_amount decimalv3(16, 2) 周边流水金额 zb_total_amount_last_day decimalv3(16, 2) 上一天周边流水金额 zb_total_amount_last_week decimalv3(16, 2) 上一周周边流水金额 zb_total_amount_last_year decimalv3(16, 2) 去年同期周边流水金额 zb_item_count bigint(20) 周边销量 zb_item_count_last_day bigint(20) 上一天周边销量 zb_item_count_last_week bigint(20) 上一周周边销量 zb_item_count_last_year bigint(20) 去年同期周边销量 zb_pay_amount decimalv3(16, 2) 周边实收金额 zb_pay_amount_last_day decimalv3(16, 2) 上一天周边实收金额 zb_pay_amount_last_week decimalv3(16, 2) 上一周周边实收金额 zb_pay_amount_last_year decimalv3(16, 2) 去年同期周边实收金额 load_time varchar(64) 数据更新时间 item_type varchar(64) 商品类型（单品、套餐、小料、周边、其它） item_status varchar(64) 饮品状态(在线饮品、不在线饮品) up_type varchar(64) 升级类型 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://tll.bizha.top/data-dictionary/ads_dbs_trade_food_di/">
-	<meta property="og:site_name" content="Data Documentation">
-	<meta property="og:title" content="产品销售">
-	<meta property="og:description" content="产品销售信息#ads_dbs_trade_food_di 列名 数据类型 注释 business_date bigint(20) 日期 oper_center_name varchar(255) 营运中心 prov_id varchar(64) 省份编码 prov_name varchar(255) 省份名称 city_id varchar(64) 城市编码 city_name varchar(255) 城市名称 city_level varchar(64) 城市等级 district_id varchar(64) 区县编码 district_name varchar(255) 区县名称 busi_area_type varchar(64) 商圈 bussiness_type varchar(64) 业务类型 channel_name varchar(255) 订单渠道 anal_type varchar(64) 分析类型(到家、到店) platform varchar(64) 平台(到家：美团、饿了么、其它 到店：POS、小程序、其它) cust_type varchar(64) 用户类型 time_name varchar(255) 时段 food_category_name varchar(255) 商品分类 food_oneid varchar(64) 商品oneid item_name varchar(500) 商品名称 new_flag varchar(64) 是否新品 cup_type varchar(64) 杯型 ice_type varchar(64) 温度 sugar_type varchar(64) 甜度 dp_total_amount decimalv3(16, 2) 商品流水金额 dp_total_amount_last_day decimalv3(16, 2) 上一天商品流水金额 dp_total_amount_last_week decimalv3(16, 2) 上一周商品流水金额 dp_total_amount_last_year decimalv3(16, 2) 去年同期商品流水金额 dp_item_count bigint(20) 商品销量 dp_item_count_last_day bigint(20) 上一天商品销量 dp_item_count_last_week bigint(20) 上一周商品销量 dp_item_count_last_year bigint(20) 去年同期商品销量 dp_pay_amount decimalv3(16, 2) 商品实收金额 dp_pay_amount_last_day decimalv3(16, 2) 上一天商品实收金额 dp_pay_amount_last_week decimalv3(16, 2) 上一周商品实收金额 dp_pay_amount_last_year decimalv3(16, 2) 去年同期商品实收金额 dp_discount_amount decimalv3(16, 2) 商品优惠金额 dp_discount_amount_last_day decimalv3(16, 2) 上一天商品优惠金额 dp_discount_amount_last_week decimalv3(16, 2) 上一周商品优惠金额 dp_discount_amount_last_year decimalv3(16, 2) 去年同期商品优惠金额 dp_return_item_count bigint(20) 商品退货量 dp_return_item_count_last_day bigint(20) 上一天商品退货量 dp_return_item_count_last_week bigint(20) 上一周商品退货量 dp_return_item_count_last_year bigint(20) 去年同期商品退货量 dp_return_total_amount decimalv3(16, 2) 商品退款金额 dp_return_total_amount_last_day decimalv3(16, 2) 上一天商品退款金额 dp_return_total_amount_last_week decimalv3(16, 2) 上一周商品退款金额 dp_return_total_amount_last_year decimalv3(16, 2) 去年同期商品退款金额 xl_total_amount decimalv3(16, 2) 小料流水金额 xl_total_amount_last_day decimalv3(16, 2) 上一天小料流水金额 xl_total_amount_last_week decimalv3(16, 2) 上一周小料流水金额 xl_total_amount_last_year decimalv3(16, 2) 去年同期小料流水金额 xl_item_count bigint(20) 小料销量 xl_item_count_last_day bigint(20) 上一天小料销量 xl_item_count_last_week bigint(20) 上一周小料销量 xl_item_count_last_year bigint(20) 去年同期小料销量 xl_pay_amount decimalv3(16, 2) 小料实收金额 xl_pay_amount_last_day decimalv3(16, 2) 上一天小料实收金额 xl_pay_amount_last_week decimalv3(16, 2) 上一周小料实收金额 xl_pay_amount_last_year decimalv3(16, 2) 去年同期小料实收金额 tc_total_amount decimalv3(16, 2) 套餐流水金额 tc_total_amount_last_day decimalv3(16, 2) 上一天套餐流水金额 tc_total_amount_last_week decimalv3(16, 2) 上一周套餐流水金额 tc_total_amount_last_year decimalv3(16, 2) 去年同期套餐流水金额 tc_item_count bigint(20) 套餐销量 tc_item_count_last_day bigint(20) 上一天套餐销量 tc_item_count_last_week bigint(20) 上一周套餐销量 tc_item_count_last_year bigint(20) 去年同期套餐销量 tc_pay_amount decimalv3(16, 2) 套餐实收金额 tc_pay_amount_last_day decimalv3(16, 2) 上一天套餐实收金额 tc_pay_amount_last_week decimalv3(16, 2) 上一周套餐实收金额 tc_pay_amount_last_year decimalv3(16, 2) 去年同期套餐实收金额 tc_discount_amount decimalv3(16, 2) 套餐优惠金额 tc_discount_amount_last_day decimalv3(16, 2) 上一天套餐优惠金额 tc_discount_amount_last_week decimalv3(16, 2) 上一周套餐优惠金额 tc_discount_amount_last_year decimalv3(16, 2) 去年同期套餐优惠金额 zb_total_amount decimalv3(16, 2) 周边流水金额 zb_total_amount_last_day decimalv3(16, 2) 上一天周边流水金额 zb_total_amount_last_week decimalv3(16, 2) 上一周周边流水金额 zb_total_amount_last_year decimalv3(16, 2) 去年同期周边流水金额 zb_item_count bigint(20) 周边销量 zb_item_count_last_day bigint(20) 上一天周边销量 zb_item_count_last_week bigint(20) 上一周周边销量 zb_item_count_last_year bigint(20) 去年同期周边销量 zb_pay_amount decimalv3(16, 2) 周边实收金额 zb_pay_amount_last_day decimalv3(16, 2) 上一天周边实收金额 zb_pay_amount_last_week decimalv3(16, 2) 上一周周边实收金额 zb_pay_amount_last_year decimalv3(16, 2) 去年同期周边实收金额 load_time varchar(64) 数据更新时间 item_type varchar(64) 商品类型（单品、套餐、小料、周边、其它） item_status varchar(64) 饮品状态(在线饮品、不在线饮品) up_type varchar(64) 升级类型">
-	<meta property="og:locale" content="zh_CN">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="data-dictionary">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/data-dictionary/ads_dbs_trade_food_di/">
+  <meta property="og:site_name" content="Data Documentation">
+  <meta property="og:title" content="产品销售">
+  <meta property="og:description" content="产品销售信息#ads_dbs_trade_food_di 列名 数据类型 注释 business_date bigint(20) 日期 oper_center_name varchar(255) 营运中心 prov_id varchar(64) 省份编码 prov_name varchar(255) 省份名称 city_id varchar(64) 城市编码 city_name varchar(255) 城市名称 city_level varchar(64) 城市等级 district_id varchar(64) 区县编码 district_name varchar(255) 区县名称 busi_area_type varchar(64) 商圈 bussiness_type varchar(64) 业务类型 channel_name varchar(255) 订单渠道 anal_type varchar(64) 分析类型(到家、到店) platform varchar(64) 平台(到家：美团、饿了么、其它 到店：POS、小程序、其它) cust_type varchar(64) 用户类型 time_name varchar(255) 时段 food_category_name varchar(255) 商品分类 food_oneid varchar(64) 商品oneid item_name varchar(500) 商品名称 new_flag varchar(64) 是否新品 cup_type varchar(64) 杯型 ice_type varchar(64) 温度 sugar_type varchar(64) 甜度 dp_total_amount decimalv3(16, 2) 商品流水金额 dp_total_amount_last_day decimalv3(16, 2) 上一天商品流水金额 dp_total_amount_last_week decimalv3(16, 2) 上一周商品流水金额 dp_total_amount_last_year decimalv3(16, 2) 去年同期商品流水金额 dp_item_count bigint(20) 商品销量 dp_item_count_last_day bigint(20) 上一天商品销量 dp_item_count_last_week bigint(20) 上一周商品销量 dp_item_count_last_year bigint(20) 去年同期商品销量 dp_pay_amount decimalv3(16, 2) 商品实收金额 dp_pay_amount_last_day decimalv3(16, 2) 上一天商品实收金额 dp_pay_amount_last_week decimalv3(16, 2) 上一周商品实收金额 dp_pay_amount_last_year decimalv3(16, 2) 去年同期商品实收金额 dp_discount_amount decimalv3(16, 2) 商品优惠金额 dp_discount_amount_last_day decimalv3(16, 2) 上一天商品优惠金额 dp_discount_amount_last_week decimalv3(16, 2) 上一周商品优惠金额 dp_discount_amount_last_year decimalv3(16, 2) 去年同期商品优惠金额 dp_return_item_count bigint(20) 商品退货量 dp_return_item_count_last_day bigint(20) 上一天商品退货量 dp_return_item_count_last_week bigint(20) 上一周商品退货量 dp_return_item_count_last_year bigint(20) 去年同期商品退货量 dp_return_total_amount decimalv3(16, 2) 商品退款金额 dp_return_total_amount_last_day decimalv3(16, 2) 上一天商品退款金额 dp_return_total_amount_last_week decimalv3(16, 2) 上一周商品退款金额 dp_return_total_amount_last_year decimalv3(16, 2) 去年同期商品退款金额 xl_total_amount decimalv3(16, 2) 小料流水金额 xl_total_amount_last_day decimalv3(16, 2) 上一天小料流水金额 xl_total_amount_last_week decimalv3(16, 2) 上一周小料流水金额 xl_total_amount_last_year decimalv3(16, 2) 去年同期小料流水金额 xl_item_count bigint(20) 小料销量 xl_item_count_last_day bigint(20) 上一天小料销量 xl_item_count_last_week bigint(20) 上一周小料销量 xl_item_count_last_year bigint(20) 去年同期小料销量 xl_pay_amount decimalv3(16, 2) 小料实收金额 xl_pay_amount_last_day decimalv3(16, 2) 上一天小料实收金额 xl_pay_amount_last_week decimalv3(16, 2) 上一周小料实收金额 xl_pay_amount_last_year decimalv3(16, 2) 去年同期小料实收金额 tc_total_amount decimalv3(16, 2) 套餐流水金额 tc_total_amount_last_day decimalv3(16, 2) 上一天套餐流水金额 tc_total_amount_last_week decimalv3(16, 2) 上一周套餐流水金额 tc_total_amount_last_year decimalv3(16, 2) 去年同期套餐流水金额 tc_item_count bigint(20) 套餐销量 tc_item_count_last_day bigint(20) 上一天套餐销量 tc_item_count_last_week bigint(20) 上一周套餐销量 tc_item_count_last_year bigint(20) 去年同期套餐销量 tc_pay_amount decimalv3(16, 2) 套餐实收金额 tc_pay_amount_last_day decimalv3(16, 2) 上一天套餐实收金额 tc_pay_amount_last_week decimalv3(16, 2) 上一周套餐实收金额 tc_pay_amount_last_year decimalv3(16, 2) 去年同期套餐实收金额 tc_discount_amount decimalv3(16, 2) 套餐优惠金额 tc_discount_amount_last_day decimalv3(16, 2) 上一天套餐优惠金额 tc_discount_amount_last_week decimalv3(16, 2) 上一周套餐优惠金额 tc_discount_amount_last_year decimalv3(16, 2) 去年同期套餐优惠金额 zb_total_amount decimalv3(16, 2) 周边流水金额 zb_total_amount_last_day decimalv3(16, 2) 上一天周边流水金额 zb_total_amount_last_week decimalv3(16, 2) 上一周周边流水金额 zb_total_amount_last_year decimalv3(16, 2) 去年同期周边流水金额 zb_item_count bigint(20) 周边销量 zb_item_count_last_day bigint(20) 上一天周边销量 zb_item_count_last_week bigint(20) 上一周周边销量 zb_item_count_last_year bigint(20) 去年同期周边销量 zb_pay_amount decimalv3(16, 2) 周边实收金额 zb_pay_amount_last_day decimalv3(16, 2) 上一天周边实收金额 zb_pay_amount_last_week decimalv3(16, 2) 上一周周边实收金额 zb_pay_amount_last_year decimalv3(16, 2) 去年同期周边实收金额 load_time varchar(64) 数据更新时间 item_type varchar(64) 商品类型（单品、套餐、小料、周边、其它） item_status varchar(64) 饮品状态(在线饮品、不在线饮品) up_type varchar(64) 升级类型">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="data-dictionary">
 
 
-	<meta itemprop="name" content="产品销售">
-	<meta itemprop="description" content="产品销售信息#ads_dbs_trade_food_di 列名 数据类型 注释 business_date bigint(20) 日期 oper_center_name varchar(255) 营运中心 prov_id varchar(64) 省份编码 prov_name varchar(255) 省份名称 city_id varchar(64) 城市编码 city_name varchar(255) 城市名称 city_level varchar(64) 城市等级 district_id varchar(64) 区县编码 district_name varchar(255) 区县名称 busi_area_type varchar(64) 商圈 bussiness_type varchar(64) 业务类型 channel_name varchar(255) 订单渠道 anal_type varchar(64) 分析类型(到家、到店) platform varchar(64) 平台(到家：美团、饿了么、其它 到店：POS、小程序、其它) cust_type varchar(64) 用户类型 time_name varchar(255) 时段 food_category_name varchar(255) 商品分类 food_oneid varchar(64) 商品oneid item_name varchar(500) 商品名称 new_flag varchar(64) 是否新品 cup_type varchar(64) 杯型 ice_type varchar(64) 温度 sugar_type varchar(64) 甜度 dp_total_amount decimalv3(16, 2) 商品流水金额 dp_total_amount_last_day decimalv3(16, 2) 上一天商品流水金额 dp_total_amount_last_week decimalv3(16, 2) 上一周商品流水金额 dp_total_amount_last_year decimalv3(16, 2) 去年同期商品流水金额 dp_item_count bigint(20) 商品销量 dp_item_count_last_day bigint(20) 上一天商品销量 dp_item_count_last_week bigint(20) 上一周商品销量 dp_item_count_last_year bigint(20) 去年同期商品销量 dp_pay_amount decimalv3(16, 2) 商品实收金额 dp_pay_amount_last_day decimalv3(16, 2) 上一天商品实收金额 dp_pay_amount_last_week decimalv3(16, 2) 上一周商品实收金额 dp_pay_amount_last_year decimalv3(16, 2) 去年同期商品实收金额 dp_discount_amount decimalv3(16, 2) 商品优惠金额 dp_discount_amount_last_day decimalv3(16, 2) 上一天商品优惠金额 dp_discount_amount_last_week decimalv3(16, 2) 上一周商品优惠金额 dp_discount_amount_last_year decimalv3(16, 2) 去年同期商品优惠金额 dp_return_item_count bigint(20) 商品退货量 dp_return_item_count_last_day bigint(20) 上一天商品退货量 dp_return_item_count_last_week bigint(20) 上一周商品退货量 dp_return_item_count_last_year bigint(20) 去年同期商品退货量 dp_return_total_amount decimalv3(16, 2) 商品退款金额 dp_return_total_amount_last_day decimalv3(16, 2) 上一天商品退款金额 dp_return_total_amount_last_week decimalv3(16, 2) 上一周商品退款金额 dp_return_total_amount_last_year decimalv3(16, 2) 去年同期商品退款金额 xl_total_amount decimalv3(16, 2) 小料流水金额 xl_total_amount_last_day decimalv3(16, 2) 上一天小料流水金额 xl_total_amount_last_week decimalv3(16, 2) 上一周小料流水金额 xl_total_amount_last_year decimalv3(16, 2) 去年同期小料流水金额 xl_item_count bigint(20) 小料销量 xl_item_count_last_day bigint(20) 上一天小料销量 xl_item_count_last_week bigint(20) 上一周小料销量 xl_item_count_last_year bigint(20) 去年同期小料销量 xl_pay_amount decimalv3(16, 2) 小料实收金额 xl_pay_amount_last_day decimalv3(16, 2) 上一天小料实收金额 xl_pay_amount_last_week decimalv3(16, 2) 上一周小料实收金额 xl_pay_amount_last_year decimalv3(16, 2) 去年同期小料实收金额 tc_total_amount decimalv3(16, 2) 套餐流水金额 tc_total_amount_last_day decimalv3(16, 2) 上一天套餐流水金额 tc_total_amount_last_week decimalv3(16, 2) 上一周套餐流水金额 tc_total_amount_last_year decimalv3(16, 2) 去年同期套餐流水金额 tc_item_count bigint(20) 套餐销量 tc_item_count_last_day bigint(20) 上一天套餐销量 tc_item_count_last_week bigint(20) 上一周套餐销量 tc_item_count_last_year bigint(20) 去年同期套餐销量 tc_pay_amount decimalv3(16, 2) 套餐实收金额 tc_pay_amount_last_day decimalv3(16, 2) 上一天套餐实收金额 tc_pay_amount_last_week decimalv3(16, 2) 上一周套餐实收金额 tc_pay_amount_last_year decimalv3(16, 2) 去年同期套餐实收金额 tc_discount_amount decimalv3(16, 2) 套餐优惠金额 tc_discount_amount_last_day decimalv3(16, 2) 上一天套餐优惠金额 tc_discount_amount_last_week decimalv3(16, 2) 上一周套餐优惠金额 tc_discount_amount_last_year decimalv3(16, 2) 去年同期套餐优惠金额 zb_total_amount decimalv3(16, 2) 周边流水金额 zb_total_amount_last_day decimalv3(16, 2) 上一天周边流水金额 zb_total_amount_last_week decimalv3(16, 2) 上一周周边流水金额 zb_total_amount_last_year decimalv3(16, 2) 去年同期周边流水金额 zb_item_count bigint(20) 周边销量 zb_item_count_last_day bigint(20) 上一天周边销量 zb_item_count_last_week bigint(20) 上一周周边销量 zb_item_count_last_year bigint(20) 去年同期周边销量 zb_pay_amount decimalv3(16, 2) 周边实收金额 zb_pay_amount_last_day decimalv3(16, 2) 上一天周边实收金额 zb_pay_amount_last_week decimalv3(16, 2) 上一周周边实收金额 zb_pay_amount_last_year decimalv3(16, 2) 去年同期周边实收金额 load_time varchar(64) 数据更新时间 item_type varchar(64) 商品类型（单品、套餐、小料、周边、其它） item_status varchar(64) 饮品状态(在线饮品、不在线饮品) up_type varchar(64) 升级类型">
-	<meta itemprop="wordCount" content="323">
+  <meta itemprop="name" content="产品销售">
+  <meta itemprop="description" content="产品销售信息#ads_dbs_trade_food_di 列名 数据类型 注释 business_date bigint(20) 日期 oper_center_name varchar(255) 营运中心 prov_id varchar(64) 省份编码 prov_name varchar(255) 省份名称 city_id varchar(64) 城市编码 city_name varchar(255) 城市名称 city_level varchar(64) 城市等级 district_id varchar(64) 区县编码 district_name varchar(255) 区县名称 busi_area_type varchar(64) 商圈 bussiness_type varchar(64) 业务类型 channel_name varchar(255) 订单渠道 anal_type varchar(64) 分析类型(到家、到店) platform varchar(64) 平台(到家：美团、饿了么、其它 到店：POS、小程序、其它) cust_type varchar(64) 用户类型 time_name varchar(255) 时段 food_category_name varchar(255) 商品分类 food_oneid varchar(64) 商品oneid item_name varchar(500) 商品名称 new_flag varchar(64) 是否新品 cup_type varchar(64) 杯型 ice_type varchar(64) 温度 sugar_type varchar(64) 甜度 dp_total_amount decimalv3(16, 2) 商品流水金额 dp_total_amount_last_day decimalv3(16, 2) 上一天商品流水金额 dp_total_amount_last_week decimalv3(16, 2) 上一周商品流水金额 dp_total_amount_last_year decimalv3(16, 2) 去年同期商品流水金额 dp_item_count bigint(20) 商品销量 dp_item_count_last_day bigint(20) 上一天商品销量 dp_item_count_last_week bigint(20) 上一周商品销量 dp_item_count_last_year bigint(20) 去年同期商品销量 dp_pay_amount decimalv3(16, 2) 商品实收金额 dp_pay_amount_last_day decimalv3(16, 2) 上一天商品实收金额 dp_pay_amount_last_week decimalv3(16, 2) 上一周商品实收金额 dp_pay_amount_last_year decimalv3(16, 2) 去年同期商品实收金额 dp_discount_amount decimalv3(16, 2) 商品优惠金额 dp_discount_amount_last_day decimalv3(16, 2) 上一天商品优惠金额 dp_discount_amount_last_week decimalv3(16, 2) 上一周商品优惠金额 dp_discount_amount_last_year decimalv3(16, 2) 去年同期商品优惠金额 dp_return_item_count bigint(20) 商品退货量 dp_return_item_count_last_day bigint(20) 上一天商品退货量 dp_return_item_count_last_week bigint(20) 上一周商品退货量 dp_return_item_count_last_year bigint(20) 去年同期商品退货量 dp_return_total_amount decimalv3(16, 2) 商品退款金额 dp_return_total_amount_last_day decimalv3(16, 2) 上一天商品退款金额 dp_return_total_amount_last_week decimalv3(16, 2) 上一周商品退款金额 dp_return_total_amount_last_year decimalv3(16, 2) 去年同期商品退款金额 xl_total_amount decimalv3(16, 2) 小料流水金额 xl_total_amount_last_day decimalv3(16, 2) 上一天小料流水金额 xl_total_amount_last_week decimalv3(16, 2) 上一周小料流水金额 xl_total_amount_last_year decimalv3(16, 2) 去年同期小料流水金额 xl_item_count bigint(20) 小料销量 xl_item_count_last_day bigint(20) 上一天小料销量 xl_item_count_last_week bigint(20) 上一周小料销量 xl_item_count_last_year bigint(20) 去年同期小料销量 xl_pay_amount decimalv3(16, 2) 小料实收金额 xl_pay_amount_last_day decimalv3(16, 2) 上一天小料实收金额 xl_pay_amount_last_week decimalv3(16, 2) 上一周小料实收金额 xl_pay_amount_last_year decimalv3(16, 2) 去年同期小料实收金额 tc_total_amount decimalv3(16, 2) 套餐流水金额 tc_total_amount_last_day decimalv3(16, 2) 上一天套餐流水金额 tc_total_amount_last_week decimalv3(16, 2) 上一周套餐流水金额 tc_total_amount_last_year decimalv3(16, 2) 去年同期套餐流水金额 tc_item_count bigint(20) 套餐销量 tc_item_count_last_day bigint(20) 上一天套餐销量 tc_item_count_last_week bigint(20) 上一周套餐销量 tc_item_count_last_year bigint(20) 去年同期套餐销量 tc_pay_amount decimalv3(16, 2) 套餐实收金额 tc_pay_amount_last_day decimalv3(16, 2) 上一天套餐实收金额 tc_pay_amount_last_week decimalv3(16, 2) 上一周套餐实收金额 tc_pay_amount_last_year decimalv3(16, 2) 去年同期套餐实收金额 tc_discount_amount decimalv3(16, 2) 套餐优惠金额 tc_discount_amount_last_day decimalv3(16, 2) 上一天套餐优惠金额 tc_discount_amount_last_week decimalv3(16, 2) 上一周套餐优惠金额 tc_discount_amount_last_year decimalv3(16, 2) 去年同期套餐优惠金额 zb_total_amount decimalv3(16, 2) 周边流水金额 zb_total_amount_last_day decimalv3(16, 2) 上一天周边流水金额 zb_total_amount_last_week decimalv3(16, 2) 上一周周边流水金额 zb_total_amount_last_year decimalv3(16, 2) 去年同期周边流水金额 zb_item_count bigint(20) 周边销量 zb_item_count_last_day bigint(20) 上一天周边销量 zb_item_count_last_week bigint(20) 上一周周边销量 zb_item_count_last_year bigint(20) 去年同期周边销量 zb_pay_amount decimalv3(16, 2) 周边实收金额 zb_pay_amount_last_day decimalv3(16, 2) 上一天周边实收金额 zb_pay_amount_last_week decimalv3(16, 2) 上一周周边实收金额 zb_pay_amount_last_year decimalv3(16, 2) 去年同期周边实收金额 load_time varchar(64) 数据更新时间 item_type varchar(64) 商品类型（单品、套餐、小料、周边、其它） item_status varchar(64) 饮品状态(在线饮品、不在线饮品) up_type varchar(64) 升级类型">
+  <meta itemprop="wordCount" content="323">
 
 <title>产品销售 • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://tll.bizha.top/data-dictionary/ads_dbs_trade_food_di/">
+<link rel="canonical" href="http://localhost:1313/data-dictionary/ads_dbs_trade_food_di/">
 <link rel="stylesheet" href="/book.min.css">
 
 
@@ -380,470 +380,470 @@ https://github.com/alex-shpak/hugo-book
 <li>ads_dbs_trade_food_di</li>
 </ul>
 <table>
-	<thead>
-			<tr>
-					<th>列名</th>
-					<th>数据类型</th>
-					<th>注释</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>business_date</td>
-					<td>bigint(20)</td>
-					<td>日期</td>
-			</tr>
-			<tr>
-					<td>oper_center_name</td>
-					<td>varchar(255)</td>
-					<td>营运中心</td>
-			</tr>
-			<tr>
-					<td>prov_id</td>
-					<td>varchar(64)</td>
-					<td>省份编码</td>
-			</tr>
-			<tr>
-					<td>prov_name</td>
-					<td>varchar(255)</td>
-					<td>省份名称</td>
-			</tr>
-			<tr>
-					<td>city_id</td>
-					<td>varchar(64)</td>
-					<td>城市编码</td>
-			</tr>
-			<tr>
-					<td>city_name</td>
-					<td>varchar(255)</td>
-					<td>城市名称</td>
-			</tr>
-			<tr>
-					<td>city_level</td>
-					<td>varchar(64)</td>
-					<td>城市等级</td>
-			</tr>
-			<tr>
-					<td>district_id</td>
-					<td>varchar(64)</td>
-					<td>区县编码</td>
-			</tr>
-			<tr>
-					<td>district_name</td>
-					<td>varchar(255)</td>
-					<td>区县名称</td>
-			</tr>
-			<tr>
-					<td>busi_area_type</td>
-					<td>varchar(64)</td>
-					<td>商圈</td>
-			</tr>
-			<tr>
-					<td>bussiness_type</td>
-					<td>varchar(64)</td>
-					<td>业务类型</td>
-			</tr>
-			<tr>
-					<td>channel_name</td>
-					<td>varchar(255)</td>
-					<td>订单渠道</td>
-			</tr>
-			<tr>
-					<td>anal_type</td>
-					<td>varchar(64)</td>
-					<td>分析类型(到家、到店)</td>
-			</tr>
-			<tr>
-					<td>platform</td>
-					<td>varchar(64)</td>
-					<td>平台(到家：美团、饿了么、其它 到店：POS、小程序、其它)</td>
-			</tr>
-			<tr>
-					<td>cust_type</td>
-					<td>varchar(64)</td>
-					<td>用户类型</td>
-			</tr>
-			<tr>
-					<td>time_name</td>
-					<td>varchar(255)</td>
-					<td>时段</td>
-			</tr>
-			<tr>
-					<td>food_category_name</td>
-					<td>varchar(255)</td>
-					<td>商品分类</td>
-			</tr>
-			<tr>
-					<td>food_oneid</td>
-					<td>varchar(64)</td>
-					<td>商品oneid</td>
-			</tr>
-			<tr>
-					<td>item_name</td>
-					<td>varchar(500)</td>
-					<td>商品名称</td>
-			</tr>
-			<tr>
-					<td>new_flag</td>
-					<td>varchar(64)</td>
-					<td>是否新品</td>
-			</tr>
-			<tr>
-					<td>cup_type</td>
-					<td>varchar(64)</td>
-					<td>杯型</td>
-			</tr>
-			<tr>
-					<td>ice_type</td>
-					<td>varchar(64)</td>
-					<td>温度</td>
-			</tr>
-			<tr>
-					<td>sugar_type</td>
-					<td>varchar(64)</td>
-					<td>甜度</td>
-			</tr>
-			<tr>
-					<td>dp_total_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>商品流水金额</td>
-			</tr>
-			<tr>
-					<td>dp_total_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天商品流水金额</td>
-			</tr>
-			<tr>
-					<td>dp_total_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周商品流水金额</td>
-			</tr>
-			<tr>
-					<td>dp_total_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期商品流水金额</td>
-			</tr>
-			<tr>
-					<td>dp_item_count</td>
-					<td>bigint(20)</td>
-					<td>商品销量</td>
-			</tr>
-			<tr>
-					<td>dp_item_count_last_day</td>
-					<td>bigint(20)</td>
-					<td>上一天商品销量</td>
-			</tr>
-			<tr>
-					<td>dp_item_count_last_week</td>
-					<td>bigint(20)</td>
-					<td>上一周商品销量</td>
-			</tr>
-			<tr>
-					<td>dp_item_count_last_year</td>
-					<td>bigint(20)</td>
-					<td>去年同期商品销量</td>
-			</tr>
-			<tr>
-					<td>dp_pay_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>商品实收金额</td>
-			</tr>
-			<tr>
-					<td>dp_pay_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天商品实收金额</td>
-			</tr>
-			<tr>
-					<td>dp_pay_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周商品实收金额</td>
-			</tr>
-			<tr>
-					<td>dp_pay_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期商品实收金额</td>
-			</tr>
-			<tr>
-					<td>dp_discount_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>商品优惠金额</td>
-			</tr>
-			<tr>
-					<td>dp_discount_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天商品优惠金额</td>
-			</tr>
-			<tr>
-					<td>dp_discount_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周商品优惠金额</td>
-			</tr>
-			<tr>
-					<td>dp_discount_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期商品优惠金额</td>
-			</tr>
-			<tr>
-					<td>dp_return_item_count</td>
-					<td>bigint(20)</td>
-					<td>商品退货量</td>
-			</tr>
-			<tr>
-					<td>dp_return_item_count_last_day</td>
-					<td>bigint(20)</td>
-					<td>上一天商品退货量</td>
-			</tr>
-			<tr>
-					<td>dp_return_item_count_last_week</td>
-					<td>bigint(20)</td>
-					<td>上一周商品退货量</td>
-			</tr>
-			<tr>
-					<td>dp_return_item_count_last_year</td>
-					<td>bigint(20)</td>
-					<td>去年同期商品退货量</td>
-			</tr>
-			<tr>
-					<td>dp_return_total_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>商品退款金额</td>
-			</tr>
-			<tr>
-					<td>dp_return_total_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天商品退款金额</td>
-			</tr>
-			<tr>
-					<td>dp_return_total_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周商品退款金额</td>
-			</tr>
-			<tr>
-					<td>dp_return_total_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期商品退款金额</td>
-			</tr>
-			<tr>
-					<td>xl_total_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>小料流水金额</td>
-			</tr>
-			<tr>
-					<td>xl_total_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天小料流水金额</td>
-			</tr>
-			<tr>
-					<td>xl_total_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周小料流水金额</td>
-			</tr>
-			<tr>
-					<td>xl_total_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期小料流水金额</td>
-			</tr>
-			<tr>
-					<td>xl_item_count</td>
-					<td>bigint(20)</td>
-					<td>小料销量</td>
-			</tr>
-			<tr>
-					<td>xl_item_count_last_day</td>
-					<td>bigint(20)</td>
-					<td>上一天小料销量</td>
-			</tr>
-			<tr>
-					<td>xl_item_count_last_week</td>
-					<td>bigint(20)</td>
-					<td>上一周小料销量</td>
-			</tr>
-			<tr>
-					<td>xl_item_count_last_year</td>
-					<td>bigint(20)</td>
-					<td>去年同期小料销量</td>
-			</tr>
-			<tr>
-					<td>xl_pay_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>小料实收金额</td>
-			</tr>
-			<tr>
-					<td>xl_pay_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天小料实收金额</td>
-			</tr>
-			<tr>
-					<td>xl_pay_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周小料实收金额</td>
-			</tr>
-			<tr>
-					<td>xl_pay_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期小料实收金额</td>
-			</tr>
-			<tr>
-					<td>tc_total_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>套餐流水金额</td>
-			</tr>
-			<tr>
-					<td>tc_total_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天套餐流水金额</td>
-			</tr>
-			<tr>
-					<td>tc_total_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周套餐流水金额</td>
-			</tr>
-			<tr>
-					<td>tc_total_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期套餐流水金额</td>
-			</tr>
-			<tr>
-					<td>tc_item_count</td>
-					<td>bigint(20)</td>
-					<td>套餐销量</td>
-			</tr>
-			<tr>
-					<td>tc_item_count_last_day</td>
-					<td>bigint(20)</td>
-					<td>上一天套餐销量</td>
-			</tr>
-			<tr>
-					<td>tc_item_count_last_week</td>
-					<td>bigint(20)</td>
-					<td>上一周套餐销量</td>
-			</tr>
-			<tr>
-					<td>tc_item_count_last_year</td>
-					<td>bigint(20)</td>
-					<td>去年同期套餐销量</td>
-			</tr>
-			<tr>
-					<td>tc_pay_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>套餐实收金额</td>
-			</tr>
-			<tr>
-					<td>tc_pay_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天套餐实收金额</td>
-			</tr>
-			<tr>
-					<td>tc_pay_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周套餐实收金额</td>
-			</tr>
-			<tr>
-					<td>tc_pay_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期套餐实收金额</td>
-			</tr>
-			<tr>
-					<td>tc_discount_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>套餐优惠金额</td>
-			</tr>
-			<tr>
-					<td>tc_discount_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天套餐优惠金额</td>
-			</tr>
-			<tr>
-					<td>tc_discount_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周套餐优惠金额</td>
-			</tr>
-			<tr>
-					<td>tc_discount_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期套餐优惠金额</td>
-			</tr>
-			<tr>
-					<td>zb_total_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>周边流水金额</td>
-			</tr>
-			<tr>
-					<td>zb_total_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天周边流水金额</td>
-			</tr>
-			<tr>
-					<td>zb_total_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周周边流水金额</td>
-			</tr>
-			<tr>
-					<td>zb_total_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期周边流水金额</td>
-			</tr>
-			<tr>
-					<td>zb_item_count</td>
-					<td>bigint(20)</td>
-					<td>周边销量</td>
-			</tr>
-			<tr>
-					<td>zb_item_count_last_day</td>
-					<td>bigint(20)</td>
-					<td>上一天周边销量</td>
-			</tr>
-			<tr>
-					<td>zb_item_count_last_week</td>
-					<td>bigint(20)</td>
-					<td>上一周周边销量</td>
-			</tr>
-			<tr>
-					<td>zb_item_count_last_year</td>
-					<td>bigint(20)</td>
-					<td>去年同期周边销量</td>
-			</tr>
-			<tr>
-					<td>zb_pay_amount</td>
-					<td>decimalv3(16, 2)</td>
-					<td>周边实收金额</td>
-			</tr>
-			<tr>
-					<td>zb_pay_amount_last_day</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一天周边实收金额</td>
-			</tr>
-			<tr>
-					<td>zb_pay_amount_last_week</td>
-					<td>decimalv3(16, 2)</td>
-					<td>上一周周边实收金额</td>
-			</tr>
-			<tr>
-					<td>zb_pay_amount_last_year</td>
-					<td>decimalv3(16, 2)</td>
-					<td>去年同期周边实收金额</td>
-			</tr>
-			<tr>
-					<td>load_time</td>
-					<td>varchar(64)</td>
-					<td>数据更新时间</td>
-			</tr>
-			<tr>
-					<td>item_type</td>
-					<td>varchar(64)</td>
-					<td>商品类型（单品、套餐、小料、周边、其它）</td>
-			</tr>
-			<tr>
-					<td>item_status</td>
-					<td>varchar(64)</td>
-					<td>饮品状态(在线饮品、不在线饮品)</td>
-			</tr>
-			<tr>
-					<td>up_type</td>
-					<td>varchar(64)</td>
-					<td>升级类型</td>
-			</tr>
-	</tbody>
+  <thead>
+      <tr>
+          <th>列名</th>
+          <th>数据类型</th>
+          <th>注释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>business_date</td>
+          <td>bigint(20)</td>
+          <td>日期</td>
+      </tr>
+      <tr>
+          <td>oper_center_name</td>
+          <td>varchar(255)</td>
+          <td>营运中心</td>
+      </tr>
+      <tr>
+          <td>prov_id</td>
+          <td>varchar(64)</td>
+          <td>省份编码</td>
+      </tr>
+      <tr>
+          <td>prov_name</td>
+          <td>varchar(255)</td>
+          <td>省份名称</td>
+      </tr>
+      <tr>
+          <td>city_id</td>
+          <td>varchar(64)</td>
+          <td>城市编码</td>
+      </tr>
+      <tr>
+          <td>city_name</td>
+          <td>varchar(255)</td>
+          <td>城市名称</td>
+      </tr>
+      <tr>
+          <td>city_level</td>
+          <td>varchar(64)</td>
+          <td>城市等级</td>
+      </tr>
+      <tr>
+          <td>district_id</td>
+          <td>varchar(64)</td>
+          <td>区县编码</td>
+      </tr>
+      <tr>
+          <td>district_name</td>
+          <td>varchar(255)</td>
+          <td>区县名称</td>
+      </tr>
+      <tr>
+          <td>busi_area_type</td>
+          <td>varchar(64)</td>
+          <td>商圈</td>
+      </tr>
+      <tr>
+          <td>bussiness_type</td>
+          <td>varchar(64)</td>
+          <td>业务类型</td>
+      </tr>
+      <tr>
+          <td>channel_name</td>
+          <td>varchar(255)</td>
+          <td>订单渠道</td>
+      </tr>
+      <tr>
+          <td>anal_type</td>
+          <td>varchar(64)</td>
+          <td>分析类型(到家、到店)</td>
+      </tr>
+      <tr>
+          <td>platform</td>
+          <td>varchar(64)</td>
+          <td>平台(到家：美团、饿了么、其它 到店：POS、小程序、其它)</td>
+      </tr>
+      <tr>
+          <td>cust_type</td>
+          <td>varchar(64)</td>
+          <td>用户类型</td>
+      </tr>
+      <tr>
+          <td>time_name</td>
+          <td>varchar(255)</td>
+          <td>时段</td>
+      </tr>
+      <tr>
+          <td>food_category_name</td>
+          <td>varchar(255)</td>
+          <td>商品分类</td>
+      </tr>
+      <tr>
+          <td>food_oneid</td>
+          <td>varchar(64)</td>
+          <td>商品oneid</td>
+      </tr>
+      <tr>
+          <td>item_name</td>
+          <td>varchar(500)</td>
+          <td>商品名称</td>
+      </tr>
+      <tr>
+          <td>new_flag</td>
+          <td>varchar(64)</td>
+          <td>是否新品</td>
+      </tr>
+      <tr>
+          <td>cup_type</td>
+          <td>varchar(64)</td>
+          <td>杯型</td>
+      </tr>
+      <tr>
+          <td>ice_type</td>
+          <td>varchar(64)</td>
+          <td>温度</td>
+      </tr>
+      <tr>
+          <td>sugar_type</td>
+          <td>varchar(64)</td>
+          <td>甜度</td>
+      </tr>
+      <tr>
+          <td>dp_total_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>商品流水金额</td>
+      </tr>
+      <tr>
+          <td>dp_total_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天商品流水金额</td>
+      </tr>
+      <tr>
+          <td>dp_total_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周商品流水金额</td>
+      </tr>
+      <tr>
+          <td>dp_total_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期商品流水金额</td>
+      </tr>
+      <tr>
+          <td>dp_item_count</td>
+          <td>bigint(20)</td>
+          <td>商品销量</td>
+      </tr>
+      <tr>
+          <td>dp_item_count_last_day</td>
+          <td>bigint(20)</td>
+          <td>上一天商品销量</td>
+      </tr>
+      <tr>
+          <td>dp_item_count_last_week</td>
+          <td>bigint(20)</td>
+          <td>上一周商品销量</td>
+      </tr>
+      <tr>
+          <td>dp_item_count_last_year</td>
+          <td>bigint(20)</td>
+          <td>去年同期商品销量</td>
+      </tr>
+      <tr>
+          <td>dp_pay_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>商品实收金额</td>
+      </tr>
+      <tr>
+          <td>dp_pay_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天商品实收金额</td>
+      </tr>
+      <tr>
+          <td>dp_pay_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周商品实收金额</td>
+      </tr>
+      <tr>
+          <td>dp_pay_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期商品实收金额</td>
+      </tr>
+      <tr>
+          <td>dp_discount_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>商品优惠金额</td>
+      </tr>
+      <tr>
+          <td>dp_discount_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天商品优惠金额</td>
+      </tr>
+      <tr>
+          <td>dp_discount_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周商品优惠金额</td>
+      </tr>
+      <tr>
+          <td>dp_discount_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期商品优惠金额</td>
+      </tr>
+      <tr>
+          <td>dp_return_item_count</td>
+          <td>bigint(20)</td>
+          <td>商品退货量</td>
+      </tr>
+      <tr>
+          <td>dp_return_item_count_last_day</td>
+          <td>bigint(20)</td>
+          <td>上一天商品退货量</td>
+      </tr>
+      <tr>
+          <td>dp_return_item_count_last_week</td>
+          <td>bigint(20)</td>
+          <td>上一周商品退货量</td>
+      </tr>
+      <tr>
+          <td>dp_return_item_count_last_year</td>
+          <td>bigint(20)</td>
+          <td>去年同期商品退货量</td>
+      </tr>
+      <tr>
+          <td>dp_return_total_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>商品退款金额</td>
+      </tr>
+      <tr>
+          <td>dp_return_total_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天商品退款金额</td>
+      </tr>
+      <tr>
+          <td>dp_return_total_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周商品退款金额</td>
+      </tr>
+      <tr>
+          <td>dp_return_total_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期商品退款金额</td>
+      </tr>
+      <tr>
+          <td>xl_total_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>小料流水金额</td>
+      </tr>
+      <tr>
+          <td>xl_total_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天小料流水金额</td>
+      </tr>
+      <tr>
+          <td>xl_total_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周小料流水金额</td>
+      </tr>
+      <tr>
+          <td>xl_total_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期小料流水金额</td>
+      </tr>
+      <tr>
+          <td>xl_item_count</td>
+          <td>bigint(20)</td>
+          <td>小料销量</td>
+      </tr>
+      <tr>
+          <td>xl_item_count_last_day</td>
+          <td>bigint(20)</td>
+          <td>上一天小料销量</td>
+      </tr>
+      <tr>
+          <td>xl_item_count_last_week</td>
+          <td>bigint(20)</td>
+          <td>上一周小料销量</td>
+      </tr>
+      <tr>
+          <td>xl_item_count_last_year</td>
+          <td>bigint(20)</td>
+          <td>去年同期小料销量</td>
+      </tr>
+      <tr>
+          <td>xl_pay_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>小料实收金额</td>
+      </tr>
+      <tr>
+          <td>xl_pay_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天小料实收金额</td>
+      </tr>
+      <tr>
+          <td>xl_pay_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周小料实收金额</td>
+      </tr>
+      <tr>
+          <td>xl_pay_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期小料实收金额</td>
+      </tr>
+      <tr>
+          <td>tc_total_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>套餐流水金额</td>
+      </tr>
+      <tr>
+          <td>tc_total_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天套餐流水金额</td>
+      </tr>
+      <tr>
+          <td>tc_total_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周套餐流水金额</td>
+      </tr>
+      <tr>
+          <td>tc_total_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期套餐流水金额</td>
+      </tr>
+      <tr>
+          <td>tc_item_count</td>
+          <td>bigint(20)</td>
+          <td>套餐销量</td>
+      </tr>
+      <tr>
+          <td>tc_item_count_last_day</td>
+          <td>bigint(20)</td>
+          <td>上一天套餐销量</td>
+      </tr>
+      <tr>
+          <td>tc_item_count_last_week</td>
+          <td>bigint(20)</td>
+          <td>上一周套餐销量</td>
+      </tr>
+      <tr>
+          <td>tc_item_count_last_year</td>
+          <td>bigint(20)</td>
+          <td>去年同期套餐销量</td>
+      </tr>
+      <tr>
+          <td>tc_pay_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>套餐实收金额</td>
+      </tr>
+      <tr>
+          <td>tc_pay_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天套餐实收金额</td>
+      </tr>
+      <tr>
+          <td>tc_pay_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周套餐实收金额</td>
+      </tr>
+      <tr>
+          <td>tc_pay_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期套餐实收金额</td>
+      </tr>
+      <tr>
+          <td>tc_discount_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>套餐优惠金额</td>
+      </tr>
+      <tr>
+          <td>tc_discount_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天套餐优惠金额</td>
+      </tr>
+      <tr>
+          <td>tc_discount_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周套餐优惠金额</td>
+      </tr>
+      <tr>
+          <td>tc_discount_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期套餐优惠金额</td>
+      </tr>
+      <tr>
+          <td>zb_total_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>周边流水金额</td>
+      </tr>
+      <tr>
+          <td>zb_total_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天周边流水金额</td>
+      </tr>
+      <tr>
+          <td>zb_total_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周周边流水金额</td>
+      </tr>
+      <tr>
+          <td>zb_total_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期周边流水金额</td>
+      </tr>
+      <tr>
+          <td>zb_item_count</td>
+          <td>bigint(20)</td>
+          <td>周边销量</td>
+      </tr>
+      <tr>
+          <td>zb_item_count_last_day</td>
+          <td>bigint(20)</td>
+          <td>上一天周边销量</td>
+      </tr>
+      <tr>
+          <td>zb_item_count_last_week</td>
+          <td>bigint(20)</td>
+          <td>上一周周边销量</td>
+      </tr>
+      <tr>
+          <td>zb_item_count_last_year</td>
+          <td>bigint(20)</td>
+          <td>去年同期周边销量</td>
+      </tr>
+      <tr>
+          <td>zb_pay_amount</td>
+          <td>decimalv3(16, 2)</td>
+          <td>周边实收金额</td>
+      </tr>
+      <tr>
+          <td>zb_pay_amount_last_day</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一天周边实收金额</td>
+      </tr>
+      <tr>
+          <td>zb_pay_amount_last_week</td>
+          <td>decimalv3(16, 2)</td>
+          <td>上一周周边实收金额</td>
+      </tr>
+      <tr>
+          <td>zb_pay_amount_last_year</td>
+          <td>decimalv3(16, 2)</td>
+          <td>去年同期周边实收金额</td>
+      </tr>
+      <tr>
+          <td>load_time</td>
+          <td>varchar(64)</td>
+          <td>数据更新时间</td>
+      </tr>
+      <tr>
+          <td>item_type</td>
+          <td>varchar(64)</td>
+          <td>商品类型（单品、套餐、小料、周边、其它）</td>
+      </tr>
+      <tr>
+          <td>item_status</td>
+          <td>varchar(64)</td>
+          <td>饮品状态(在线饮品、不在线饮品)</td>
+      </tr>
+      <tr>
+          <td>up_type</td>
+          <td>varchar(64)</td>
+          <td>升级类型</td>
+      </tr>
+  </tbody>
 </table>
 </article>
  

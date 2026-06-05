@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -16,31 +16,31 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1314/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
-	<meta property="og:site_name" content="Data Documentation">
-	<meta property="og:title" content="周边数据需求">
-	<meta property="og:description" content="周边数据需求#背景#零食事业部需要的周边相关报表
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
+  <meta property="og:site_name" content="Data Documentation">
+  <meta property="og:title" content="周边数据需求">
+  <meta property="og:description" content="周边数据需求#背景#零食事业部需要的周边相关报表
 需求频率#每月第一个工作日，发送至零食事业部@李慧 @刘垚 。
 目录结构#周边数据分析 ├─ main.py ├─ query1.csv ├─ query2.csv ├─ query3.csv ├─ ReadMe.md └─ 周边数据需求.db数据查询及导出#查询周边销售数据#查询结果保存为query1.csv。
 SELECT stat_shop_id AS 门店编号, item_name AS 周边产品名称, SUM(dp_item_count) AS 周边产品销量, SUM(dp_total_amount) AS 周边产品流水 FROM ads_dbs_trade_food_di WHERE food_category_name in (&#39;周边产品&#39; ,&#39;周边&#39;) AND business_date like &#39;202604%&#39; GROUP BY stat_shop_id,item_name HAVING SUM(dp_item_count) &gt; 0;查询周边报货数据#查询结果保存为query2.csv。
 WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, order_status AS `订单状态`, order_time AS `订单时间`, order_type AS `订单类型`, order_notes AS `订单备注`, store_code AS `门店编号` FROM dwd_rps_tll_order_di ), unique_orders AS ( SELECT `订单ID`, `订单编号`, `订单状态`, `订单时间`, `订单类型`, `订单备注`, `门店编号`, ROW_NUMBER() OVER (PARTITION BY `订单ID` ORDER BY `订单时间` DESC) AS rn FROM report_order ), report_order_details AS ( SELECT id AS `详单ID`, order_id AS `订单ID`, product_info AS `存货名称`, product_specification AS `存货规格`, product_id AS `产品ID`, sku_code AS `存货编码`, quantity AS `数量`, actual_amount AS `实际金额` FROM dwd_rps_tll_order_details_di ), summary_table AS ( SELECT uo.`门店编号`, rod.`存货名称`, rod.`实际金额`, rod.`数量` FROM unique_orders uo INNER JOIN report_order_details rod ON uo.`订单ID` = rod.`订单ID` WHERE CAST(rod.`存货编码` AS CHAR) LIKE &#39;108%&#39; AND uo.`订单状态` &gt;= 3 AND uo.`订单状态` != 5 AND uo.rn = 1 -- 修改了这里的日期过滤条件 AND uo.`订单时间` &gt;= &#39;2026-04-01&#39; AND uo.`订单时间` &lt; &#39;2026-05-01&#39; ) SELECT `门店编号`, `存货名称`, SUM(`数量`) AS `周边报货数量`, SUM(`实际金额`) AS `周边报货金额` FROM summary_table GROUP BY `门店编号`, `存货名称` ORDER BY `门店编号`, `存货名称`;查询门店销售数据#查询结果保存为query3.csv。">
-	<meta property="og:locale" content="zh_CN">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="script">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="script">
 
 
-	<meta itemprop="name" content="周边数据需求">
-	<meta itemprop="description" content="周边数据需求#背景#零食事业部需要的周边相关报表
+  <meta itemprop="name" content="周边数据需求">
+  <meta itemprop="description" content="周边数据需求#背景#零食事业部需要的周边相关报表
 需求频率#每月第一个工作日，发送至零食事业部@李慧 @刘垚 。
 目录结构#周边数据分析 ├─ main.py ├─ query1.csv ├─ query2.csv ├─ query3.csv ├─ ReadMe.md └─ 周边数据需求.db数据查询及导出#查询周边销售数据#查询结果保存为query1.csv。
 SELECT stat_shop_id AS 门店编号, item_name AS 周边产品名称, SUM(dp_item_count) AS 周边产品销量, SUM(dp_total_amount) AS 周边产品流水 FROM ads_dbs_trade_food_di WHERE food_category_name in (&#39;周边产品&#39; ,&#39;周边&#39;) AND business_date like &#39;202604%&#39; GROUP BY stat_shop_id,item_name HAVING SUM(dp_item_count) &gt; 0;查询周边报货数据#查询结果保存为query2.csv。
 WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, order_status AS `订单状态`, order_time AS `订单时间`, order_type AS `订单类型`, order_notes AS `订单备注`, store_code AS `门店编号` FROM dwd_rps_tll_order_di ), unique_orders AS ( SELECT `订单ID`, `订单编号`, `订单状态`, `订单时间`, `订单类型`, `订单备注`, `门店编号`, ROW_NUMBER() OVER (PARTITION BY `订单ID` ORDER BY `订单时间` DESC) AS rn FROM report_order ), report_order_details AS ( SELECT id AS `详单ID`, order_id AS `订单ID`, product_info AS `存货名称`, product_specification AS `存货规格`, product_id AS `产品ID`, sku_code AS `存货编码`, quantity AS `数量`, actual_amount AS `实际金额` FROM dwd_rps_tll_order_details_di ), summary_table AS ( SELECT uo.`门店编号`, rod.`存货名称`, rod.`实际金额`, rod.`数量` FROM unique_orders uo INNER JOIN report_order_details rod ON uo.`订单ID` = rod.`订单ID` WHERE CAST(rod.`存货编码` AS CHAR) LIKE &#39;108%&#39; AND uo.`订单状态` &gt;= 3 AND uo.`订单状态` != 5 AND uo.rn = 1 -- 修改了这里的日期过滤条件 AND uo.`订单时间` &gt;= &#39;2026-04-01&#39; AND uo.`订单时间` &lt; &#39;2026-05-01&#39; ) SELECT `门店编号`, `存货名称`, SUM(`数量`) AS `周边报货数量`, SUM(`实际金额`) AS `周边报货金额` FROM summary_table GROUP BY `门店编号`, `存货名称` ORDER BY `门店编号`, `存货名称`;查询门店销售数据#查询结果保存为query3.csv。">
-	<meta itemprop="wordCount" content="242">
+  <meta itemprop="wordCount" content="242">
 
 <title>周边数据需求 • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1314/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
+<link rel="canonical" href="http://localhost:1313/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
 <link rel="stylesheet" href="/book.min.css">
 
 
@@ -84,6 +84,81 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
 
   
   <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      DataDictionary</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_shop_pay_channel_di/" class="">
+      门店销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_food_di/" class="">
+      产品销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dwd_rps_tll_order_details_di/" class="">
+      门店报货信息</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dim_oas_formmain_0145_df/" class="">
+      门店管理表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
     
       
         <li class="book-section-flat" >
@@ -206,6 +281,39 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
   
     <a href="/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/" class="">
       赠茶数据需求</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      NewProduct</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/new-product/2026%E4%BA%A7%E5%93%81%E4%B8%8A%E6%96%B0%E8%AE%B0%E5%BD%95/" class="">
+      2026产品上新记录</a>
   
 
         </li>
