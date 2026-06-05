@@ -8,28 +8,31 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="北森通讯录信息日备份#背景#记录北森通讯录信息，可整理出每人的入职、离职时间等。
-需求频率#每个工作日
-目录结构#beiseng-users ├─ config.py ├─ cookies_2026-05-27.json ├─ main.py └─ README.md代码库#https://e.coding.net/fuwenyue/tianlala/beiseng-users.git
+<meta name="description" content="北森通讯录信息日备份#需求背景#记录北森通讯录信息，可整理出每人的入职、离职时间等。
+需求频率#每个工作日。
+自动化执行#在quicker中设定定时任务，每天开机时执行。cookies有效期是7天，需要每7天更新一次。 设定每周六更新一次。
+chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\activate.bat C:\Users\%USERNAME%\anaconda3 cd C:\Users\Administrator\OneDrive\Tianlala\Script\beiseng-users python main.py目录结构#beiseng-users ├─ config.py ├─ cookies_2026-05-27.json ├─ main.py └─ README.md项目地址#https://e.coding.net/fuwenyue/tianlala/beiseng-users.git
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/script/%E5%8C%97%E6%A3%AE%E9%80%9A%E8%AE%AF%E5%BD%95%E4%BF%A1%E6%81%AF%E6%97%A5%E5%A4%87%E4%BB%BD/">
   <meta property="og:site_name" content="Data Documentation">
   <meta property="og:title" content="北森通讯录信息日备份">
-  <meta property="og:description" content="北森通讯录信息日备份#背景#记录北森通讯录信息，可整理出每人的入职、离职时间等。
-需求频率#每个工作日
-目录结构#beiseng-users ├─ config.py ├─ cookies_2026-05-27.json ├─ main.py └─ README.md代码库#https://e.coding.net/fuwenyue/tianlala/beiseng-users.git">
+  <meta property="og:description" content="北森通讯录信息日备份#需求背景#记录北森通讯录信息，可整理出每人的入职、离职时间等。
+需求频率#每个工作日。
+自动化执行#在quicker中设定定时任务，每天开机时执行。cookies有效期是7天，需要每7天更新一次。 设定每周六更新一次。
+chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\activate.bat C:\Users\%USERNAME%\anaconda3 cd C:\Users\Administrator\OneDrive\Tianlala\Script\beiseng-users python main.py目录结构#beiseng-users ├─ config.py ├─ cookies_2026-05-27.json ├─ main.py └─ README.md项目地址#https://e.coding.net/fuwenyue/tianlala/beiseng-users.git">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="script">
 
 
   <meta itemprop="name" content="北森通讯录信息日备份">
-  <meta itemprop="description" content="北森通讯录信息日备份#背景#记录北森通讯录信息，可整理出每人的入职、离职时间等。
-需求频率#每个工作日
-目录结构#beiseng-users ├─ config.py ├─ cookies_2026-05-27.json ├─ main.py └─ README.md代码库#https://e.coding.net/fuwenyue/tianlala/beiseng-users.git">
-  <meta itemprop="wordCount" content="16">
+  <meta itemprop="description" content="北森通讯录信息日备份#需求背景#记录北森通讯录信息，可整理出每人的入职、离职时间等。
+需求频率#每个工作日。
+自动化执行#在quicker中设定定时任务，每天开机时执行。cookies有效期是7天，需要每7天更新一次。 设定每周六更新一次。
+chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\activate.bat C:\Users\%USERNAME%\anaconda3 cd C:\Users\Administrator\OneDrive\Tianlala\Script\beiseng-users python main.py目录结构#beiseng-users ├─ config.py ├─ cookies_2026-05-27.json ├─ main.py └─ README.md项目地址#https://e.coding.net/fuwenyue/tianlala/beiseng-users.git">
+  <meta itemprop="wordCount" content="31">
 
 <title>北森通讯录信息日备份 • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
@@ -371,10 +374,14 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#北森通讯录信息日备份">北森通讯录信息日备份</a>
       <ul>
-        <li><a href="#背景">背景</a></li>
-        <li><a href="#需求频率">需求频率</a></li>
+        <li><a href="#需求背景">需求背景</a></li>
+        <li><a href="#需求频率">需求频率</a>
+          <ul>
+            <li><a href="#自动化执行">自动化执行</a></li>
+          </ul>
+        </li>
         <li><a href="#目录结构">目录结构</a></li>
-        <li><a href="#代码库">代码库</a></li>
+        <li><a href="#项目地址">项目地址</a></li>
       </ul>
     </li>
   </ul>
@@ -390,16 +397,25 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown book-article"><h1 id="北森通讯录信息日备份">北森通讯录信息日备份<a class="anchor" href="#%e5%8c%97%e6%a3%ae%e9%80%9a%e8%ae%af%e5%bd%95%e4%bf%a1%e6%81%af%e6%97%a5%e5%a4%87%e4%bb%bd">#</a></h1>
-<h2 id="背景">背景<a class="anchor" href="#%e8%83%8c%e6%99%af">#</a></h2>
+<h2 id="需求背景">需求背景<a class="anchor" href="#%e9%9c%80%e6%b1%82%e8%83%8c%e6%99%af">#</a></h2>
 <p>记录北森通讯录信息，可整理出每人的入职、离职时间等。</p>
 <h2 id="需求频率">需求频率<a class="anchor" href="#%e9%9c%80%e6%b1%82%e9%a2%91%e7%8e%87">#</a></h2>
-<p>每个工作日</p>
-<h2 id="目录结构">目录结构<a class="anchor" href="#%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84">#</a></h2>
+<p>每个工作日。</p>
+<h3 id="自动化执行">自动化执行<a class="anchor" href="#%e8%87%aa%e5%8a%a8%e5%8c%96%e6%89%a7%e8%a1%8c">#</a></h3>
+<p>在quicker中设定定时任务，每天开机时执行。<code>cookies</code>有效期是7天，需要每7天更新一次。
+设定每周六更新一次。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-batch" data-lang="batch"><span style="display:flex;"><span>chcp 65001
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">@</span><span style="color:#cf222e">echo</span> off
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">:</span><span style="color:#57606a">: 激活环境</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">CALL</span> C:\Users\<span style="color:#953800">%USERNAME%</span>\anaconda3\Scripts\activate.bat C:\Users\<span style="color:#953800">%USERNAME%</span>\anaconda3
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">cd</span> C:\Users\Administrator\OneDrive\Tianlala\Script\beiseng-users
+</span></span><span style="display:flex;"><span>python main.py</span></span></code></pre></div><h2 id="目录结构">目录结构<a class="anchor" href="#%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>beiseng-users
 </span></span><span style="display:flex;"><span>├─ config.py
 </span></span><span style="display:flex;"><span>├─ cookies_2026-05-27.json
 </span></span><span style="display:flex;"><span>├─ main.py
-</span></span><span style="display:flex;"><span>└─ README.md</span></span></code></pre></div><h2 id="代码库">代码库<a class="anchor" href="#%e4%bb%a3%e7%a0%81%e5%ba%93">#</a></h2>
+</span></span><span style="display:flex;"><span>└─ README.md</span></span></code></pre></div><h2 id="项目地址">项目地址<a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e5%9c%b0%e5%9d%80">#</a></h2>
 <p><a href="https://e.coding.net/fuwenyue/tianlala/beiseng-users.git">https://e.coding.net/fuwenyue/tianlala/beiseng-users.git</a></p>
 </article>
  
@@ -466,10 +482,14 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#北森通讯录信息日备份">北森通讯录信息日备份</a>
       <ul>
-        <li><a href="#背景">背景</a></li>
-        <li><a href="#需求频率">需求频率</a></li>
+        <li><a href="#需求背景">需求背景</a></li>
+        <li><a href="#需求频率">需求频率</a>
+          <ul>
+            <li><a href="#自动化执行">自动化执行</a></li>
+          </ul>
+        </li>
         <li><a href="#目录结构">目录结构</a></li>
-        <li><a href="#代码库">代码库</a></li>
+        <li><a href="#项目地址">项目地址</a></li>
       </ul>
     </li>
   </ul>

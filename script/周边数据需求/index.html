@@ -8,7 +8,7 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="周边数据需求#背景#零食事业部需要的周边相关报表
+<meta name="description" content="周边数据需求#需求背景#零食事业部需要的周边相关报表
 需求频率#每月第一个工作日，发送至零食事业部@李慧 @刘垚 。
 目录结构#周边数据分析 ├─ main.py ├─ query1.csv ├─ query2.csv ├─ query3.csv ├─ ReadMe.md └─ 周边数据需求.db数据查询及导出#查询周边销售数据#查询结果保存为query1.csv。
 SELECT stat_shop_id AS 门店编号, item_name AS 周边产品名称, SUM(dp_item_count) AS 周边产品销量, SUM(dp_total_amount) AS 周边产品流水 FROM ads_dbs_trade_food_di WHERE food_category_name in (&#39;周边产品&#39; ,&#39;周边&#39;) AND business_date like &#39;202604%&#39; GROUP BY stat_shop_id,item_name HAVING SUM(dp_item_count) &gt; 0;查询周边报货数据#查询结果保存为query2.csv。
@@ -19,7 +19,7 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
   <meta property="og:site_name" content="Data Documentation">
   <meta property="og:title" content="周边数据需求">
-  <meta property="og:description" content="周边数据需求#背景#零食事业部需要的周边相关报表
+  <meta property="og:description" content="周边数据需求#需求背景#零食事业部需要的周边相关报表
 需求频率#每月第一个工作日，发送至零食事业部@李慧 @刘垚 。
 目录结构#周边数据分析 ├─ main.py ├─ query1.csv ├─ query2.csv ├─ query3.csv ├─ ReadMe.md └─ 周边数据需求.db数据查询及导出#查询周边销售数据#查询结果保存为query1.csv。
 SELECT stat_shop_id AS 门店编号, item_name AS 周边产品名称, SUM(dp_item_count) AS 周边产品销量, SUM(dp_total_amount) AS 周边产品流水 FROM ads_dbs_trade_food_di WHERE food_category_name in (&#39;周边产品&#39; ,&#39;周边&#39;) AND business_date like &#39;202604%&#39; GROUP BY stat_shop_id,item_name HAVING SUM(dp_item_count) &gt; 0;查询周边报货数据#查询结果保存为query2.csv。
@@ -30,7 +30,7 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
 
 
   <meta itemprop="name" content="周边数据需求">
-  <meta itemprop="description" content="周边数据需求#背景#零食事业部需要的周边相关报表
+  <meta itemprop="description" content="周边数据需求#需求背景#零食事业部需要的周边相关报表
 需求频率#每月第一个工作日，发送至零食事业部@李慧 @刘垚 。
 目录结构#周边数据分析 ├─ main.py ├─ query1.csv ├─ query2.csv ├─ query3.csv ├─ ReadMe.md └─ 周边数据需求.db数据查询及导出#查询周边销售数据#查询结果保存为query1.csv。
 SELECT stat_shop_id AS 门店编号, item_name AS 周边产品名称, SUM(dp_item_count) AS 周边产品销量, SUM(dp_total_amount) AS 周边产品流水 FROM ads_dbs_trade_food_di WHERE food_category_name in (&#39;周边产品&#39; ,&#39;周边&#39;) AND business_date like &#39;202604%&#39; GROUP BY stat_shop_id,item_name HAVING SUM(dp_item_count) &gt; 0;查询周边报货数据#查询结果保存为query2.csv。
@@ -377,7 +377,7 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
   <ul>
     <li><a href="#周边数据需求">周边数据需求</a>
       <ul>
-        <li><a href="#背景">背景</a></li>
+        <li><a href="#需求背景">需求背景</a></li>
         <li><a href="#需求频率">需求频率</a></li>
         <li><a href="#目录结构">目录结构</a></li>
         <li><a href="#数据查询及导出">数据查询及导出</a>
@@ -387,7 +387,7 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
             <li><a href="#查询门店销售数据">查询门店销售数据</a></li>
           </ul>
         </li>
-        <li><a href="#代码库">代码库</a></li>
+        <li><a href="#项目地址">项目地址</a></li>
       </ul>
     </li>
   </ul>
@@ -403,7 +403,7 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
       
       
   <article class="markdown book-article"><h1 id="周边数据需求">周边数据需求<a class="anchor" href="#%e5%91%a8%e8%be%b9%e6%95%b0%e6%8d%ae%e9%9c%80%e6%b1%82">#</a></h1>
-<h2 id="背景">背景<a class="anchor" href="#%e8%83%8c%e6%99%af">#</a></h2>
+<h2 id="需求背景">需求背景<a class="anchor" href="#%e9%9c%80%e6%b1%82%e8%83%8c%e6%99%af">#</a></h2>
 <p>零食事业部需要的周边相关报表</p>
 <h2 id="需求频率">需求频率<a class="anchor" href="#%e9%9c%80%e6%b1%82%e9%a2%91%e7%8e%87">#</a></h2>
 <p>每月第一个工作日，发送至<code>零食事业部</code>@李慧 @刘垚 。</p>
@@ -503,7 +503,7 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
 </span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff"> </span>pt<span style="color:#fff"> </span><span style="color:#cf222e">like</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;202604%&#39;</span><span style="color:#fff">
 </span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#cf222e">AND</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span>shop_id<span style="color:#fff"> </span><span style="color:#cf222e">LIKE</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;TLL%&#39;</span><span style="color:#fff"> </span><span style="color:#cf222e">OR</span><span style="color:#fff"> </span>shop_id<span style="color:#fff"> </span><span style="color:#cf222e">LIKE</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;ZYD%&#39;</span><span style="color:#1f2328">)</span><span style="color:#fff"> 
 </span></span></span><span style="display:flex;"><span><span style="color:#cf222e">GROUP</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span>shop_id<span style="color:#fff"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">ORDER</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span><span >门店编号</span><span style="color:#1f2328">;</span></span></span></code></pre></div><h2 id="代码库">代码库<a class="anchor" href="#%e4%bb%a3%e7%a0%81%e5%ba%93">#</a></h2>
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">ORDER</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span><span >门店编号</span><span style="color:#1f2328">;</span></span></span></code></pre></div><h2 id="项目地址">项目地址<a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e5%9c%b0%e5%9d%80">#</a></h2>
 <p><a href="https://e.coding.net/fuwenyue/tianlala/snacks_sales.git">https://e.coding.net/fuwenyue/tianlala/snacks_sales.git</a></p>
 </article>
  
@@ -570,7 +570,7 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
   <ul>
     <li><a href="#周边数据需求">周边数据需求</a>
       <ul>
-        <li><a href="#背景">背景</a></li>
+        <li><a href="#需求背景">需求背景</a></li>
         <li><a href="#需求频率">需求频率</a></li>
         <li><a href="#目录结构">目录结构</a></li>
         <li><a href="#数据查询及导出">数据查询及导出</a>
@@ -580,7 +580,7 @@ WITH report_order AS ( SELECT id AS `订单ID`, order_num AS `订单编号`, ord
             <li><a href="#查询门店销售数据">查询门店销售数据</a></li>
           </ul>
         </li>
-        <li><a href="#代码库">代码库</a></li>
+        <li><a href="#项目地址">项目地址</a></li>
       </ul>
     </li>
   </ul>

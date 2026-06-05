@@ -8,7 +8,7 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
+<meta name="description" content="赠茶数据需求#需求背景#品牌管理部需要的赠茶相关报表
 需求频率#不定时
 数据查询及导出#视实收金额为0的茶为赠茶。
 WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39; AS end_date ) SELECT CONCAT(day_periods.start_date, &#39;~&#39;, day_periods.end_date) AS 时段, business_date AS 日期, city_name AS 城市, item_name AS 产品名称, SUM(dp_item_count) AS 销量, SUM(dp_total_amount) AS 流水, SUM(dp_pay_amount) AS 实收 FROM ads_dbs_trade_food_di CROSS JOIN day_periods WHERE business_date BETWEEN day_periods.start_date AND day_periods.end_date AND city_name in (&#39;蚌埠市&#39;,&#39;阜阳市&#39;,&#39;淮南市&#39;) GROUP BY 时段, 日期, 城市, 产品名称 HAVING SUM(dp_item_count) &gt; 0 AND SUM(dp_pay_amount) = 0;数据清洗#筛选 青韵乌龙、茉莉初露、每日鲜泡好茶 相关，因可能会新增奇怪名称，不在SQL阶段进行过滤。
@@ -18,7 +18,7 @@ WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/">
   <meta property="og:site_name" content="Data Documentation">
   <meta property="og:title" content="赠茶数据需求">
-  <meta property="og:description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
+  <meta property="og:description" content="赠茶数据需求#需求背景#品牌管理部需要的赠茶相关报表
 需求频率#不定时
 数据查询及导出#视实收金额为0的茶为赠茶。
 WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39; AS end_date ) SELECT CONCAT(day_periods.start_date, &#39;~&#39;, day_periods.end_date) AS 时段, business_date AS 日期, city_name AS 城市, item_name AS 产品名称, SUM(dp_item_count) AS 销量, SUM(dp_total_amount) AS 流水, SUM(dp_pay_amount) AS 实收 FROM ads_dbs_trade_food_di CROSS JOIN day_periods WHERE business_date BETWEEN day_periods.start_date AND day_periods.end_date AND city_name in (&#39;蚌埠市&#39;,&#39;阜阳市&#39;,&#39;淮南市&#39;) GROUP BY 时段, 日期, 城市, 产品名称 HAVING SUM(dp_item_count) &gt; 0 AND SUM(dp_pay_amount) = 0;数据清洗#筛选 青韵乌龙、茉莉初露、每日鲜泡好茶 相关，因可能会新增奇怪名称，不在SQL阶段进行过滤。">
@@ -28,7 +28,7 @@ WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39
 
 
   <meta itemprop="name" content="赠茶数据需求">
-  <meta itemprop="description" content="赠茶数据需求#背景#品牌管理部需要的赠茶相关报表
+  <meta itemprop="description" content="赠茶数据需求#需求背景#品牌管理部需要的赠茶相关报表
 需求频率#不定时
 数据查询及导出#视实收金额为0的茶为赠茶。
 WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39; AS end_date ) SELECT CONCAT(day_periods.start_date, &#39;~&#39;, day_periods.end_date) AS 时段, business_date AS 日期, city_name AS 城市, item_name AS 产品名称, SUM(dp_item_count) AS 销量, SUM(dp_total_amount) AS 流水, SUM(dp_pay_amount) AS 实收 FROM ads_dbs_trade_food_di CROSS JOIN day_periods WHERE business_date BETWEEN day_periods.start_date AND day_periods.end_date AND city_name in (&#39;蚌埠市&#39;,&#39;阜阳市&#39;,&#39;淮南市&#39;) GROUP BY 时段, 日期, 城市, 产品名称 HAVING SUM(dp_item_count) &gt; 0 AND SUM(dp_pay_amount) = 0;数据清洗#筛选 青韵乌龙、茉莉初露、每日鲜泡好茶 相关，因可能会新增奇怪名称，不在SQL阶段进行过滤。">
@@ -374,7 +374,7 @@ WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39
   <ul>
     <li><a href="#赠茶数据需求">赠茶数据需求</a>
       <ul>
-        <li><a href="#背景">背景</a></li>
+        <li><a href="#需求背景">需求背景</a></li>
         <li><a href="#需求频率">需求频率</a></li>
         <li><a href="#数据查询及导出">数据查询及导出</a></li>
         <li><a href="#数据清洗">数据清洗</a></li>
@@ -393,7 +393,7 @@ WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39
       
       
   <article class="markdown book-article"><h1 id="赠茶数据需求">赠茶数据需求<a class="anchor" href="#%e8%b5%a0%e8%8c%b6%e6%95%b0%e6%8d%ae%e9%9c%80%e6%b1%82">#</a></h1>
-<h2 id="背景">背景<a class="anchor" href="#%e8%83%8c%e6%99%af">#</a></h2>
+<h2 id="需求背景">需求背景<a class="anchor" href="#%e9%9c%80%e6%b1%82%e8%83%8c%e6%99%af">#</a></h2>
 <p>品牌管理部需要的赠茶相关报表</p>
 <h2 id="需求频率">需求频率<a class="anchor" href="#%e9%9c%80%e6%b1%82%e9%a2%91%e7%8e%87">#</a></h2>
 <p>不定时</p>
@@ -489,7 +489,7 @@ WITH day_periods AS ( SELECT &#39;20260327&#39; AS start_date, &#39;20260504&#39
   <ul>
     <li><a href="#赠茶数据需求">赠茶数据需求</a>
       <ul>
-        <li><a href="#背景">背景</a></li>
+        <li><a href="#需求背景">需求背景</a></li>
         <li><a href="#需求频率">需求频率</a></li>
         <li><a href="#数据查询及导出">数据查询及导出</a></li>
         <li><a href="#数据清洗">数据清洗</a></li>
