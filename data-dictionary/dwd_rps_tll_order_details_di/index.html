@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -8,27 +8,27 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="门店报货信息#数据字典#dwd_rps_tll_order_details_di 列名 数据类型 注释 pt varchar(255) 天分区 id varchar(255) 明细ID order_id varchar(255) 订单号 product_info varchar(255) 商品信息 product_specification varchar(255) 商品规格 product_id varchar(255) 商品ID sku_code varchar(255) SKU代码 supplier varchar(255) 供应商 unit_price decimalv3(10, 2) 单价 quantity int(11) 购买数量 cancel_quantity int(11) 取消数量 payable_amount decimalv3(10, 2) 应付金额 discount_amount decimalv3(10, 2) 优惠金额 actual_amount decimalv3(10, 2) 实付金额 status int(11) 状态 tenant_id varchar(255) 租户ID create_time varchar(255) 创建时间 product_type varchar(255) 商品类型 warehouse_id int(11) 发货仓库 warehouse_batch_no varchar(255) 仓库批次号 discount_unit_price decimalv3(10, 2) 折后单价 category_id bigint(20) 类目id tax_rate decimalv3(10, 2) 税率 is_freebies int(11) 是否为赠品：0：否 1：是 packaging_unit varchar(255) 包装单位 unit_code varchar(255) 单位编码 serial_no varchar(255) 流水号 out_quantity int(11) 出库数量 customer_discount_amount decimalv3(10, 2) 客户优惠 rent_subsidy_amount decimalv3(10, 2) 房租优惠 agent_amount decimalv3(10, 2) 代理商代收代付款 bank_actual_amount decimalv3(10, 2) 银行实付金额 pt_discount_amount decimalv3(10, 2) 平台优惠金额 is_combination_children_product int(11) 是否是组合子商品(1-是,2-否) final_pay_amount decimalv3(10, 2) 最终支付金额，包含银行和平台付款，折后单价乘以出库数量 cancel_order_num string 退款单号 created_at string 退款时间 warehouse_name string 仓库名称 refund_fee decimalv3(10, 2) 退单金额 modify_time varchar(255) 更新时间 activity_id varchar(255) 活动id combination_code varchar(255) 组合商品编码 logistic_fee_amount decimalv3(10, 2) has_logistic_fee int(11) delivery_method int(11) 配送方式,1:物流,2:快递,3:上门自提 shipping_method int(11) 送货方式,0:起订,1:包邮,2:送货上门 real_store_code varchar(128) 真实门店code 注意事项#报货记录通常以财务部统计为准。
+<meta name="description" content="门店报货信息#查询#SELECT COLUMN_NAME AS 字段名, COLUMN_TYPE AS 字段类型, COLUMN_COMMENT AS 字段注释 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = &#39;tll_bi_dw&#39; AND TABLE_NAME = &#39;dwd_rps_tll_order_details_di&#39;;数据字典#dwd_rps_tll_order_details_di 列名 数据类型 注释 pt varchar(255) 天分区 id varchar(255) 明细ID order_id varchar(255) 订单号 product_info varchar(255) 商品信息 product_specification varchar(255) 商品规格 product_id varchar(255) 商品ID sku_code varchar(255) SKU代码 supplier varchar(255) 供应商 unit_price decimalv3(10, 2) 单价 quantity int(11) 购买数量 cancel_quantity int(11) 取消数量 payable_amount decimalv3(10, 2) 应付金额 discount_amount decimalv3(10, 2) 优惠金额 actual_amount decimalv3(10, 2) 实付金额 status int(11) 状态 tenant_id varchar(255) 租户ID create_time varchar(255) 创建时间 product_type varchar(255) 商品类型 warehouse_id int(11) 发货仓库 warehouse_batch_no varchar(255) 仓库批次号 discount_unit_price decimalv3(10, 2) 折后单价 category_id bigint(20) 类目id tax_rate decimalv3(10, 2) 税率 is_freebies int(11) 是否为赠品：0：否 1：是 packaging_unit varchar(255) 包装单位 unit_code varchar(255) 单位编码 serial_no varchar(255) 流水号 out_quantity int(11) 出库数量 customer_discount_amount decimalv3(10, 2) 客户优惠 rent_subsidy_amount decimalv3(10, 2) 房租优惠 agent_amount decimalv3(10, 2) 代理商代收代付款 bank_actual_amount decimalv3(10, 2) 银行实付金额 pt_discount_amount decimalv3(10, 2) 平台优惠金额 is_combination_children_product int(11) 是否是组合子商品(1-是,2-否) final_pay_amount decimalv3(10, 2) 最终支付金额，包含银行和平台付款，折后单价乘以出库数量 cancel_order_num string 退款单号 created_at string 退款时间 warehouse_name string 仓库名称 refund_fee decimalv3(10, 2) 退单金额 modify_time varchar(255) 更新时间 activity_id varchar(255) 活动id combination_code varchar(255) 组合商品编码 logistic_fee_amount decimalv3(10, 2) has_logistic_fee int(11) delivery_method int(11) 配送方式,1:物流,2:快递,3:上门自提 shipping_method int(11) 送货方式,0:起订,1:包邮,2:送货上门 real_store_code varchar(128) 真实门店code 注意事项#报货记录通常以财务部统计为准。
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/data-dictionary/dwd_rps_tll_order_details_di/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://tll.bizha.top/data-dictionary/dwd_rps_tll_order_details_di/">
   <meta property="og:site_name" content="Data Documentation">
   <meta property="og:title" content="门店报货信息">
-  <meta property="og:description" content="门店报货信息#数据字典#dwd_rps_tll_order_details_di 列名 数据类型 注释 pt varchar(255) 天分区 id varchar(255) 明细ID order_id varchar(255) 订单号 product_info varchar(255) 商品信息 product_specification varchar(255) 商品规格 product_id varchar(255) 商品ID sku_code varchar(255) SKU代码 supplier varchar(255) 供应商 unit_price decimalv3(10, 2) 单价 quantity int(11) 购买数量 cancel_quantity int(11) 取消数量 payable_amount decimalv3(10, 2) 应付金额 discount_amount decimalv3(10, 2) 优惠金额 actual_amount decimalv3(10, 2) 实付金额 status int(11) 状态 tenant_id varchar(255) 租户ID create_time varchar(255) 创建时间 product_type varchar(255) 商品类型 warehouse_id int(11) 发货仓库 warehouse_batch_no varchar(255) 仓库批次号 discount_unit_price decimalv3(10, 2) 折后单价 category_id bigint(20) 类目id tax_rate decimalv3(10, 2) 税率 is_freebies int(11) 是否为赠品：0：否 1：是 packaging_unit varchar(255) 包装单位 unit_code varchar(255) 单位编码 serial_no varchar(255) 流水号 out_quantity int(11) 出库数量 customer_discount_amount decimalv3(10, 2) 客户优惠 rent_subsidy_amount decimalv3(10, 2) 房租优惠 agent_amount decimalv3(10, 2) 代理商代收代付款 bank_actual_amount decimalv3(10, 2) 银行实付金额 pt_discount_amount decimalv3(10, 2) 平台优惠金额 is_combination_children_product int(11) 是否是组合子商品(1-是,2-否) final_pay_amount decimalv3(10, 2) 最终支付金额，包含银行和平台付款，折后单价乘以出库数量 cancel_order_num string 退款单号 created_at string 退款时间 warehouse_name string 仓库名称 refund_fee decimalv3(10, 2) 退单金额 modify_time varchar(255) 更新时间 activity_id varchar(255) 活动id combination_code varchar(255) 组合商品编码 logistic_fee_amount decimalv3(10, 2) has_logistic_fee int(11) delivery_method int(11) 配送方式,1:物流,2:快递,3:上门自提 shipping_method int(11) 送货方式,0:起订,1:包邮,2:送货上门 real_store_code varchar(128) 真实门店code 注意事项#报货记录通常以财务部统计为准。">
+  <meta property="og:description" content="门店报货信息#查询#SELECT COLUMN_NAME AS 字段名, COLUMN_TYPE AS 字段类型, COLUMN_COMMENT AS 字段注释 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = &#39;tll_bi_dw&#39; AND TABLE_NAME = &#39;dwd_rps_tll_order_details_di&#39;;数据字典#dwd_rps_tll_order_details_di 列名 数据类型 注释 pt varchar(255) 天分区 id varchar(255) 明细ID order_id varchar(255) 订单号 product_info varchar(255) 商品信息 product_specification varchar(255) 商品规格 product_id varchar(255) 商品ID sku_code varchar(255) SKU代码 supplier varchar(255) 供应商 unit_price decimalv3(10, 2) 单价 quantity int(11) 购买数量 cancel_quantity int(11) 取消数量 payable_amount decimalv3(10, 2) 应付金额 discount_amount decimalv3(10, 2) 优惠金额 actual_amount decimalv3(10, 2) 实付金额 status int(11) 状态 tenant_id varchar(255) 租户ID create_time varchar(255) 创建时间 product_type varchar(255) 商品类型 warehouse_id int(11) 发货仓库 warehouse_batch_no varchar(255) 仓库批次号 discount_unit_price decimalv3(10, 2) 折后单价 category_id bigint(20) 类目id tax_rate decimalv3(10, 2) 税率 is_freebies int(11) 是否为赠品：0：否 1：是 packaging_unit varchar(255) 包装单位 unit_code varchar(255) 单位编码 serial_no varchar(255) 流水号 out_quantity int(11) 出库数量 customer_discount_amount decimalv3(10, 2) 客户优惠 rent_subsidy_amount decimalv3(10, 2) 房租优惠 agent_amount decimalv3(10, 2) 代理商代收代付款 bank_actual_amount decimalv3(10, 2) 银行实付金额 pt_discount_amount decimalv3(10, 2) 平台优惠金额 is_combination_children_product int(11) 是否是组合子商品(1-是,2-否) final_pay_amount decimalv3(10, 2) 最终支付金额，包含银行和平台付款，折后单价乘以出库数量 cancel_order_num string 退款单号 created_at string 退款时间 warehouse_name string 仓库名称 refund_fee decimalv3(10, 2) 退单金额 modify_time varchar(255) 更新时间 activity_id varchar(255) 活动id combination_code varchar(255) 组合商品编码 logistic_fee_amount decimalv3(10, 2) has_logistic_fee int(11) delivery_method int(11) 配送方式,1:物流,2:快递,3:上门自提 shipping_method int(11) 送货方式,0:起订,1:包邮,2:送货上门 real_store_code varchar(128) 真实门店code 注意事项#报货记录通常以财务部统计为准。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="data-dictionary">
 
 
   <meta itemprop="name" content="门店报货信息">
-  <meta itemprop="description" content="门店报货信息#数据字典#dwd_rps_tll_order_details_di 列名 数据类型 注释 pt varchar(255) 天分区 id varchar(255) 明细ID order_id varchar(255) 订单号 product_info varchar(255) 商品信息 product_specification varchar(255) 商品规格 product_id varchar(255) 商品ID sku_code varchar(255) SKU代码 supplier varchar(255) 供应商 unit_price decimalv3(10, 2) 单价 quantity int(11) 购买数量 cancel_quantity int(11) 取消数量 payable_amount decimalv3(10, 2) 应付金额 discount_amount decimalv3(10, 2) 优惠金额 actual_amount decimalv3(10, 2) 实付金额 status int(11) 状态 tenant_id varchar(255) 租户ID create_time varchar(255) 创建时间 product_type varchar(255) 商品类型 warehouse_id int(11) 发货仓库 warehouse_batch_no varchar(255) 仓库批次号 discount_unit_price decimalv3(10, 2) 折后单价 category_id bigint(20) 类目id tax_rate decimalv3(10, 2) 税率 is_freebies int(11) 是否为赠品：0：否 1：是 packaging_unit varchar(255) 包装单位 unit_code varchar(255) 单位编码 serial_no varchar(255) 流水号 out_quantity int(11) 出库数量 customer_discount_amount decimalv3(10, 2) 客户优惠 rent_subsidy_amount decimalv3(10, 2) 房租优惠 agent_amount decimalv3(10, 2) 代理商代收代付款 bank_actual_amount decimalv3(10, 2) 银行实付金额 pt_discount_amount decimalv3(10, 2) 平台优惠金额 is_combination_children_product int(11) 是否是组合子商品(1-是,2-否) final_pay_amount decimalv3(10, 2) 最终支付金额，包含银行和平台付款，折后单价乘以出库数量 cancel_order_num string 退款单号 created_at string 退款时间 warehouse_name string 仓库名称 refund_fee decimalv3(10, 2) 退单金额 modify_time varchar(255) 更新时间 activity_id varchar(255) 活动id combination_code varchar(255) 组合商品编码 logistic_fee_amount decimalv3(10, 2) has_logistic_fee int(11) delivery_method int(11) 配送方式,1:物流,2:快递,3:上门自提 shipping_method int(11) 送货方式,0:起订,1:包邮,2:送货上门 real_store_code varchar(128) 真实门店code 注意事项#报货记录通常以财务部统计为准。">
-  <meta itemprop="wordCount" content="162">
+  <meta itemprop="description" content="门店报货信息#查询#SELECT COLUMN_NAME AS 字段名, COLUMN_TYPE AS 字段类型, COLUMN_COMMENT AS 字段注释 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = &#39;tll_bi_dw&#39; AND TABLE_NAME = &#39;dwd_rps_tll_order_details_di&#39;;数据字典#dwd_rps_tll_order_details_di 列名 数据类型 注释 pt varchar(255) 天分区 id varchar(255) 明细ID order_id varchar(255) 订单号 product_info varchar(255) 商品信息 product_specification varchar(255) 商品规格 product_id varchar(255) 商品ID sku_code varchar(255) SKU代码 supplier varchar(255) 供应商 unit_price decimalv3(10, 2) 单价 quantity int(11) 购买数量 cancel_quantity int(11) 取消数量 payable_amount decimalv3(10, 2) 应付金额 discount_amount decimalv3(10, 2) 优惠金额 actual_amount decimalv3(10, 2) 实付金额 status int(11) 状态 tenant_id varchar(255) 租户ID create_time varchar(255) 创建时间 product_type varchar(255) 商品类型 warehouse_id int(11) 发货仓库 warehouse_batch_no varchar(255) 仓库批次号 discount_unit_price decimalv3(10, 2) 折后单价 category_id bigint(20) 类目id tax_rate decimalv3(10, 2) 税率 is_freebies int(11) 是否为赠品：0：否 1：是 packaging_unit varchar(255) 包装单位 unit_code varchar(255) 单位编码 serial_no varchar(255) 流水号 out_quantity int(11) 出库数量 customer_discount_amount decimalv3(10, 2) 客户优惠 rent_subsidy_amount decimalv3(10, 2) 房租优惠 agent_amount decimalv3(10, 2) 代理商代收代付款 bank_actual_amount decimalv3(10, 2) 银行实付金额 pt_discount_amount decimalv3(10, 2) 平台优惠金额 is_combination_children_product int(11) 是否是组合子商品(1-是,2-否) final_pay_amount decimalv3(10, 2) 最终支付金额，包含银行和平台付款，折后单价乘以出库数量 cancel_order_num string 退款单号 created_at string 退款时间 warehouse_name string 仓库名称 refund_fee decimalv3(10, 2) 退单金额 modify_time varchar(255) 更新时间 activity_id varchar(255) 活动id combination_code varchar(255) 组合商品编码 logistic_fee_amount decimalv3(10, 2) has_logistic_fee int(11) delivery_method int(11) 配送方式,1:物流,2:快递,3:上门自提 shipping_method int(11) 送货方式,0:起订,1:包邮,2:送货上门 real_store_code varchar(128) 真实门店code 注意事项#报货记录通常以财务部统计为准。">
+  <meta itemprop="wordCount" content="182">
 
 <title>门店报货信息 • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/data-dictionary/dwd_rps_tll_order_details_di/">
+<link rel="canonical" href="https://tll.bizha.top/data-dictionary/dwd_rps_tll_order_details_di/">
 <link rel="stylesheet" href="/book.min.css">
 
 
@@ -274,6 +274,48 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%9C%88%E5%BA%A6%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE/" class="">
+      月度产品销售数据</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%B8%85%E6%B4%97/" class="">
+      标准菜品名称清洗</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%86%E5%89%B2/" class="">
+      CSV文件分割</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -365,6 +407,7 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#门店报货信息">门店报货信息</a>
       <ul>
+        <li><a href="#查询">查询</a></li>
         <li><a href="#数据字典">数据字典</a></li>
         <li><a href="#注意事项">注意事项</a></li>
       </ul>
@@ -382,7 +425,14 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown book-article"><h1 id="门店报货信息">门店报货信息<a class="anchor" href="#%e9%97%a8%e5%ba%97%e6%8a%a5%e8%b4%a7%e4%bf%a1%e6%81%af">#</a></h1>
-<h2 id="数据字典">数据字典<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e5%ad%97%e5%85%b8">#</a></h2>
+<h2 id="查询">查询<a class="anchor" href="#%e6%9f%a5%e8%af%a2">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">SELECT</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">COLUMN_NAME</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >字段名</span><span style="color:#1f2328">,</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>COLUMN_TYPE<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >字段类型</span><span style="color:#1f2328">,</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>COLUMN_COMMENT<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >字段注释</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">FROM</span><span style="color:#fff"> </span>information_schema<span style="color:#1f2328">.</span>COLUMNS<span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff"> </span>TABLE_SCHEMA<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;tll_bi_dw&#39;</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">AND</span><span style="color:#fff"> </span><span style="color:#cf222e">TABLE_NAME</span><span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;dwd_rps_tll_order_details_di&#39;</span><span style="color:#1f2328">;</span></span></span></code></pre></div><h2 id="数据字典">数据字典<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e5%ad%97%e5%85%b8">#</a></h2>
 <ul>
 <li><code>dwd_rps_tll_order_details_di</code></li>
 </ul>
@@ -699,6 +749,7 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#门店报货信息">门店报货信息</a>
       <ul>
+        <li><a href="#查询">查询</a></li>
         <li><a href="#数据字典">数据字典</a></li>
         <li><a href="#注意事项">注意事项</a></li>
       </ul>

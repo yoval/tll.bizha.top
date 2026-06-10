@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CSV文件分割#需求背景#解决CSV文件过大，导致某些系统无法上传/识别的问题。
+需求频率#不定时。
+处理代码#param( [string]$CsvPath = &#34;5月产品数据.csv&#34;, [int]$Parts = 5, [string]$OutputDir = $PSScriptRoot ) $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $header = $reader.ReadLine() # 统计总行数 $totalLines = 0 while ($reader.ReadLine() -ne $null) { $totalLines&#43;&#43; } $reader.Close() $linesPerPart = [math]::Ceiling($totalLines / $Parts) Write-Host &#34;总数据行: $totalLines, 每份: $linesPerPart 行&#34; # 重新读取，开始分割 $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $reader.ReadLine() | Out-Null # 跳过表头 $baseName = [System.IO.Path]::GetFileNameWithoutExtension($CsvPath) for ($i = 0; $i -lt $Parts; $i&#43;&#43;) { $partNum = $i &#43; 1 $outFile = Join-Path $OutputDir &#34;${baseName}_part${partNum}.csv&#34; $writer = [System.IO.StreamWriter]::new($outFile, $false, [System.Text.Encoding]::UTF8) $writer.WriteLine($header) $lineCount = 0 while ($lineCount -lt $linesPerPart -and ($line = $reader.ReadLine()) -ne $null) { $writer.WriteLine($line) $lineCount&#43;&#43; } $writer.Close() Write-Host &#34;已生成: ${baseName}_part${partNum}.csv ($lineCount 行数据)&#34; } $reader.Close() Write-Host &#34;分割完成!&#34;">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://tll.bizha.top/script/csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%86%E5%89%B2/">
+  <meta property="og:site_name" content="Data Documentation">
+  <meta property="og:title" content="CSV文件分割">
+  <meta property="og:description" content="CSV文件分割#需求背景#解决CSV文件过大，导致某些系统无法上传/识别的问题。
+需求频率#不定时。
+处理代码#param( [string]$CsvPath = &#34;5月产品数据.csv&#34;, [int]$Parts = 5, [string]$OutputDir = $PSScriptRoot ) $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $header = $reader.ReadLine() # 统计总行数 $totalLines = 0 while ($reader.ReadLine() -ne $null) { $totalLines&#43;&#43; } $reader.Close() $linesPerPart = [math]::Ceiling($totalLines / $Parts) Write-Host &#34;总数据行: $totalLines, 每份: $linesPerPart 行&#34; # 重新读取，开始分割 $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $reader.ReadLine() | Out-Null # 跳过表头 $baseName = [System.IO.Path]::GetFileNameWithoutExtension($CsvPath) for ($i = 0; $i -lt $Parts; $i&#43;&#43;) { $partNum = $i &#43; 1 $outFile = Join-Path $OutputDir &#34;${baseName}_part${partNum}.csv&#34; $writer = [System.IO.StreamWriter]::new($outFile, $false, [System.Text.Encoding]::UTF8) $writer.WriteLine($header) $lineCount = 0 while ($lineCount -lt $linesPerPart -and ($line = $reader.ReadLine()) -ne $null) { $writer.WriteLine($line) $lineCount&#43;&#43; } $writer.Close() Write-Host &#34;已生成: ${baseName}_part${partNum}.csv ($lineCount 行数据)&#34; } $reader.Close() Write-Host &#34;分割完成!&#34;">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="script">
+
+
+  <meta itemprop="name" content="CSV文件分割">
+  <meta itemprop="description" content="CSV文件分割#需求背景#解决CSV文件过大，导致某些系统无法上传/识别的问题。
+需求频率#不定时。
+处理代码#param( [string]$CsvPath = &#34;5月产品数据.csv&#34;, [int]$Parts = 5, [string]$OutputDir = $PSScriptRoot ) $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $header = $reader.ReadLine() # 统计总行数 $totalLines = 0 while ($reader.ReadLine() -ne $null) { $totalLines&#43;&#43; } $reader.Close() $linesPerPart = [math]::Ceiling($totalLines / $Parts) Write-Host &#34;总数据行: $totalLines, 每份: $linesPerPart 行&#34; # 重新读取，开始分割 $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $reader.ReadLine() | Out-Null # 跳过表头 $baseName = [System.IO.Path]::GetFileNameWithoutExtension($CsvPath) for ($i = 0; $i -lt $Parts; $i&#43;&#43;) { $partNum = $i &#43; 1 $outFile = Join-Path $OutputDir &#34;${baseName}_part${partNum}.csv&#34; $writer = [System.IO.StreamWriter]::new($outFile, $false, [System.Text.Encoding]::UTF8) $writer.WriteLine($header) $lineCount = 0 while ($lineCount -lt $linesPerPart -and ($line = $reader.ReadLine()) -ne $null) { $writer.WriteLine($line) $lineCount&#43;&#43; } $writer.Close() Write-Host &#34;已生成: ${baseName}_part${partNum}.csv ($lineCount 行数据)&#34; } $reader.Close() Write-Host &#34;分割完成!&#34;">
+  <meta itemprop="wordCount" content="116">
+
+<title>CSV文件分割 • Data Documentation</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://tll.bizha.top/script/csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%86%E5%89%B2/">
+<link rel="stylesheet" href="/book.min.css">
+
+
+  <script defer type="module" src="/en.search.min.js"></script>
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-script">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="https://www.tianlala.com/favicon.ico" alt="Logo" /><span>Data Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      DataDictionary</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_shop_pay_channel_di/" class="">
+      门店销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_food_di/" class="">
+      产品销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dwd_rps_tll_order_details_di/" class="">
+      门店报货信息</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dim_oas_formmain_0145_df/" class="">
+      门店管理表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      Script</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E9%97%A8%E5%BA%97%E7%AE%A1%E7%90%86%E8%A1%A8%E6%97%A5%E5%A4%87%E4%BB%BD/" class="">
+      门店管理表日备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E5%8C%97%E6%A3%AE%E9%80%9A%E8%AE%AF%E5%BD%95%E4%BF%A1%E6%81%AF%E6%97%A5%E5%A4%87%E4%BB%BD/" class="">
+      北森通讯录信息日备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E9%97%A8%E5%BA%97%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%87%E4%BB%BD/" class="">
+      门店销售数据的备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/" class="">
+      各渠道同比基础数据</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%A0%B8%E5%AF%B9/" class="">
+      标准菜品名称核对</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E7%94%9C%E5%95%A6%E5%95%A6%E9%85%8D%E6%96%B9%E7%AE%A1%E7%90%86/" class="">
+      配方管理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/" class="">
+      周边数据需求</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/" class="">
+      赠茶数据需求</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%9C%88%E5%BA%A6%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE/" class="">
+      月度产品销售数据</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%B8%85%E6%B4%97/" class="">
+      标准菜品名称清洗</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%86%E5%89%B2/" class="active">
+      CSV文件分割</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      NewProduct</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/new-product/2026%E4%BA%A7%E5%93%81%E4%B8%8A%E6%96%B0%E8%AE%B0%E5%BD%95/" class="">
+      2026产品上新记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>CSV文件分割</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#csv文件分割">CSV文件分割</a>
+      <ul>
+        <li><a href="#需求背景">需求背景</a></li>
+        <li><a href="#需求频率">需求频率</a></li>
+        <li><a href="#处理代码">处理代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="csv文件分割">CSV文件分割<a class="anchor" href="#csv%e6%96%87%e4%bb%b6%e5%88%86%e5%89%b2">#</a></h1>
+<h2 id="需求背景">需求背景<a class="anchor" href="#%e9%9c%80%e6%b1%82%e8%83%8c%e6%99%af">#</a></h2>
+<p>解决CSV文件过大，导致某些系统无法上传/识别的问题。</p>
+<h2 id="需求频率">需求频率<a class="anchor" href="#%e9%9c%80%e6%b1%82%e9%a2%91%e7%8e%87">#</a></h2>
+<p>不定时。</p>
+<h2 id="处理代码">处理代码<a class="anchor" href="#%e5%a4%84%e7%90%86%e4%bb%a3%e7%a0%81">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#cf222e">param</span><span style="color:#1f2328">(</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">[</span><span style="color:#0550ae">string</span><span style="color:#1f2328">]</span><span style="color:#953800">$CsvPath</span> <span style="color:#1f2328">=</span> <span style="color:#0a3069">&#34;5月产品数据.csv&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">[</span><span style="color:#0550ae">int</span><span style="color:#1f2328">]</span><span style="color:#953800">$Parts</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">5</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">[</span><span style="color:#0550ae">string</span><span style="color:#1f2328">]</span><span style="color:#953800">$OutputDir</span> <span style="color:#1f2328">=</span> <span style="color:#953800">$PSScriptRoot</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">$reader</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">[</span><span style="color:#0550ae">System.IO.StreamReader</span><span style="color:#1f2328">]::</span>new<span style="color:#1f2328">((</span><span style="color:#6639ba">Join-Path</span> <span style="color:#953800">$OutputDir</span> <span style="color:#953800">$CsvPath</span><span style="color:#1f2328">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">$header</span> <span style="color:#1f2328">=</span> <span style="color:#953800">$reader</span><span style="color:#1f2328">.</span>ReadLine<span style="color:#1f2328">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 统计总行数</span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">$totalLines</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">while</span> <span style="color:#1f2328">(</span><span style="color:#953800">$reader</span><span style="color:#1f2328">.</span>ReadLine<span style="color:#1f2328">()</span> <span style="color:#0550ae">-ne</span> <span style="color:#953800">$null</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">$totalLines</span><span style="color:#1f2328">++</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">$reader</span><span style="color:#1f2328">.</span>Close<span style="color:#1f2328">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">$linesPerPart</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">[</span><span style="color:#0550ae">math</span><span style="color:#1f2328">]::</span>Ceiling<span style="color:#1f2328">(</span><span style="color:#953800">$totalLines</span> <span style="color:#1f2328">/</span> <span style="color:#953800">$Parts</span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">Write-Host</span> <span style="color:#0a3069">&#34;总数据行: </span><span style="color:#953800">$totalLines</span><span style="color:#0a3069">, 每份: </span><span style="color:#953800">$linesPerPart</span><span style="color:#0a3069"> 行&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 重新读取，开始分割</span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">$reader</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">[</span><span style="color:#0550ae">System.IO.StreamReader</span><span style="color:#1f2328">]::</span>new<span style="color:#1f2328">((</span><span style="color:#6639ba">Join-Path</span> <span style="color:#953800">$OutputDir</span> <span style="color:#953800">$CsvPath</span><span style="color:#1f2328">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">$reader</span><span style="color:#1f2328">.</span>ReadLine<span style="color:#1f2328">()</span> <span style="color:#1f2328">|</span> <span style="color:#6639ba">Out-Null</span>  <span style="color:#57606a"># 跳过表头</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">$baseName</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">[</span><span style="color:#0550ae">System.IO.Path</span><span style="color:#1f2328">]::</span>GetFileNameWithoutExtension<span style="color:#1f2328">(</span><span style="color:#953800">$CsvPath</span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> <span style="color:#1f2328">(</span><span style="color:#953800">$i</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">0</span><span style="color:#1f2328">;</span> <span style="color:#953800">$i</span> <span style="color:#0550ae">-lt</span> <span style="color:#953800">$Parts</span><span style="color:#1f2328">;</span> <span style="color:#953800">$i</span><span style="color:#1f2328">++)</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">$partNum</span> <span style="color:#1f2328">=</span> <span style="color:#953800">$i</span> <span style="color:#1f2328">+</span> <span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">$outFile</span> <span style="color:#1f2328">=</span> <span style="color:#6639ba">Join-Path</span> <span style="color:#953800">$OutputDir</span> <span style="color:#0a3069">&#34;</span><span style="color:#953800">${baseName}</span><span style="color:#0a3069">_part</span><span style="color:#953800">${partNum}</span><span style="color:#0a3069">.csv&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">$writer</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">[</span><span style="color:#0550ae">System.IO.StreamWriter</span><span style="color:#1f2328">]::</span>new<span style="color:#1f2328">(</span><span style="color:#953800">$outFile</span><span style="color:#1f2328">,</span> <span style="color:#953800">$false</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">[</span><span style="color:#0550ae">System.Text.Encoding</span><span style="color:#1f2328">]::</span>UTF8<span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">$writer</span><span style="color:#1f2328">.</span>WriteLine<span style="color:#1f2328">(</span><span style="color:#953800">$header</span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">$lineCount</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">while</span> <span style="color:#1f2328">(</span><span style="color:#953800">$lineCount</span> <span style="color:#0550ae">-lt</span> <span style="color:#953800">$linesPerPart</span> <span style="color:#0550ae">-and</span> <span style="color:#1f2328">(</span><span style="color:#953800">$line</span> <span style="color:#1f2328">=</span> <span style="color:#953800">$reader</span><span style="color:#1f2328">.</span>ReadLine<span style="color:#1f2328">())</span> <span style="color:#0550ae">-ne</span> <span style="color:#953800">$null</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">$writer</span><span style="color:#1f2328">.</span>WriteLine<span style="color:#1f2328">(</span><span style="color:#953800">$line</span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">$lineCount</span><span style="color:#1f2328">++</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">$writer</span><span style="color:#1f2328">.</span>Close<span style="color:#1f2328">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">Write-Host</span> <span style="color:#0a3069">&#34;已生成: </span><span style="color:#953800">${baseName}</span><span style="color:#0a3069">_part</span><span style="color:#953800">${partNum}</span><span style="color:#0a3069">.csv (</span><span style="color:#953800">$lineCount</span><span style="color:#0a3069"> 行数据)&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">$reader</span><span style="color:#1f2328">.</span>Close<span style="color:#1f2328">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">Write-Host</span> <span style="color:#0a3069">&#34;分割完成!&#34;</span></span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%B8%85%E6%B4%97/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>标准菜品名称清洗</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/new-product/2026%E4%BA%A7%E5%93%81%E4%B8%8A%E6%96%B0%E8%AE%B0%E5%BD%95/" class="flex align-center">
+        <span>2026产品上新记录</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#csv文件分割">CSV文件分割</a>
+      <ul>
+        <li><a href="#需求背景">需求背景</a></li>
+        <li><a href="#需求频率">需求频率</a></li>
+        <li><a href="#处理代码">处理代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  <script>
+(function () {
+  document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+    var pre = codeBlock.parentNode;
+    var button = document.createElement('button');
+    button.className = 'copy-code';
+    button.textContent = '复制';
+    button.addEventListener('click', function () {
+      var text = codeBlock.textContent;
+      navigator.clipboard.writeText(text).then(function () {
+        button.textContent = '已复制';
+        button.classList.add('copied');
+        setTimeout(function () {
+          button.textContent = '复制';
+          button.classList.remove('copied');
+        }, 2000);
+      });
+    });
+    pre.appendChild(button);
+  });
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

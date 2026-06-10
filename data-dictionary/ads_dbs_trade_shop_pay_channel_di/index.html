@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -8,14 +8,14 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="门店销售信息#数据字典#ads_dbs_trade_shop_pay_channel_di 列名 数据类型 注释 pt varchar(20) 时间分区 shop_id varchar(20) 门店编号 payment_channels varchar(100) 结账方式名称 order_cnt bigint(20) 订单量 income decimalv3(16, 2) 收入金额 discount decimalv3(16, 2) 优惠金额 amount decimalv3(16, 2) 流水金额 total_order_cnt bigint(20) 订单量 item_scrap_amount decimalv3(16, 2) 报废金额 注意事项#检查当月渠道是否完整，是否有缺失的渠道（核对当月是否有线上新增xx团购）。
+<meta name="description" content="门店销售信息#查询#SELECT COLUMN_NAME AS 字段名, COLUMN_TYPE AS 字段类型, COLUMN_COMMENT AS 字段注释 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = &#39;tll_bi_dw&#39; AND TABLE_NAME = &#39;ads_dbs_trade_shop_pay_channel_di&#39;;数据字典#ads_dbs_trade_shop_pay_channel_di 列名 数据类型 注释 pt varchar(20) 时间分区 shop_id varchar(20) 门店编号 payment_channels varchar(100) 结账方式名称 order_cnt bigint(20) 订单量 income decimalv3(16, 2) 收入金额 discount decimalv3(16, 2) 优惠金额 amount decimalv3(16, 2) 流水金额 total_order_cnt bigint(20) 订单量 item_scrap_amount decimalv3(16, 2) 报废金额 注意事项#检查当月渠道是否完整，是否有缺失的渠道（核对当月是否有线上新增xx团购）。
 SELECT DISTINCT payment_channels FROM ads_dbs_trade_shop_pay_channel_di WHERE pt LIKE &#39;202605%&#39;">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/data-dictionary/ads_dbs_trade_shop_pay_channel_di/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://tll.bizha.top/data-dictionary/ads_dbs_trade_shop_pay_channel_di/">
   <meta property="og:site_name" content="Data Documentation">
   <meta property="og:title" content="门店销售">
-  <meta property="og:description" content="门店销售信息#数据字典#ads_dbs_trade_shop_pay_channel_di 列名 数据类型 注释 pt varchar(20) 时间分区 shop_id varchar(20) 门店编号 payment_channels varchar(100) 结账方式名称 order_cnt bigint(20) 订单量 income decimalv3(16, 2) 收入金额 discount decimalv3(16, 2) 优惠金额 amount decimalv3(16, 2) 流水金额 total_order_cnt bigint(20) 订单量 item_scrap_amount decimalv3(16, 2) 报废金额 注意事项#检查当月渠道是否完整，是否有缺失的渠道（核对当月是否有线上新增xx团购）。
+  <meta property="og:description" content="门店销售信息#查询#SELECT COLUMN_NAME AS 字段名, COLUMN_TYPE AS 字段类型, COLUMN_COMMENT AS 字段注释 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = &#39;tll_bi_dw&#39; AND TABLE_NAME = &#39;ads_dbs_trade_shop_pay_channel_di&#39;;数据字典#ads_dbs_trade_shop_pay_channel_di 列名 数据类型 注释 pt varchar(20) 时间分区 shop_id varchar(20) 门店编号 payment_channels varchar(100) 结账方式名称 order_cnt bigint(20) 订单量 income decimalv3(16, 2) 收入金额 discount decimalv3(16, 2) 优惠金额 amount decimalv3(16, 2) 流水金额 total_order_cnt bigint(20) 订单量 item_scrap_amount decimalv3(16, 2) 报废金额 注意事项#检查当月渠道是否完整，是否有缺失的渠道（核对当月是否有线上新增xx团购）。
 SELECT DISTINCT payment_channels FROM ads_dbs_trade_shop_pay_channel_di WHERE pt LIKE &#39;202605%&#39;">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
@@ -23,14 +23,14 @@ SELECT DISTINCT payment_channels FROM ads_dbs_trade_shop_pay_channel_di WHERE pt
 
 
   <meta itemprop="name" content="门店销售">
-  <meta itemprop="description" content="门店销售信息#数据字典#ads_dbs_trade_shop_pay_channel_di 列名 数据类型 注释 pt varchar(20) 时间分区 shop_id varchar(20) 门店编号 payment_channels varchar(100) 结账方式名称 order_cnt bigint(20) 订单量 income decimalv3(16, 2) 收入金额 discount decimalv3(16, 2) 优惠金额 amount decimalv3(16, 2) 流水金额 total_order_cnt bigint(20) 订单量 item_scrap_amount decimalv3(16, 2) 报废金额 注意事项#检查当月渠道是否完整，是否有缺失的渠道（核对当月是否有线上新增xx团购）。
+  <meta itemprop="description" content="门店销售信息#查询#SELECT COLUMN_NAME AS 字段名, COLUMN_TYPE AS 字段类型, COLUMN_COMMENT AS 字段注释 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = &#39;tll_bi_dw&#39; AND TABLE_NAME = &#39;ads_dbs_trade_shop_pay_channel_di&#39;;数据字典#ads_dbs_trade_shop_pay_channel_di 列名 数据类型 注释 pt varchar(20) 时间分区 shop_id varchar(20) 门店编号 payment_channels varchar(100) 结账方式名称 order_cnt bigint(20) 订单量 income decimalv3(16, 2) 收入金额 discount decimalv3(16, 2) 优惠金额 amount decimalv3(16, 2) 流水金额 total_order_cnt bigint(20) 订单量 item_scrap_amount decimalv3(16, 2) 报废金额 注意事项#检查当月渠道是否完整，是否有缺失的渠道（核对当月是否有线上新增xx团购）。
 SELECT DISTINCT payment_channels FROM ads_dbs_trade_shop_pay_channel_di WHERE pt LIKE &#39;202605%&#39;">
-  <meta itemprop="wordCount" content="48">
+  <meta itemprop="wordCount" content="68">
 
 <title>门店销售 • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/data-dictionary/ads_dbs_trade_shop_pay_channel_di/">
+<link rel="canonical" href="https://tll.bizha.top/data-dictionary/ads_dbs_trade_shop_pay_channel_di/">
 <link rel="stylesheet" href="/book.min.css">
 
 
@@ -276,6 +276,48 @@ SELECT DISTINCT payment_channels FROM ads_dbs_trade_shop_pay_channel_di WHERE pt
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%9C%88%E5%BA%A6%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE/" class="">
+      月度产品销售数据</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%B8%85%E6%B4%97/" class="">
+      标准菜品名称清洗</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%86%E5%89%B2/" class="">
+      CSV文件分割</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -367,6 +409,7 @@ SELECT DISTINCT payment_channels FROM ads_dbs_trade_shop_pay_channel_di WHERE pt
   <ul>
     <li><a href="#门店销售信息">门店销售信息</a>
       <ul>
+        <li><a href="#查询">查询</a></li>
         <li><a href="#数据字典">数据字典</a></li>
         <li><a href="#注意事项">注意事项</a></li>
       </ul>
@@ -384,7 +427,14 @@ SELECT DISTINCT payment_channels FROM ads_dbs_trade_shop_pay_channel_di WHERE pt
       
       
   <article class="markdown book-article"><h1 id="门店销售信息">门店销售信息<a class="anchor" href="#%e9%97%a8%e5%ba%97%e9%94%80%e5%94%ae%e4%bf%a1%e6%81%af">#</a></h1>
-<h2 id="数据字典">数据字典<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e5%ad%97%e5%85%b8">#</a></h2>
+<h2 id="查询">查询<a class="anchor" href="#%e6%9f%a5%e8%af%a2">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">SELECT</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">COLUMN_NAME</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >字段名</span><span style="color:#1f2328">,</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>COLUMN_TYPE<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >字段类型</span><span style="color:#1f2328">,</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>COLUMN_COMMENT<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >字段注释</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">FROM</span><span style="color:#fff"> </span>information_schema<span style="color:#1f2328">.</span>COLUMNS<span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff"> </span>TABLE_SCHEMA<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;tll_bi_dw&#39;</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">AND</span><span style="color:#fff"> </span><span style="color:#cf222e">TABLE_NAME</span><span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;ads_dbs_trade_shop_pay_channel_di&#39;</span><span style="color:#1f2328">;</span></span></span></code></pre></div><h2 id="数据字典">数据字典<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e5%ad%97%e5%85%b8">#</a></h2>
 <ul>
 <li><code>ads_dbs_trade_shop_pay_channel_di</code></li>
 </ul>
@@ -516,6 +566,7 @@ SELECT DISTINCT payment_channels FROM ads_dbs_trade_shop_pay_channel_di WHERE pt
   <ul>
     <li><a href="#门店销售信息">门店销售信息</a>
       <ul>
+        <li><a href="#查询">查询</a></li>
         <li><a href="#数据字典">数据字典</a></li>
         <li><a href="#注意事项">注意事项</a></li>
       </ul>
