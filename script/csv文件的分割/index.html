@@ -8,27 +8,22 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CSV文件分割#需求背景#解决CSV文件过大，导致某些系统无法上传/识别的问题。
-需求频率#不定时。
-处理代码#param( [string]$CsvPath = &#34;5月产品数据.csv&#34;, [int]$Parts = 5, [string]$OutputDir = $PSScriptRoot ) $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $header = $reader.ReadLine() # 统计总行数 $totalLines = 0 while ($reader.ReadLine() -ne $null) { $totalLines&#43;&#43; } $reader.Close() $linesPerPart = [math]::Ceiling($totalLines / $Parts) Write-Host &#34;总数据行: $totalLines, 每份: $linesPerPart 行&#34; # 重新读取，开始分割 $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $reader.ReadLine() | Out-Null # 跳过表头 $baseName = [System.IO.Path]::GetFileNameWithoutExtension($CsvPath) for ($i = 0; $i -lt $Parts; $i&#43;&#43;) { $partNum = $i &#43; 1 $outFile = Join-Path $OutputDir &#34;${baseName}_part${partNum}.csv&#34; $writer = [System.IO.StreamWriter]::new($outFile, $false, [System.Text.Encoding]::UTF8) $writer.WriteLine($header) $lineCount = 0 while ($lineCount -lt $linesPerPart -and ($line = $reader.ReadLine()) -ne $null) { $writer.WriteLine($line) $lineCount&#43;&#43; } $writer.Close() Write-Host &#34;已生成: ${baseName}_part${partNum}.csv ($lineCount 行数据)&#34; } $reader.Close() Write-Host &#34;分割完成!&#34;">
+<meta name="description" content="CSV 文件分割#需求背景#背景 解决 CSV 文件过大，导致某些系统无法上传 / 识别的问题。
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://tll.bizha.top/script/csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%86%E5%89%B2/">
   <meta property="og:site_name" content="Data Documentation">
   <meta property="og:title" content="CSV文件分割">
-  <meta property="og:description" content="CSV文件分割#需求背景#解决CSV文件过大，导致某些系统无法上传/识别的问题。
-需求频率#不定时。
-处理代码#param( [string]$CsvPath = &#34;5月产品数据.csv&#34;, [int]$Parts = 5, [string]$OutputDir = $PSScriptRoot ) $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $header = $reader.ReadLine() # 统计总行数 $totalLines = 0 while ($reader.ReadLine() -ne $null) { $totalLines&#43;&#43; } $reader.Close() $linesPerPart = [math]::Ceiling($totalLines / $Parts) Write-Host &#34;总数据行: $totalLines, 每份: $linesPerPart 行&#34; # 重新读取，开始分割 $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $reader.ReadLine() | Out-Null # 跳过表头 $baseName = [System.IO.Path]::GetFileNameWithoutExtension($CsvPath) for ($i = 0; $i -lt $Parts; $i&#43;&#43;) { $partNum = $i &#43; 1 $outFile = Join-Path $OutputDir &#34;${baseName}_part${partNum}.csv&#34; $writer = [System.IO.StreamWriter]::new($outFile, $false, [System.Text.Encoding]::UTF8) $writer.WriteLine($header) $lineCount = 0 while ($lineCount -lt $linesPerPart -and ($line = $reader.ReadLine()) -ne $null) { $writer.WriteLine($line) $lineCount&#43;&#43; } $writer.Close() Write-Host &#34;已生成: ${baseName}_part${partNum}.csv ($lineCount 行数据)&#34; } $reader.Close() Write-Host &#34;分割完成!&#34;">
+  <meta property="og:description" content="CSV 文件分割#需求背景#背景 解决 CSV 文件过大，导致某些系统无法上传 / 识别的问题。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="script">
 
 
   <meta itemprop="name" content="CSV文件分割">
-  <meta itemprop="description" content="CSV文件分割#需求背景#解决CSV文件过大，导致某些系统无法上传/识别的问题。
-需求频率#不定时。
-处理代码#param( [string]$CsvPath = &#34;5月产品数据.csv&#34;, [int]$Parts = 5, [string]$OutputDir = $PSScriptRoot ) $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $header = $reader.ReadLine() # 统计总行数 $totalLines = 0 while ($reader.ReadLine() -ne $null) { $totalLines&#43;&#43; } $reader.Close() $linesPerPart = [math]::Ceiling($totalLines / $Parts) Write-Host &#34;总数据行: $totalLines, 每份: $linesPerPart 行&#34; # 重新读取，开始分割 $reader = [System.IO.StreamReader]::new((Join-Path $OutputDir $CsvPath)) $reader.ReadLine() | Out-Null # 跳过表头 $baseName = [System.IO.Path]::GetFileNameWithoutExtension($CsvPath) for ($i = 0; $i -lt $Parts; $i&#43;&#43;) { $partNum = $i &#43; 1 $outFile = Join-Path $OutputDir &#34;${baseName}_part${partNum}.csv&#34; $writer = [System.IO.StreamWriter]::new($outFile, $false, [System.Text.Encoding]::UTF8) $writer.WriteLine($header) $lineCount = 0 while ($lineCount -lt $linesPerPart -and ($line = $reader.ReadLine()) -ne $null) { $writer.WriteLine($line) $lineCount&#43;&#43; } $writer.Close() Write-Host &#34;已生成: ${baseName}_part${partNum}.csv ($lineCount 行数据)&#34; } $reader.Close() Write-Host &#34;分割完成!&#34;">
-  <meta itemprop="wordCount" content="116">
+  <meta itemprop="description" content="CSV 文件分割#需求背景#背景 解决 CSV 文件过大，导致某些系统无法上传 / 识别的问题。">
+  <meta itemprop="wordCount" content="123">
 
 <title>CSV文件分割 • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
@@ -216,6 +211,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/script/%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/" class="">
+      产品销售数据的备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/" class="">
       各渠道同比基础数据</a>
   
@@ -232,20 +241,6 @@ https://github.com/alex-shpak/hugo-book
   
     <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%A0%B8%E5%AF%B9/" class="">
       标准菜品名称核对</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/script/%E7%94%9C%E5%95%A6%E5%95%A6%E9%85%8D%E6%96%B9%E7%AE%A1%E7%90%86/" class="">
-      配方管理</a>
   
 
         </li>
@@ -410,7 +405,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#csv文件分割">CSV文件分割</a>
+    <li><a href="#csv-文件分割">CSV 文件分割</a>
       <ul>
         <li><a href="#需求背景">需求背景</a></li>
         <li><a href="#需求频率">需求频率</a></li>
@@ -429,11 +424,72 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="csv文件分割">CSV文件分割<a class="anchor" href="#csv%e6%96%87%e4%bb%b6%e5%88%86%e5%89%b2">#</a></h1>
+  <article class="markdown book-article"><h1 id="csv-文件分割">CSV 文件分割<a class="anchor" href="#csv-%e6%96%87%e4%bb%b6%e5%88%86%e5%89%b2">#</a></h1>
 <h2 id="需求背景">需求背景<a class="anchor" href="#%e9%9c%80%e6%b1%82%e8%83%8c%e6%99%af">#</a></h2>
-<p>解决CSV文件过大，导致某些系统无法上传/识别的问题。</p>
+<style>
+  .notice {
+    --notice-title-color: #fff;
+    --notice-title-bg: #6be;
+    --notice-content-color: #444;
+    --notice-content-bg: #e7f2fa;
+    padding: 0;
+    margin: 1em 0;
+    border-radius: 6px;
+    overflow: hidden;
+    color: var(--notice-content-color);
+    background: var(--notice-content-bg);
+    border: 1px solid var(--notice-title-bg);
+  }
+  .notice.info {
+    --notice-title-bg: #fb7;
+    --notice-content-bg: #fff8e7;
+  }
+  .notice.tip {
+    --notice-title-bg: #5a5;
+    --notice-content-bg: #e8f5e9;
+  }
+  .notice.warning {
+    --notice-title-bg: #c33;
+    --notice-content-bg: #fdecea;
+  }
+  .notice .notice-title {
+    margin: 0;
+    padding: 6px 16px;
+    font-weight: 700;
+    font-size: .9em;
+    color: var(--notice-title-color);
+    background: var(--notice-title-bg);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .notice .notice-title svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+  .notice .notice-body {
+    padding: 12px 16px;
+    line-height: 1.7;
+  }
+  .notice .notice-body > :last-child {
+    margin-bottom: 0;
+  }
+  .notice .notice-body > :first-child {
+    margin-top: 0;
+  }
+</style><div class="notice info">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>背景</div>
+  <div class="notice-body"><p>解决 CSV 文件过大，导致某些系统无法上传 / 识别的问题。</p></div>
+</div>
+
 <h2 id="需求频率">需求频率<a class="anchor" href="#%e9%9c%80%e6%b1%82%e9%a2%91%e7%8e%87">#</a></h2>
-<p>不定时。</p>
+<div class="notice tip">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>频率</div>
+  <div class="notice-body"><p>不定时。</p></div>
+</div>
+
 <h2 id="处理代码">处理代码<a class="anchor" href="#%e5%a4%84%e7%90%86%e4%bb%a3%e7%a0%81">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#cf222e">param</span><span style="color:#1f2328">(</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#1f2328">[</span><span style="color:#0550ae">string</span><span style="color:#1f2328">]</span><span style="color:#953800">$CsvPath</span> <span style="color:#1f2328">=</span> <span style="color:#0a3069">&#34;5月产品数据.csv&#34;</span><span style="color:#1f2328">,</span>
@@ -541,7 +597,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#csv文件分割">CSV文件分割</a>
+    <li><a href="#csv-文件分割">CSV 文件分割</a>
       <ul>
         <li><a href="#需求背景">需求背景</a></li>
         <li><a href="#需求频率">需求频率</a></li>

@@ -8,31 +8,22 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="北森通讯录信息日备份#需求背景#记录北森通讯录信息，可整理出每人的入职、离职时间等。
-需求频率#每个工作日。
-自动化执行#在quicker中设定定时任务，每天开机时执行。cookies有效期是7天，需要每7天更新一次。 设定每周六更新一次。
-chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\activate.bat C:\Users\%USERNAME%\anaconda3 cd C:\Users\Administrator\OneDrive\Tianlala\Script\beiseng-users python main.py目录结构#beiseng-users ├─ config.py ├─ cookies_2026-05-27.json ├─ main.py └─ README.md项目地址#https://e.coding.net/fuwenyue/tianlala/beiseng-users.git
+<meta name="description" content="北森通讯录信息日备份#需求背景#背景 记录北森通讯录信息，可整理出每人的入职、离职时间等。
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://tll.bizha.top/script/%E5%8C%97%E6%A3%AE%E9%80%9A%E8%AE%AF%E5%BD%95%E4%BF%A1%E6%81%AF%E6%97%A5%E5%A4%87%E4%BB%BD/">
   <meta property="og:site_name" content="Data Documentation">
   <meta property="og:title" content="北森通讯录信息日备份">
-  <meta property="og:description" content="北森通讯录信息日备份#需求背景#记录北森通讯录信息，可整理出每人的入职、离职时间等。
-需求频率#每个工作日。
-自动化执行#在quicker中设定定时任务，每天开机时执行。cookies有效期是7天，需要每7天更新一次。 设定每周六更新一次。
-chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\activate.bat C:\Users\%USERNAME%\anaconda3 cd C:\Users\Administrator\OneDrive\Tianlala\Script\beiseng-users python main.py目录结构#beiseng-users ├─ config.py ├─ cookies_2026-05-27.json ├─ main.py └─ README.md项目地址#https://e.coding.net/fuwenyue/tianlala/beiseng-users.git">
+  <meta property="og:description" content="北森通讯录信息日备份#需求背景#背景 记录北森通讯录信息，可整理出每人的入职、离职时间等。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="script">
 
 
   <meta itemprop="name" content="北森通讯录信息日备份">
-  <meta itemprop="description" content="北森通讯录信息日备份#需求背景#记录北森通讯录信息，可整理出每人的入职、离职时间等。
-需求频率#每个工作日。
-自动化执行#在quicker中设定定时任务，每天开机时执行。cookies有效期是7天，需要每7天更新一次。 设定每周六更新一次。
-chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\activate.bat C:\Users\%USERNAME%\anaconda3 cd C:\Users\Administrator\OneDrive\Tianlala\Script\beiseng-users python main.py目录结构#beiseng-users ├─ config.py ├─ cookies_2026-05-27.json ├─ main.py └─ README.md项目地址#https://e.coding.net/fuwenyue/tianlala/beiseng-users.git">
-  <meta itemprop="wordCount" content="31">
+  <meta itemprop="description" content="北森通讯录信息日备份#需求背景#背景 记录北森通讯录信息，可整理出每人的入职、离职时间等。">
+  <meta itemprop="wordCount" content="40">
 
 <title>北森通讯录信息日备份 • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
@@ -220,6 +211,20 @@ chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\
   
 
   
+    <a href="/script/%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/" class="">
+      产品销售数据的备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/" class="">
       各渠道同比基础数据</a>
   
@@ -236,20 +241,6 @@ chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\
   
     <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%A0%B8%E5%AF%B9/" class="">
       标准菜品名称核对</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/script/%E7%94%9C%E5%95%A6%E5%95%A6%E9%85%8D%E6%96%B9%E7%AE%A1%E7%90%86/" class="">
-      配方管理</a>
   
 
         </li>
@@ -440,12 +431,72 @@ chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\
       
   <article class="markdown book-article"><h1 id="北森通讯录信息日备份">北森通讯录信息日备份<a class="anchor" href="#%e5%8c%97%e6%a3%ae%e9%80%9a%e8%ae%af%e5%bd%95%e4%bf%a1%e6%81%af%e6%97%a5%e5%a4%87%e4%bb%bd">#</a></h1>
 <h2 id="需求背景">需求背景<a class="anchor" href="#%e9%9c%80%e6%b1%82%e8%83%8c%e6%99%af">#</a></h2>
-<p>记录北森通讯录信息，可整理出每人的入职、离职时间等。</p>
+<style>
+  .notice {
+    --notice-title-color: #fff;
+    --notice-title-bg: #6be;
+    --notice-content-color: #444;
+    --notice-content-bg: #e7f2fa;
+    padding: 0;
+    margin: 1em 0;
+    border-radius: 6px;
+    overflow: hidden;
+    color: var(--notice-content-color);
+    background: var(--notice-content-bg);
+    border: 1px solid var(--notice-title-bg);
+  }
+  .notice.info {
+    --notice-title-bg: #fb7;
+    --notice-content-bg: #fff8e7;
+  }
+  .notice.tip {
+    --notice-title-bg: #5a5;
+    --notice-content-bg: #e8f5e9;
+  }
+  .notice.warning {
+    --notice-title-bg: #c33;
+    --notice-content-bg: #fdecea;
+  }
+  .notice .notice-title {
+    margin: 0;
+    padding: 6px 16px;
+    font-weight: 700;
+    font-size: .9em;
+    color: var(--notice-title-color);
+    background: var(--notice-title-bg);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .notice .notice-title svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+  .notice .notice-body {
+    padding: 12px 16px;
+    line-height: 1.7;
+  }
+  .notice .notice-body > :last-child {
+    margin-bottom: 0;
+  }
+  .notice .notice-body > :first-child {
+    margin-top: 0;
+  }
+</style><div class="notice info">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>背景</div>
+  <div class="notice-body"><p>记录北森通讯录信息，可整理出每人的入职、离职时间等。</p></div>
+</div>
+
 <h2 id="需求频率">需求频率<a class="anchor" href="#%e9%9c%80%e6%b1%82%e9%a2%91%e7%8e%87">#</a></h2>
-<p>每个工作日。</p>
+<div class="notice tip">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>频率</div>
+  <div class="notice-body"><p>每个工作日。</p></div>
+</div>
+
 <h3 id="自动化执行">自动化执行<a class="anchor" href="#%e8%87%aa%e5%8a%a8%e5%8c%96%e6%89%a7%e8%a1%8c">#</a></h3>
-<p>在quicker中设定定时任务，每天开机时执行。<code>cookies</code>有效期是7天，需要每7天更新一次。
-设定每周六更新一次。</p>
+<p>在 Quicker 中设定定时任务，每天开机时执行。<code>cookies</code> 有效期是 7 天，需要每 7 天更新一次。设定每周六更新一次。</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-batch" data-lang="batch"><span style="display:flex;"><span>chcp 65001
 </span></span><span style="display:flex;"><span><span style="color:#1f2328">@</span><span style="color:#cf222e">echo</span> off
 </span></span><span style="display:flex;"><span>
@@ -453,12 +504,16 @@ chcp 65001 @echo off :: 激活环境 CALL C:\Users\%USERNAME%\anaconda3\Scripts\
 </span></span><span style="display:flex;"><span><span style="color:#cf222e">CALL</span> C:\Users\<span style="color:#953800">%USERNAME%</span>\anaconda3\Scripts\activate.bat C:\Users\<span style="color:#953800">%USERNAME%</span>\anaconda3
 </span></span><span style="display:flex;"><span><span style="color:#cf222e">cd</span> C:\Users\Administrator\OneDrive\Tianlala\Script\beiseng-users
 </span></span><span style="display:flex;"><span>python main.py</span></span></code></pre></div><h2 id="目录结构">目录结构<a class="anchor" href="#%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>beiseng-users
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>beiseng-users
 </span></span><span style="display:flex;"><span>├─ config.py
 </span></span><span style="display:flex;"><span>├─ cookies_2026-05-27.json
 </span></span><span style="display:flex;"><span>├─ main.py
 </span></span><span style="display:flex;"><span>└─ README.md</span></span></code></pre></div><h2 id="项目地址">项目地址<a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e5%9c%b0%e5%9d%80">#</a></h2>
-<p><a href="https://e.coding.net/fuwenyue/tianlala/beiseng-users.git">https://e.coding.net/fuwenyue/tianlala/beiseng-users.git</a></p>
+<div class="notice info">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>仓库</div>
+  <div class="notice-body"><p><a href="https://e.coding.net/fuwenyue/tianlala/beiseng-users.git">https://e.coding.net/fuwenyue/tianlala/beiseng-users.git</a></p></div>
+</div>
+
 </article>
  
       

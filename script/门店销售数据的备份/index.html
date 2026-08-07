@@ -8,28 +8,22 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="门店销售数据备份#需求背景#因数据库只能通过JumpServer访问，对导出的数据量有着限制。需要在本地建立一个备份，方便Python/Power Query 的调用。
-需求频率#不定时
-目录结构#shop_sales_sync ├─ main.py └─ 门店销售 ├─ 待同步 │ └─ 202505.csv └─ 已同步 ├─ 202501.csv ├─ 202502.csv ├─ 202503.csv ├─ 202504.csv ├─ 202505.csv ├─ 202506.csv ├─ 202507.csv ├─ 202508.csv ├─ 202509.csv ├─ 202510.csv ├─ 202511.csv ├─ 202512.csv ├─ 202601.csv ├─ 202602.csv ├─ 202603.csv └─ 202604.csv数据查询及导出#为保障能够正常导出数据，可逐月进行查询、导出。
+<meta name="description" content="门店销售数据备份#需求背景#背景 因数据库只能通过 JumpServer 访问，对导出的数据量有着限制。需要在本地建立一个备份，方便 Python / Power Query 的调用。
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://tll.bizha.top/script/%E9%97%A8%E5%BA%97%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%87%E4%BB%BD/">
   <meta property="og:site_name" content="Data Documentation">
   <meta property="og:title" content="门店销售数据的备份">
-  <meta property="og:description" content="门店销售数据备份#需求背景#因数据库只能通过JumpServer访问，对导出的数据量有着限制。需要在本地建立一个备份，方便Python/Power Query 的调用。
-需求频率#不定时
-目录结构#shop_sales_sync ├─ main.py └─ 门店销售 ├─ 待同步 │ └─ 202505.csv └─ 已同步 ├─ 202501.csv ├─ 202502.csv ├─ 202503.csv ├─ 202504.csv ├─ 202505.csv ├─ 202506.csv ├─ 202507.csv ├─ 202508.csv ├─ 202509.csv ├─ 202510.csv ├─ 202511.csv ├─ 202512.csv ├─ 202601.csv ├─ 202602.csv ├─ 202603.csv └─ 202604.csv数据查询及导出#为保障能够正常导出数据，可逐月进行查询、导出。">
+  <meta property="og:description" content="门店销售数据备份#需求背景#背景 因数据库只能通过 JumpServer 访问，对导出的数据量有着限制。需要在本地建立一个备份，方便 Python / Power Query 的调用。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="script">
 
 
   <meta itemprop="name" content="门店销售数据的备份">
-  <meta itemprop="description" content="门店销售数据备份#需求背景#因数据库只能通过JumpServer访问，对导出的数据量有着限制。需要在本地建立一个备份，方便Python/Power Query 的调用。
-需求频率#不定时
-目录结构#shop_sales_sync ├─ main.py └─ 门店销售 ├─ 待同步 │ └─ 202505.csv └─ 已同步 ├─ 202501.csv ├─ 202502.csv ├─ 202503.csv ├─ 202504.csv ├─ 202505.csv ├─ 202506.csv ├─ 202507.csv ├─ 202508.csv ├─ 202509.csv ├─ 202510.csv ├─ 202511.csv ├─ 202512.csv ├─ 202601.csv ├─ 202602.csv ├─ 202603.csv └─ 202604.csv数据查询及导出#为保障能够正常导出数据，可逐月进行查询、导出。">
-  <meta itemprop="wordCount" content="92">
+  <meta itemprop="description" content="门店销售数据备份#需求背景#背景 因数据库只能通过 JumpServer 访问，对导出的数据量有着限制。需要在本地建立一个备份，方便 Python / Power Query 的调用。">
+  <meta itemprop="wordCount" content="102">
 
 <title>门店销售数据的备份 • Data Documentation</title>
 <link rel="icon" href="/favicon.png" >
@@ -217,6 +211,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/script/%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/" class="">
+      产品销售数据的备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/" class="">
       各渠道同比基础数据</a>
   
@@ -233,20 +241,6 @@ https://github.com/alex-shpak/hugo-book
   
     <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%A0%B8%E5%AF%B9/" class="">
       标准菜品名称核对</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/script/%E7%94%9C%E5%95%A6%E5%95%A6%E9%85%8D%E6%96%B9%E7%AE%A1%E7%90%86/" class="">
-      配方管理</a>
   
 
         </li>
@@ -436,11 +430,72 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown book-article"><h1 id="门店销售数据备份">门店销售数据备份<a class="anchor" href="#%e9%97%a8%e5%ba%97%e9%94%80%e5%94%ae%e6%95%b0%e6%8d%ae%e5%a4%87%e4%bb%bd">#</a></h1>
 <h2 id="需求背景">需求背景<a class="anchor" href="#%e9%9c%80%e6%b1%82%e8%83%8c%e6%99%af">#</a></h2>
-<p>因数据库只能通过JumpServer访问，对导出的数据量有着限制。需要在本地建立一个备份，方便Python/Power Query 的调用。</p>
+<style>
+  .notice {
+    --notice-title-color: #fff;
+    --notice-title-bg: #6be;
+    --notice-content-color: #444;
+    --notice-content-bg: #e7f2fa;
+    padding: 0;
+    margin: 1em 0;
+    border-radius: 6px;
+    overflow: hidden;
+    color: var(--notice-content-color);
+    background: var(--notice-content-bg);
+    border: 1px solid var(--notice-title-bg);
+  }
+  .notice.info {
+    --notice-title-bg: #fb7;
+    --notice-content-bg: #fff8e7;
+  }
+  .notice.tip {
+    --notice-title-bg: #5a5;
+    --notice-content-bg: #e8f5e9;
+  }
+  .notice.warning {
+    --notice-title-bg: #c33;
+    --notice-content-bg: #fdecea;
+  }
+  .notice .notice-title {
+    margin: 0;
+    padding: 6px 16px;
+    font-weight: 700;
+    font-size: .9em;
+    color: var(--notice-title-color);
+    background: var(--notice-title-bg);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .notice .notice-title svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+  .notice .notice-body {
+    padding: 12px 16px;
+    line-height: 1.7;
+  }
+  .notice .notice-body > :last-child {
+    margin-bottom: 0;
+  }
+  .notice .notice-body > :first-child {
+    margin-top: 0;
+  }
+</style><div class="notice info">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>背景</div>
+  <div class="notice-body"><p>因数据库只能通过 JumpServer 访问，对导出的数据量有着限制。需要在本地建立一个备份，方便 Python / Power Query 的调用。</p></div>
+</div>
+
 <h2 id="需求频率">需求频率<a class="anchor" href="#%e9%9c%80%e6%b1%82%e9%a2%91%e7%8e%87">#</a></h2>
-<p>不定时</p>
+<div class="notice tip">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>频率</div>
+  <div class="notice-body"><p>不定时。</p></div>
+</div>
+
 <h2 id="目录结构">目录结构<a class="anchor" href="#%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>shop_sales_sync
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>shop_sales_sync
 </span></span><span style="display:flex;"><span>├─ main.py
 </span></span><span style="display:flex;"><span>└─ 门店销售
 </span></span><span style="display:flex;"><span>   ├─ 待同步
@@ -467,7 +522,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span></span><span style="display:flex;"><span><span style="color:#cf222e">FROM</span><span style="color:#fff">
 </span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>ads_dbs_trade_shop_pay_channel_di<span style="color:#fff">
 </span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff">
-</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">AND</span><span style="color:#fff"> </span>pt<span style="color:#fff"> </span><span style="color:#cf222e">LIKE</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;202604%&#39;</span></span></span></code></pre></div><p>保存文件至&quot;待同步&quot;文件夹。</p>
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>pt<span style="color:#fff"> </span><span style="color:#cf222e">LIKE</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;202604%&#39;</span></span></span></code></pre></div><p>保存文件至 <code>待同步</code> 文件夹。</p>
 <h2 id="数据校验">数据校验<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e6%a0%a1%e9%aa%8c">#</a></h2>
 <p>分别在本地数据库与中台数据按月进行查询：</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#fff">
@@ -479,16 +534,20 @@ https://github.com/alex-shpak/hugo-book
 </span></span></span><span style="display:flex;"><span><span style="color:#cf222e">GROUP</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span>SUBSTR<span style="color:#1f2328">(</span>pt<span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">6</span><span style="color:#1f2328">)</span><span style="color:#fff">
 </span></span></span><span style="display:flex;"><span><span style="color:#cf222e">ORDER</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span>month_pt<span style="color:#1f2328">;</span></span></span></code></pre></div><p>比较各月数据是否一致。</p>
 <h2 id="注意事项">注意事项<a class="anchor" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">#</a></h2>
-<ul>
-<li>
-<p>中台会刷新前一个月的数据，会导致数据存在差异。同步前先删除上个月数据，再同步上个月数据。</p>
-</li>
-<li>
-<p>中台历史数据（包含一年前）会偶尔轻微变动，与保存的可能差个几块钱。</p>
-</li>
-</ul>
+<div class="notice note">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>注意</div>
+  <div class="notice-body"><ul>
+<li>中台会刷新前一个月的数据，会导致数据存在差异。同步前先删除上个月数据，再同步上个月数据。</li>
+<li>中台历史数据（包含一年前）会偶尔轻微变动，与保存的可能差个几块钱。</li>
+</ul></div>
+</div>
+
 <h2 id="项目地址">项目地址<a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e5%9c%b0%e5%9d%80">#</a></h2>
-<p><a href="https://e.coding.net/fuwenyue/tianlala/shop_sales_sync.git">https://e.coding.net/fuwenyue/tianlala/shop_sales_sync.git</a></p>
+<div class="notice info">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>仓库</div>
+  <div class="notice-body"><p><a href="https://e.coding.net/fuwenyue/tianlala/shop_sales_sync.git">https://e.coding.net/fuwenyue/tianlala/shop_sales_sync.git</a></p></div>
+</div>
+
 </article>
  
       
@@ -518,8 +577,8 @@ https://github.com/alex-shpak/hugo-book
     </span>
     <span>
     
-      <a href="/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/" class="flex align-center">
-        <span>各渠道同比基础数据</span>
+      <a href="/script/%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/" class="flex align-center">
+        <span>产品销售数据的备份</span>
         <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
       </a>
     

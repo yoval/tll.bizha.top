@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="产品销售数据备份#需求背景#背景 因数据库只能通过 JumpServer 访问，对导出的数据量有着限制。需要在本地建立一个备份，方便 Python / Power Query 的调用。
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://tll.bizha.top/script/%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/">
+  <meta property="og:site_name" content="Data Documentation">
+  <meta property="og:title" content="产品销售数据的备份">
+  <meta property="og:description" content="产品销售数据备份#需求背景#背景 因数据库只能通过 JumpServer 访问，对导出的数据量有着限制。需要在本地建立一个备份，方便 Python / Power Query 的调用。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="script">
+
+
+  <meta itemprop="name" content="产品销售数据的备份">
+  <meta itemprop="description" content="产品销售数据备份#需求背景#背景 因数据库只能通过 JumpServer 访问，对导出的数据量有着限制。需要在本地建立一个备份，方便 Python / Power Query 的调用。">
+  <meta itemprop="wordCount" content="230">
+
+<title>产品销售数据的备份 • Data Documentation</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://tll.bizha.top/script/%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/">
+<link rel="stylesheet" href="/book.min.css">
+
+
+  <script defer type="module" src="/en.search.min.js"></script>
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-script">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="https://www.tianlala.com/favicon.ico" alt="Logo" /><span>Data Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      DataDictionary</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_shop_pay_channel_di/" class="">
+      门店销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/ads_dbs_trade_food_di/" class="">
+      产品销售</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dwd_rps_tll_order_details_di/" class="">
+      门店报货信息</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/data-dictionary/dim_oas_formmain_0145_df/" class="">
+      门店管理表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      Script</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E9%97%A8%E5%BA%97%E7%AE%A1%E7%90%86%E8%A1%A8%E6%97%A5%E5%A4%87%E4%BB%BD/" class="">
+      门店管理表日备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E5%8C%97%E6%A3%AE%E9%80%9A%E8%AE%AF%E5%BD%95%E4%BF%A1%E6%81%AF%E6%97%A5%E5%A4%87%E4%BB%BD/" class="">
+      北森通讯录信息日备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E9%97%A8%E5%BA%97%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%87%E4%BB%BD/" class="">
+      门店销售数据的备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/" class="active">
+      产品销售数据的备份</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/" class="">
+      各渠道同比基础数据</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%A0%B8%E5%AF%B9/" class="">
+      标准菜品名称核对</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E5%91%A8%E8%BE%B9%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/" class="">
+      周边数据需求</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E8%B5%A0%E8%8C%B6%E6%95%B0%E6%8D%AE%E9%9C%80%E6%B1%82/" class="">
+      赠茶数据需求</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%9C%88%E5%BA%A6%E4%BA%A7%E5%93%81%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE/" class="">
+      月度产品销售数据</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/%E6%A0%87%E5%87%86%E8%8F%9C%E5%93%81%E5%90%8D%E7%A7%B0%E6%B8%85%E6%B4%97/" class="">
+      标准菜品名称清洗</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/script/csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%86%E5%89%B2/" class="">
+      CSV文件分割</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      NewProduct</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/new-product/2026%E4%BA%A7%E5%93%81%E4%B8%8A%E6%96%B0%E8%AE%B0%E5%BD%95/" class="">
+      2026产品上新记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>产品销售数据的备份</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#产品销售数据备份">产品销售数据备份</a>
+      <ul>
+        <li><a href="#需求背景">需求背景</a></li>
+        <li><a href="#需求频率">需求频率</a></li>
+        <li><a href="#目录结构">目录结构</a></li>
+        <li><a href="#数据查询及导出">数据查询及导出</a></li>
+        <li><a href="#数据校验">数据校验</a></li>
+        <li><a href="#注意事项">注意事项</a></li>
+        <li><a href="#项目地址">项目地址</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="产品销售数据备份">产品销售数据备份<a class="anchor" href="#%e4%ba%a7%e5%93%81%e9%94%80%e5%94%ae%e6%95%b0%e6%8d%ae%e5%a4%87%e4%bb%bd">#</a></h1>
+<h2 id="需求背景">需求背景<a class="anchor" href="#%e9%9c%80%e6%b1%82%e8%83%8c%e6%99%af">#</a></h2>
+<style>
+  .notice {
+    --notice-title-color: #fff;
+    --notice-title-bg: #6be;
+    --notice-content-color: #444;
+    --notice-content-bg: #e7f2fa;
+    padding: 0;
+    margin: 1em 0;
+    border-radius: 6px;
+    overflow: hidden;
+    color: var(--notice-content-color);
+    background: var(--notice-content-bg);
+    border: 1px solid var(--notice-title-bg);
+  }
+  .notice.info {
+    --notice-title-bg: #fb7;
+    --notice-content-bg: #fff8e7;
+  }
+  .notice.tip {
+    --notice-title-bg: #5a5;
+    --notice-content-bg: #e8f5e9;
+  }
+  .notice.warning {
+    --notice-title-bg: #c33;
+    --notice-content-bg: #fdecea;
+  }
+  .notice .notice-title {
+    margin: 0;
+    padding: 6px 16px;
+    font-weight: 700;
+    font-size: .9em;
+    color: var(--notice-title-color);
+    background: var(--notice-title-bg);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .notice .notice-title svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+  .notice .notice-body {
+    padding: 12px 16px;
+    line-height: 1.7;
+  }
+  .notice .notice-body > :last-child {
+    margin-bottom: 0;
+  }
+  .notice .notice-body > :first-child {
+    margin-top: 0;
+  }
+</style><div class="notice info">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>背景</div>
+  <div class="notice-body"><p>因数据库只能通过 JumpServer 访问，对导出的数据量有着限制。需要在本地建立一个备份，方便 Python / Power Query 的调用。</p></div>
+</div>
+
+<h2 id="需求频率">需求频率<a class="anchor" href="#%e9%9c%80%e6%b1%82%e9%a2%91%e7%8e%87">#</a></h2>
+<div class="notice tip">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>频率</div>
+  <div class="notice-body"><p>不定时。</p></div>
+</div>
+
+<h2 id="目录结构">目录结构<a class="anchor" href="#%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>food_sales_sync
+</span></span><span style="display:flex;"><span>├─ main.py
+</span></span><span style="display:flex;"><span>└─ 产品销售
+</span></span><span style="display:flex;"><span>   ├─ 待同步
+</span></span><span style="display:flex;"><span>   │  └─ 202505.csv
+</span></span><span style="display:flex;"><span>   └─ 已同步
+</span></span><span style="display:flex;"><span>      ├─ 202501.csv
+</span></span><span style="display:flex;"><span>      ├─ 202502.csv
+</span></span><span style="display:flex;"><span>      ├─ 202503.csv
+</span></span><span style="display:flex;"><span>      ├─ 202504.csv
+</span></span><span style="display:flex;"><span>      ├─ 202505.csv
+</span></span><span style="display:flex;"><span>      ├─ 202506.csv
+</span></span><span style="display:flex;"><span>      ├─ 202507.csv
+</span></span><span style="display:flex;"><span>      ├─ 202508.csv
+</span></span><span style="display:flex;"><span>      ├─ 202509.csv
+</span></span><span style="display:flex;"><span>      ├─ 202510.csv
+</span></span><span style="display:flex;"><span>      ├─ 202511.csv
+</span></span><span style="display:flex;"><span>      ├─ 202512.csv
+</span></span><span style="display:flex;"><span>      ├─ 202601.csv
+</span></span><span style="display:flex;"><span>      ├─ 202602.csv
+</span></span><span style="display:flex;"><span>      ├─ 202603.csv
+</span></span><span style="display:flex;"><span>      └─ 202604.csv</span></span></code></pre></div><h2 id="数据查询及导出">数据查询及导出<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e6%9f%a5%e8%af%a2%e5%8f%8a%e5%af%bc%e5%87%ba">#</a></h2>
+<p>为保障能够正常导出数据，可逐月进行查询、导出。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">SELECT</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span>business_date<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >日期</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>stat_shop_id<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >门店编号</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>channel_name<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >渠道</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>item_name<span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >产品名称</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span>dp_total_amount<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >流水</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span>dp_pay_amount<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >实收</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span>dp_item_count<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >销量</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">FROM</span><span style="color:#fff"> </span>ads_dbs_trade_food_di<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff"> </span>business_date<span style="color:#fff"> </span><span style="color:#cf222e">BETWEEN</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;20260101&#39;</span><span style="color:#fff"> </span><span style="color:#cf222e">AND</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;20260401&#39;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">GROUP</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span>business_date<span style="color:#1f2328">,</span>stat_shop_id<span style="color:#1f2328">,</span><span style="color:#fff"> </span>channel_name<span style="color:#1f2328">,</span><span style="color:#fff"> </span>item_name<span style="color:#1f2328">;</span></span></span></code></pre></div><p>保存文件至 <code>待同步</code> 文件夹。</p>
+<h2 id="数据校验">数据校验<a class="anchor" href="#%e6%95%b0%e6%8d%ae%e6%a0%a1%e9%aa%8c">#</a></h2>
+<p>分别在本地数据库与中台数据按月进行查询：</p>
+<p>本地数据库：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">SELECT</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>SUBSTR<span style="color:#1f2328">(</span><span >日期</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">6</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >月份</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span><span >流水</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >流水</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">FROM</span><span style="color:#fff"> </span><span >日表</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff"> </span><span >日期</span><span style="color:#fff"> </span><span style="color:#0550ae">&gt;=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;20250101&#39;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">GROUP</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span>SUBSTR<span style="color:#1f2328">(</span><span >日期</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">6</span><span style="color:#1f2328">)</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">ORDER</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span><span >月份</span><span style="color:#1f2328">;</span></span></span></code></pre></div><p>中台数据：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">SELECT</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>SUBSTR<span style="color:#1f2328">(</span>business_date<span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">6</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >月份</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SUM</span><span style="color:#1f2328">(</span>dp_total_amount<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">AS</span><span style="color:#fff"> </span><span >流水</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">FROM</span><span style="color:#fff"> </span>ads_dbs_trade_food_di<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff"> </span>business_date<span style="color:#fff"> </span><span style="color:#0550ae">&gt;=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;20250101&#39;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">GROUP</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span>SUBSTR<span style="color:#1f2328">(</span>business_date<span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">6</span><span style="color:#1f2328">)</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">ORDER</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span><span >月份</span><span style="color:#1f2328">;</span></span></span></code></pre></div><p>比较各月数据是否一致。</p>
+<p>校验结果：</p>
+<table>
+  <thead>
+      <tr>
+          <th>月份</th>
+          <th>云端流水</th>
+          <th>本地流水</th>
+          <th>差额</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>202501</td>
+          <td>254446551</td>
+          <td>254447609</td>
+          <td>-1058</td>
+      </tr>
+      <tr>
+          <td>202502</td>
+          <td>221359462</td>
+          <td>221358803</td>
+          <td>659</td>
+      </tr>
+      <tr>
+          <td>202503</td>
+          <td>223620888</td>
+          <td>223620584</td>
+          <td>304</td>
+      </tr>
+      <tr>
+          <td>202504</td>
+          <td>230342129</td>
+          <td>230340867</td>
+          <td>1262</td>
+      </tr>
+      <tr>
+          <td>202505</td>
+          <td>313282515</td>
+          <td>313280889</td>
+          <td>1626</td>
+      </tr>
+      <tr>
+          <td>202506</td>
+          <td>323012777</td>
+          <td>323014791</td>
+          <td>-2014</td>
+      </tr>
+      <tr>
+          <td>202507</td>
+          <td>393247571</td>
+          <td>393240744</td>
+          <td>6827</td>
+      </tr>
+      <tr>
+          <td>202508</td>
+          <td>388048696</td>
+          <td>388047465</td>
+          <td>1231</td>
+      </tr>
+      <tr>
+          <td>202509</td>
+          <td>244951228</td>
+          <td>244949845</td>
+          <td>1383</td>
+      </tr>
+      <tr>
+          <td>202510</td>
+          <td>239025739</td>
+          <td>239025395</td>
+          <td>344</td>
+      </tr>
+      <tr>
+          <td>202511</td>
+          <td>222458793</td>
+          <td>222459615</td>
+          <td>-823</td>
+      </tr>
+      <tr>
+          <td>202512</td>
+          <td>199027603</td>
+          <td>199027524</td>
+          <td>78</td>
+      </tr>
+      <tr>
+          <td>202601</td>
+          <td>194985514</td>
+          <td>194984842</td>
+          <td>672</td>
+      </tr>
+      <tr>
+          <td>202602</td>
+          <td>270686437</td>
+          <td>270687820</td>
+          <td>-1383</td>
+      </tr>
+      <tr>
+          <td>202603</td>
+          <td>194120854</td>
+          <td>194120947</td>
+          <td>-93</td>
+      </tr>
+      <tr>
+          <td>202604</td>
+          <td>204229133</td>
+          <td>204228466</td>
+          <td>667</td>
+      </tr>
+      <tr>
+          <td>202605</td>
+          <td>241985753</td>
+          <td>241986275</td>
+          <td>-522</td>
+      </tr>
+      <tr>
+          <td>202606</td>
+          <td>257155412</td>
+          <td>257154716</td>
+          <td>697</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="注意事项">注意事项<a class="anchor" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">#</a></h2>
+<div class="notice note">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>注意</div>
+  <div class="notice-body"><ul>
+<li>中台会刷新前一个月的数据，会导致数据存在差异。同步前先删除上个月数据，再同步上个月数据。</li>
+<li>中台历史数据（包含一年前）会偶尔轻微变动，与保存的可能差个几块钱。</li>
+</ul></div>
+</div>
+
+<h2 id="项目地址">项目地址<a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e5%9c%b0%e5%9d%80">#</a></h2>
+<div class="notice info">
+  <div class="notice-title"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>仓库</div>
+  <div class="notice-body"><p><a href="https://e.coding.net/fuwenyue/tianlala/shop_sales_sync.git">https://e.coding.net/fuwenyue/tianlala/shop_sales_sync.git</a></p></div>
+</div>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/script/%E9%97%A8%E5%BA%97%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%87%E4%BB%BD/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>门店销售数据的备份</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/script/%E5%90%84%E6%B8%A0%E9%81%93%E5%90%8C%E6%AF%94%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE/" class="flex align-center">
+        <span>各渠道同比基础数据</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#产品销售数据备份">产品销售数据备份</a>
+      <ul>
+        <li><a href="#需求背景">需求背景</a></li>
+        <li><a href="#需求频率">需求频率</a></li>
+        <li><a href="#目录结构">目录结构</a></li>
+        <li><a href="#数据查询及导出">数据查询及导出</a></li>
+        <li><a href="#数据校验">数据校验</a></li>
+        <li><a href="#注意事项">注意事项</a></li>
+        <li><a href="#项目地址">项目地址</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  <script>
+(function () {
+  document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+    var pre = codeBlock.parentNode;
+    var button = document.createElement('button');
+    button.className = 'copy-code';
+    button.textContent = '复制';
+    button.addEventListener('click', function () {
+      var text = codeBlock.textContent;
+      navigator.clipboard.writeText(text).then(function () {
+        button.textContent = '已复制';
+        button.classList.add('copied');
+        setTimeout(function () {
+          button.textContent = '复制';
+          button.classList.remove('copied');
+        }, 2000);
+      });
+    });
+    pre.appendChild(button);
+  });
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
